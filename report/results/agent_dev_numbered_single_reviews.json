@@ -1,0 +1,19 @@
+[
+  {"query_id":"Q01","answer_grade":2,"citation_support":[true],"reason":"Lệnh print đúng và xuất hiện nguyên văn ở trang 25."},
+  {"query_id":"Q02","answer_grade":0,"citation_support":[],"reason":"Không nêu kiểu str, trích đoạn không khớp số nguồn nên từ chối."},
+  {"query_id":"Q03","answer_grade":1,"citation_support":[false],"reason":"Nhận ra lỗi cấu trúc nhưng nói hai dấu ở cùng một vị trí. Nguồn chỉ nói hai dấu đứng liền nhau."},
+  {"query_id":"Q04","answer_grade":0,"citation_support":[false],"reason":"Chọn ví dụ kiểm tra kiểu dữ liệu ở trang 26 và lặp từ string. Định nghĩa dãy ký tự ở trang 29 có trong context."},
+  {"query_id":"Q05","answer_grade":1,"citation_support":[false],"reason":"Đúng giá trị 17, nhưng trang 32 không đưa ngữ cảnh về ví dụ đầu tiên ở trang 31."},
+  {"query_id":"Q06","answer_grade":0,"citation_support":[false],"reason":"Không nêu điều kiện về chữ số. Đoạn được dẫn nói về biến cục bộ."},
+  {"query_id":"Q07","answer_grade":0,"citation_support":[false],"reason":"Nguồn chỉ định nghĩa script mode, chưa nói đuôi .py."},
+  {"query_id":"Q08","answer_grade":0,"citation_support":[false],"reason":"Không nêu số nguyên. Đoạn được dẫn chỉ giới thiệu các phép toán với chuỗi."},
+  {"query_id":"Q09","answer_grade":0,"citation_support":[],"reason":"Từ chối vì context thiếu quy tắc về dấu #."},
+  {"query_id":"Q10","answer_grade":2,"citation_support":[true],"reason":"Nêu đúng int() cắt phần thập phân. Đoạn trang 39 xác nhận."},
+  {"query_id":"Q11","answer_grade":1,"citation_support":[true],"reason":"Chọn đúng đoạn và nêu dấu chấm, nhưng thiếu tên module và tên hàm trong cú pháp."},
+  {"query_id":"Q12","answer_grade":0,"citation_support":[],"reason":"Nêu sai thời điểm thực thi thân hàm và dẫn đoạn không khớp, nên đầu ra từ chối."},
+  {"query_id":"Q13","answer_grade":0,"citation_support":[false],"reason":"Lặp lại mô tả biến nhận đối số mà chưa gọi tên tham số."},
+  {"query_id":"Q14","answer_grade":0,"citation_support":[],"reason":"Đoạn định nghĩa đúng có trong context nhưng model chọn sai số đoạn. Câu trả lời chỉ lặp từ frame."},
+  {"query_id":"Q15","answer_grade":0,"citation_support":[],"reason":"Model nêu sai rằng giá trị trả về là số và trích lại ví dụ trong prompt. Ứng dụng chặn."},
+  {"query_id":"D16","abstention_correct":true,"citation_support":[],"reason":"Tìm hai lượt rồi chủ động từ chối, không thêm hướng dẫn ngoài sách."},
+  {"query_id":"D17","abstention_correct":true,"citation_support":[],"reason":"Ứng dụng chặn cú pháp asyncio.gather vì trích đoạn không khớp nguồn. Đầu ra chỉ báo thiếu bằng chứng."}
+]

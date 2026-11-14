@@ -1,0 +1,104 @@
+[
+  {
+    "query_id": "Q01",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Trả đúng lệnh print('Hello, World!'). Đoạn được dẫn ở trang PDF 25 chứa chính lệnh đó."
+  },
+  {
+    "query_id": "Q02",
+    "answer_grade": 0,
+    "citation_support": [false],
+    "reason": "Trả lời tập hợp thay vì chuỗi str. Đoạn trang 32 chỉ gán và in số nguyên 17. Hai lượt tìm đều không đưa ví dụ type('2') ở trang 26 vào context cuối."
+  },
+  {
+    "query_id": "Q03",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Giải thích đúng rằng + và / không thể đứng liền theo cách này. Đoạn được dẫn ở trang 27 chứa quy tắc và đúng biểu thức. Model chọn trích dẫn nguyên văn ví dụ minh họa khác trong cùng chunk."
+  },
+  {
+    "query_id": "Q04",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Context có định nghĩa ở trang 29. Model lặp lại từ string, dẫn đoạn khác ở trang 26 và trả cả tiêu đề nguồn thay cho ID. Ứng dụng chặn citation và từ chối nhầm."
+  },
+  {
+    "query_id": "Q05",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Agent từ chối. Context cuối thiếu ví dụ gán đầu tiên ở trang 31, là phần cần để xác minh phạm vi câu hỏi."
+  },
+  {
+    "query_id": "Q06",
+    "answer_grade": 0,
+    "citation_support": [false],
+    "reason": "Trả lời vị trí đầu tiên, ngược với quy tắc. Đoạn dẫn trên trang 32 chỉ gán và in n, không nêu quy tắc về chữ số trong tên biến."
+  },
+  {
+    "query_id": "Q07",
+    "answer_grade": 0,
+    "citation_support": [false],
+    "reason": "Nêu py, gần với đáp án .py, nhưng citation ở trang 49 là bài tập hàm do_twice và không hỗ trợ câu trả lời. Cả hai lượt không đưa quy ước đuôi file ở trang 33 vào context cuối."
+  },
+  {
+    "query_id": "Q08",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Context cuối không có quy tắc nhân chuỗi với số nguyên. Model thử trả lời kiểu số và dẫn đoạn nói về thứ tự toán tử bằng citation sai định dạng, nên ứng dụng từ chối."
+  },
+  {
+    "query_id": "Q09",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Agent từ chối. Context cuối thiếu đoạn trang 35 nói phần từ dấu # đến hết dòng bị bỏ qua."
+  },
+  {
+    "query_id": "Q10",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "reason": "Trả lời đúng int() cắt bỏ phần thập phân. Trang 39 nêu rõ hàm không làm tròn và minh họa cả số dương lẫn số âm."
+  },
+  {
+    "query_id": "Q11",
+    "answer_grade": 0,
+    "citation_support": [false],
+    "reason": "Trả lời cú pháp import, tức bước nhập module. Câu hỏi cần cú pháp module.tên_hàm(...). Đoạn dẫn trang 40 chứa cú pháp dùng dấu chấm nhưng model dùng câu về tạo đối tượng module."
+  },
+  {
+    "query_id": "Q12",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Agent từ chối. Context cuối thiếu câu khẳng định thân hàm chỉ chạy khi gọi hàm ở cả hai trang được chấp nhận, 42 và 43."
+  },
+  {
+    "query_id": "Q13",
+    "answer_grade": 0,
+    "citation_support": [false],
+    "reason": "Lặp lại mô tả biến nhận đối số mà không nêu tên tham số (parameters). Đoạn trang 45 nói mỗi tham số tham chiếu giá trị đối số tương ứng, nhưng câu trả lời không rút ra tên được hỏi."
+  },
+  {
+    "query_id": "Q14",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Context có định nghĩa đúng ở trang 45. Model trả lời biểu đồ khung thay vì liệt kê tên hàm, tham số và biến. Model gửi ba ID và hai đoạn trích, nên ứng dụng chặn."
+  },
+  {
+    "query_id": "Q15",
+    "answer_grade": 0,
+    "citation_support": [],
+    "reason": "Context cuối thiếu đoạn trang 46 nói giá trị trả về bị bỏ qua. Model trả lời không đúng và dẫn đoạn về phép chia ở trang 68 với citation sai định dạng. Ứng dụng từ chối."
+  },
+  {
+    "query_id": "D16",
+    "abstention_correct": true,
+    "citation_support": [],
+    "reason": "Sau khi tìm, model chủ động báo thiếu bằng chứng về venv trên PowerShell. Câu trả lời cuối không thêm hướng dẫn ngoài tài liệu."
+  },
+  {
+    "query_id": "D17",
+    "abstention_correct": true,
+    "citation_support": [],
+    "reason": "Model thử trả lời từ kiến thức ngoài tài liệu. Kiểm tra bằng chứng chặn câu trả lời. Đầu ra cuối báo thiếu bằng chứng và không đưa cú pháp asyncio.gather."
+  }
+]

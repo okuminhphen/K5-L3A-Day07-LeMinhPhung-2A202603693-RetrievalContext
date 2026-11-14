@@ -1,0 +1,9 @@
+[
+  {"query_id":"T01","answer_grade":0,"citation_support":[],"context_grade":0,"context_reason":"Trang 24 có dấu >>> trong ví dụ khởi động nhưng thiếu câu giải thích ý nghĩa của dấu nhắc.","reason":"Ứng dụng từ chối vì model gửi cả tiêu đề nguồn làm ID."},
+  {"query_id":"T02","answer_grade":2,"citation_support":[true],"context_grade":2,"context_reason":"Trang 34 nêu quy tắc ưu tiên và tính đúng biểu thức 6 + 4 / 2.","reason":"Câu hỏi yêu cầu giá trị của biểu thức. Trả đúng 8 và dẫn đoạn nêu trực tiếp kết quả."},
+  {"query_id":"T03","answer_grade":0,"citation_support":[],"context_grade":0,"context_reason":"Đoạn trang 45 nói về biến ngoài hàm, thiếu quy tắc phạm vi biến tạo trong hàm.","reason":"Model nêu phạm vi của hàm nhưng nguồn không hỗ trợ và citation sai định dạng, nên đầu ra từ chối."},
+  {"query_id":"T04","answer_grade":0,"citation_support":[],"context_grade":2,"context_reason":"Trang 66 có cả n = 0 và việc không gọi đệ quy tiếp.","reason":"Model chỉ nêu n = 0 và gửi ID kèm tên file, số trang. Ứng dụng từ chối."},
+  {"query_id":"T05","answer_grade":0,"citation_support":[],"context_grade":1,"context_reason":"Chunk trang 35 bắt đầu định nghĩa lỗi ngữ nghĩa nhưng bị cắt trước dấu hiệu chương trình chạy và ra kết quả sai.","reason":"Model chủ động từ chối."},
+  {"query_id":"T06","abstention_correct":true,"citation_support":[],"reason":"Các đoạn tìm được nói về đệ quy thường. Ứng dụng chặn đề xuất 128 vì trích dẫn không khớp nguồn."},
+  {"query_id":"T07","abstention_correct":true,"citation_support":[],"reason":"Các đoạn tìm được không nói về pip hay requirements.txt. Ứng dụng chặn lệnh pip vì trích dẫn không khớp nguồn."}
+]

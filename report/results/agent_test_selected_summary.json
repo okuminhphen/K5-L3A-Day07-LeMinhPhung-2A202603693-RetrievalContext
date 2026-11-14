@@ -1,0 +1,77 @@
+{
+  "split": "test",
+  "model": "llama3.2:latest",
+  "method": "dense",
+  "day6_strategy": "f1981f439e266dff42b2827e190fc629a62e280420cce4f8b8fe89b533846305:B",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_dimensions": 384,
+  "top_k": 3,
+  "max_searches": 2,
+  "context_budget_chars": 1600,
+  "translate_first_query": false,
+  "numbered_citations": false,
+  "api_cost_usd": 0,
+  "metrics": {
+    "cases": 7,
+    "provider_errors": 1,
+    "tool_use": {
+      "n": 6,
+      "N": 6
+    },
+    "grounded_answer": {
+      "0": 3,
+      "1": 0,
+      "2": 1,
+      "N": 4,
+      "mean": 0.5
+    },
+    "citation_validity": {
+      "n": 1,
+      "N": 3
+    },
+    "answer_citation_coverage": {
+      "n": 2,
+      "N": 2
+    },
+    "abstention": {
+      "n": 2,
+      "N": 2
+    },
+    "false_abstention": {
+      "n": 2,
+      "N": 4
+    }
+  },
+  "fully_grounded_out_of_all_answerable": {
+    "n": 1,
+    "N": 5
+  },
+  "hit_at_1": {
+    "n": 1,
+    "N": 5
+  },
+  "evidence_hit_at_3": {
+    "n": 3,
+    "N": 5
+  },
+  "final_context_exact_evidence": {
+    "n": 3,
+    "N": 5,
+    "query_ids": [
+      "T02",
+      "T03",
+      "T04"
+    ]
+  },
+  "search_call_distribution": {
+    "1": 6,
+    "2": 1
+  },
+  "median_elapsed_seconds": 2.658242200006498,
+  "total_case_elapsed_seconds": 36.92276599997422,
+  "reviewed_context_grades": {
+    "0": 1,
+    "1": 1,
+    "2": 3
+  }
+}

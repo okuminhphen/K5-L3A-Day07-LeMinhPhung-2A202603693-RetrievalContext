@@ -1,0 +1,411 @@
+{
+  "split": "dev",
+  "model": "llama3.2:latest",
+  "method": "dense",
+  "day6_strategy": "f1981f439e266dff42b2827e190fc629a62e280420cce4f8b8fe89b533846305:B",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_dimensions": 384,
+  "top_k": 3,
+  "max_searches": 2,
+  "context_budget_chars": 1600,
+  "api_cost_usd": 0,
+  "traces": [
+    {
+      "query_id": "Q01",
+      "question": "Trong mục chương trình đầu tiên của sách, lệnh Python 3 nào hiển thị lời chào Hello, World!?",
+      "filter": null,
+      "elapsed_seconds": 18.221755200007465,
+      "status": "answered",
+      "answer": "print('Hello, World!') [think-python-2e:25:paragraph:2]",
+      "citations": [
+        "think-python-2e:25:paragraph:2"
+      ],
+      "events": [
+        {
+          "event": "decision",
+          "response": {
+            "action": "search",
+            "query": "Trong mục chương trình đầu tiên của sách, lệnh Python 3 nào hiển thị lời chào Hello, World!?"
+          },
+          "ms": 1123.905599990394
+        },
+        {
+          "event": "search",
+          "query": "Trong mục chương trình đầu tiên của sách, lệnh Python 3 nào hiển thị lời chào Hello, World!?",
+          "filter": null,
+          "top_k": 3,
+          "results": [
+            {
+              "id": "think-python-2e:25:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "Traditionally, the first program you write in a new language is called “Hello, World!” be-\ncause all it does is display the words “Hello, World!”. In Python, it looks like this:\n>>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\nThe quotation marks in the program mark the beginning and end of the text to be dis-\nplayed; they don’t appear in",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8490191192019526
+            },
+            {
+              "id": "think-python-2e:25:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "1.3. The first program 3\n1.3 The first program",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8308541774749756
+            },
+            {
+              "id": "think-python-2e:24:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 24,
+              "text": "The Pythoninterpreteris a program that reads and executes Python code. Depending\non your environment, you might start the interpreter by clicking on an icon, or by typing\npythonon a command line. When it starts, you should see output like this:\nPython 3.4.0 (default, Jun 19 2015, 14:20:21)\n[GCC 4.8.2] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>>\nThe first three lines contain information about the interpreter and the operating system it’s\nrunning on, so it",
+              "metadata": {
+                "page": 24,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8272848232218744
+            }
+          ],
+          "context": "[think-python-2e:25:paragraph:2 | think-python-2e.pdf | page 25]\nTraditionally, the first program you write in a new language is called “Hello, World!” be-\ncause all it does is display the words “Hello, World!”. In Python, it looks like this:\n>>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\nThe quotation marks in the program mark the beginning and end of the text to be dis-\nplayed; they don’t appear in\n\n[think-python-2e:25:paragraph:1 | think-python-2e.pdf | page 25]\n1.3. The first program 3\n1.3 The first program\n\n[think-python-2e:24:paragraph:5 | think-python-2e.pdf | page 24]\nThe Pythoninterpreteris a program that reads and executes Python code. Depending\non your environment, you might start the interpreter by clicking on an icon, or by typing\npythonon a command line. When it starts, you should see output like this:\nPython 3.4.0 (default, Jun 19 2015, 14:20:21)\n[GCC 4.8.2] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>>\nThe first three lines contain information about the interpreter and the operating system it’s\nrunning on, so it",
+          "context_ids": [
+            "think-python-2e:25:paragraph:2",
+            "think-python-2e:25:paragraph:1",
+            "think-python-2e:24:paragraph:5"
+          ],
+          "retrieval_ms": 14762.3339999991
+        },
+        {
+          "event": "decision",
+          "response": {
+            "action": "answer",
+            "answer": "print('Hello, World!')",
+            "citations": [
+              "think-python-2e:25:paragraph:2"
+            ],
+            "quotes": [
+              ">>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\n"
+            ]
+          },
+          "ms": 2335.4107000050135
+        },
+        {
+          "event": "answer"
+        }
+      ]
+    },
+    {
+      "query_id": "Q04",
+      "question": "Trong bảng thuật ngữ của chương The way of the program, kiểu string biểu diễn loại dữ liệu gì?",
+      "filter": {
+        "chapter": "The way of the program"
+      },
+      "elapsed_seconds": 2.4313819999806583,
+      "status": "abstain",
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "citations": [],
+      "events": [
+        {
+          "event": "decision",
+          "response": {
+            "action": "search",
+            "query": "Trong bảng thuật ngữ của chương The way of the program, kiểu string biểu diễn loại dữ liệu gì?"
+          },
+          "ms": 765.1551000017207
+        },
+        {
+          "event": "search",
+          "query": "Trong bảng thuật ngữ của chương The way of the program, kiểu string biểu diễn loại dữ liệu gì?",
+          "filter": {
+            "chapter": "The way of the program"
+          },
+          "top_k": 3,
+          "results": [
+            {
+              "id": "think-python-2e:26:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "4 Chapter 1. The way of the program\n1.5 Values and types\n\nAvalueis one of the basic things a program works with, like a letter or a number. Some\nvalues we have seen so far are2,42.0, and'Hello, World!'.\n\nThese values belong to differenttypes:2is aninteger,42.0is afloating-point number, and\n'Hello, World!'is astring, so-called because the letters it contains are strung together.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8258239238472076
+            },
+            {
+              "id": "think-python-2e:26:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "If you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8229605661058104
+            },
+            {
+              "id": "think-python-2e:29:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 29,
+              "text": "integer:A type that represents whole numbers.\n\nfloating-point:A type that represents numbers with fractional parts.\n\nstring:A type that represents sequences of characters.\n\nnatural language:Any one of the languages that people speak that evolved naturally.\n\nformal language:Any one of the languages that people have designed for specific pur-\nposes, such as representing mathematical ideas or computer programs; all program-\nming languages are formal languages.",
+              "metadata": {
+                "page": 29,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8224587161912844
+            }
+          ],
+          "context": "[think-python-2e:26:paragraph:1 | think-python-2e.pdf | page 26]\n4 Chapter 1. The way of the program\n1.5 Values and types\n\nAvalueis one of the basic things a program works with, like a letter or a number. Some\nvalues we have seen so far are2,42.0, and'Hello, World!'.\n\nThese values belong to differenttypes:2is aninteger,42.0is afloating-point number, and\n'Hello, World!'is astring, so-called because the letters it contains are strung together.\n\n[think-python-2e:26:paragraph:2 | think-python-2e.pdf | page 26]\nIf you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.\n\n[think-python-2e:29:paragraph:2 | think-python-2e.pdf | page 29]\ninteger:A type that represents whole numbers.\n\nfloating-point:A type that represents numbers with fractional parts.\n\nstring:A type that represents sequences of characters.\n\nnatural language:Any one of the languages that people speak that evolved naturally.\n\nformal language:Any one of the languages that people have designed for specific pur-\nposes, such as representing mathematical ideas or computer programs; all program-\nming languages are formal languages.",
+          "context_ids": [
+            "think-python-2e:26:paragraph:1",
+            "think-python-2e:26:paragraph:2",
+            "think-python-2e:29:paragraph:2"
+          ],
+          "retrieval_ms": 45.3947999922093
+        },
+        {
+          "event": "decision",
+          "response": {
+            "action": "answer",
+            "answer": "string",
+            "citations": [
+              "[think-python-2e:26:paragraph:1 | think-python-2e.pdf | page 26]"
+            ],
+            "quotes": [
+              "string, so-called because the letters it contains are strung together."
+            ]
+          },
+          "ms": 1620.7456999982242
+        },
+        {
+          "event": "invalid_citations"
+        }
+      ]
+    },
+    {
+      "query_id": "D16",
+      "question": "Sách chỉ cách tạo và kích hoạt môi trường ảo bằng venv trên PowerShell như thế nào?",
+      "filter": null,
+      "elapsed_seconds": 1.2073482999985572,
+      "status": "abstain",
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "citations": [],
+      "events": [
+        {
+          "event": "decision",
+          "response": {
+            "action": "search",
+            "query": "Sách chỉ cách tạo và kích hoạt môi trường ảo bằng venv trên PowerShell như thế nào?"
+          },
+          "ms": 808.952399995178
+        },
+        {
+          "event": "search",
+          "query": "Sách chỉ cách tạo và kích hoạt môi trường ảo bằng venv trên PowerShell như thế nào?",
+          "filter": null,
+          "top_k": 3,
+          "results": [
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.7881074674065445
+            },
+            {
+              "id": "think-python-2e:67:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 67,
+              "text": "5.11. Keyboard input 45",
+              "metadata": {
+                "page": 67,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.7855258839695592
+            },
+            {
+              "id": "think-python-2e:68:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 68,
+              "text": "Traceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is",
+              "metadata": {
+                "page": 68,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.7851558093680232
+            }
+          ],
+          "context": "[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:67:paragraph:1 | think-python-2e.pdf | page 67]\n5.11. Keyboard input 45\n\n[think-python-2e:68:paragraph:5 | think-python-2e.pdf | page 68]\nTraceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is",
+          "context_ids": [
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:67:paragraph:1",
+            "think-python-2e:68:paragraph:5"
+          ],
+          "retrieval_ms": 45.7178000069689
+        },
+        {
+          "event": "decision",
+          "response": {
+            "action": "abstain"
+          },
+          "ms": 352.6278000208549
+        },
+        {
+          "event": "abstain"
+        }
+      ]
+    },
+    {
+      "query_id": "D17",
+      "question": "Sách hướng dẫn dùng asyncio.gather để chạy đồng thời hai hàm async như thế nào?",
+      "filter": null,
+      "elapsed_seconds": 4.128089000005275,
+      "status": "abstain",
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "citations": [],
+      "events": [
+        {
+          "event": "decision",
+          "response": {
+            "action": "search",
+            "query": "Sách hướng dẫn dùng asyncio.gather để chạy đồng thời hai hàm async như thế nào?"
+          },
+          "ms": 733.1843999854755
+        },
+        {
+          "event": "search",
+          "query": "Sách hướng dẫn dùng asyncio.gather để chạy đồng thời hai hàm async như thế nào?",
+          "filter": null,
+          "top_k": 3,
+          "results": [
+            {
+              "id": "think-python-2e:49:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 49,
+              "text": "2. Modifydo_twiceso that it takes two arguments, a function object and a value, and calls the\nfunction twice, passing the value as an argument.\n\n3. Copy the definition ofprint_twicefrom earlier in this chapter to your script.\n\n4. Use the modified version ofdo_twiceto callprint_twicetwice, passing'spam'as an\nargument.",
+              "metadata": {
+                "page": 49,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8319838643074036
+            },
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.829237699508667
+            },
+            {
+              "id": "think-python-2e:66:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 66,
+              "text": "5.9 Stack diagrams for recursive functions",
+              "metadata": {
+                "page": 66,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8199346768894998
+            }
+          ],
+          "context": "[think-python-2e:49:paragraph:2 | think-python-2e.pdf | page 49]\n2. Modifydo_twiceso that it takes two arguments, a function object and a value, and calls the\nfunction twice, passing the value as an argument.\n\n3. Copy the definition ofprint_twicefrom earlier in this chapter to your script.\n\n4. Use the modified version ofdo_twiceto callprint_twicetwice, passing'spam'as an\nargument.\n\n[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:66:paragraph:4 | think-python-2e.pdf | page 66]\n5.9 Stack diagrams for recursive functions",
+          "context_ids": [
+            "think-python-2e:49:paragraph:2",
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:66:paragraph:4"
+          ],
+          "retrieval_ms": 55.70840000291355
+        },
+        {
+          "event": "decision",
+          "response": {
+            "action": "answer",
+            "answer": "asyncio.gather(func1(), func2())",
+            "citations": [
+              "think-python-2e:49:paragraph:2",
+              "think-python-2e:32:paragraph:8",
+              "think-python-2e:66:paragraph:4"
+            ],
+            "quotes": [
+              "2. Modifydo_twiceso that it takes two arguments, a function object and a value, and calls the\nfunction twice, passing the value as an argument.\n\n3. Copy the definition ofprint_twicefrom earlier in this chapter to your script.\n\n4. Use the modified version ofdo_twiceto callprint_twicetwice, passing'spam'as an\nargument."
+            ]
+          },
+          "ms": 3339.1335000051185
+        },
+        {
+          "event": "invalid_evidence_quotes"
+        }
+      ]
+    }
+  ]
+}

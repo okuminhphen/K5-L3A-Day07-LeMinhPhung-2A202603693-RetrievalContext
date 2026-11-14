@@ -1,0 +1,2497 @@
+{
+  "split": "dev",
+  "day6_strategy": "f1981f439e266dff42b2827e190fc629a62e280420cce4f8b8fe89b533846305:B",
+  "chunk_count": 211,
+  "top_k": 3,
+  "context_budget_chars": 1600,
+  "api_cost_usd": 0,
+  "translation_model": "llama3.2:latest",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_dimensions": 384,
+  "model_load_seconds": 14.072062499995809,
+  "methods": {
+    "dense": {
+      "evaluation_seconds": 0.5579567000095267,
+      "metrics": {
+        "hit_at_1": {
+          "hits": 4,
+          "total": 15,
+          "rate": 0.26666666666666666
+        },
+        "evidence_hit_at_3": {
+          "hits": 6,
+          "total": 15,
+          "rate": 0.4
+        },
+        "packed_context_evidence": {
+          "hits": 6,
+          "total": 15,
+          "rate": 0.4
+        }
+      },
+      "median_retrieval_ms": 32.5252000184264,
+      "skipped_unanswerable_ids": [
+        "D16",
+        "D17"
+      ],
+      "traces": [
+        {
+          "query_id": "Q01",
+          "query": "Trong mục chương trình đầu tiên của sách, lệnh Python 3 nào hiển thị lời chào Hello, World!?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 25,
+              "evidence": ">>> print('Hello, World!')"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:25:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "Traditionally, the first program you write in a new language is called “Hello, World!” be-\ncause all it does is display the words “Hello, World!”. In Python, it looks like this:\n>>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\nThe quotation marks in the program mark the beginning and end of the text to be dis-\nplayed; they don’t appear in",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8490191192019526,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:25:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "1.3. The first program 3\n1.3 The first program",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8308541774749756,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:24:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 24,
+              "text": "The Pythoninterpreteris a program that reads and executes Python code. Depending\non your environment, you might start the interpreter by clicking on an icon, or by typing\npythonon a command line. When it starts, you should see output like this:\nPython 3.4.0 (default, Jun 19 2015, 14:20:21)\n[GCC 4.8.2] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>>\nThe first three lines contain information about the interpreter and the operating system it’s\nrunning on, so it",
+              "metadata": {
+                "page": 24,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8272848232218744,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:25:paragraph:2",
+            "think-python-2e:25:paragraph:1",
+            "think-python-2e:24:paragraph:5"
+          ],
+          "context": "[think-python-2e:25:paragraph:2 | think-python-2e.pdf | page 25]\nTraditionally, the first program you write in a new language is called “Hello, World!” be-\ncause all it does is display the words “Hello, World!”. In Python, it looks like this:\n>>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\nThe quotation marks in the program mark the beginning and end of the text to be dis-\nplayed; they don’t appear in\n\n[think-python-2e:25:paragraph:1 | think-python-2e.pdf | page 25]\n1.3. The first program 3\n1.3 The first program\n\n[think-python-2e:24:paragraph:5 | think-python-2e.pdf | page 24]\nThe Pythoninterpreteris a program that reads and executes Python code. Depending\non your environment, you might start the interpreter by clicking on an icon, or by typing\npythonon a command line. When it starts, you should see output like this:\nPython 3.4.0 (default, Jun 19 2015, 14:20:21)\n[GCC 4.8.2] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>>\nThe first three lines contain information about the interpreter and the operating system it’s\nrunning on, so it",
+          "retrieval_ms": 44.87819998757914
+        },
+        {
+          "query_id": "Q02",
+          "query": "Nếu đặt số nguyên 2 trong dấu nháy đơn, Python xếp giá trị đó vào kiểu nào?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 26,
+              "evidence": ">>> type('2')\n<class'str'>"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8261318802833557,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:68:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 68,
+              "text": "Traceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is",
+              "metadata": {
+                "page": 68,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.815780961983829,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:30:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 30,
+              "text": "8 Chapter 1. The way of the program\n\n4. In math notation, leading zeros are ok, as in09. What happens if you try this in Python?\nWhat about011?\n\n5. What happens if you have two values with no operator between them?\nExercise 1.2.Start the Python interpreter and use it as a calculator.\n\n1. How many seconds are there in 42 minutes 42 seconds?\n\n2. How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.",
+              "metadata": {
+                "page": 30,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8153285494250938,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:68:paragraph:5",
+            "think-python-2e:30:paragraph:1"
+          ],
+          "context": "[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:68:paragraph:5 | think-python-2e.pdf | page 68]\nTraceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is\n\n[think-python-2e:30:paragraph:1 | think-python-2e.pdf | page 30]\n8 Chapter 1. The way of the program\n\n4. In math notation, leading zeros are ok, as in09. What happens if you try this in Python?\nWhat about011?\n\n5. What happens if you have two values with no operator between them?\nExercise 1.2.Start the Python interpreter and use it as a calculator.\n\n1. How many seconds are there in 42 minutes 42 seconds?\n\n2. How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.",
+          "retrieval_ms": 50.83350001950748
+        },
+        {
+          "query_id": "Q03",
+          "query": "Vì sao biểu thức 3+/3 sai cú pháp dù dấu cộng và dấu chia đều là ký hiệu hợp lệ?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 27,
+              "evidence": "3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:27:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 27,
+              "text": "The second type of syntax rule pertains to the way tokens are combined. The equation\n3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other. Similarly, in a chemical formula the subscript comes after the element name,\nnot before.\n\nThis is @ well-structured Engli$h sentence with invalid t*kens in it. This sentence all valid\ntokens has, but invalid structure with.",
+              "metadata": {
+                "page": 27,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8172573556150596,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:27:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 27,
+              "text": "Syntax rules come in two flavors, pertaining totokensand structure. Tokens are the basic\nelements of the language, such as words, numbers, and chemical elements. One of the\nproblems with 3+ =3$6 is that $ is not a legal token in mathematics (at least as far as I\nknow). Similarly, 2Zzis not legal because there is no element with the abbreviationZz.",
+              "metadata": {
+                "page": 27,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8089505661784985,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:34:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 34,
+              "text": "•Multiplication andDivision have higher precedence thanAddition andSubtraction.\nSo2*3-1is 5, not 4, and6+4/2is 8, not 5.\n\n• Operators with the same precedence are evaluated from left to right (except exponen-\ntiation). So in the expressiondegrees / 2 * pi, the division happens first and the\nresult is multiplied bypi. To divide by 2π, you can use parentheses or writedegrees\n/ 2 / pi.",
+              "metadata": {
+                "page": 34,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8064003586769104,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:27:paragraph:3",
+            "think-python-2e:27:paragraph:2",
+            "think-python-2e:34:paragraph:2"
+          ],
+          "context": "[think-python-2e:27:paragraph:3 | think-python-2e.pdf | page 27]\nThe second type of syntax rule pertains to the way tokens are combined. The equation\n3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other. Similarly, in a chemical formula the subscript comes after the element name,\nnot before.\n\nThis is @ well-structured Engli$h sentence with invalid t*kens in it. This sentence all valid\ntokens has, but invalid structure with.\n\n[think-python-2e:27:paragraph:2 | think-python-2e.pdf | page 27]\nSyntax rules come in two flavors, pertaining totokensand structure. Tokens are the basic\nelements of the language, such as words, numbers, and chemical elements. One of the\nproblems with 3+ =3$6 is that $ is not a legal token in mathematics (at least as far as I\nknow). Similarly, 2Zzis not legal because there is no element with the abbreviationZz.\n\n[think-python-2e:34:paragraph:2 | think-python-2e.pdf | page 34]\n•Multiplication andDivision have higher precedence thanAddition andSubtraction.\nSo2*3-1is 5, not 4, and6+4/2is 8, not 5.\n\n• Operators with the same precedence are evaluated from left to right (except exponen-\ntiation). So in the expressiondegrees / 2 * pi, the division happens first and the\nresult is multiplied bypi. To divide by 2π, you can use parentheses or writedegrees\n/ 2 / pi.",
+          "retrieval_ms": 29.601799993542954
+        },
+        {
+          "query_id": "Q04",
+          "query": "Trong bảng thuật ngữ của chương The way of the program, kiểu string biểu diễn loại dữ liệu gì?",
+          "filter": {
+            "chapter": "The way of the program"
+          },
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 29,
+              "evidence": "string:A type that represents sequences of characters."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:26:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "4 Chapter 1. The way of the program\n1.5 Values and types\n\nAvalueis one of the basic things a program works with, like a letter or a number. Some\nvalues we have seen so far are2,42.0, and'Hello, World!'.\n\nThese values belong to differenttypes:2is aninteger,42.0is afloating-point number, and\n'Hello, World!'is astring, so-called because the letters it contains are strung together.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8258239238472076,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:26:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "If you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8229605661058104,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:29:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 29,
+              "text": "integer:A type that represents whole numbers.\n\nfloating-point:A type that represents numbers with fractional parts.\n\nstring:A type that represents sequences of characters.\n\nnatural language:Any one of the languages that people speak that evolved naturally.\n\nformal language:Any one of the languages that people have designed for specific pur-\nposes, such as representing mathematical ideas or computer programs; all program-\nming languages are formal languages.",
+              "metadata": {
+                "page": 29,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8224587161912844,
+              "rank": 3,
+              "evidence_hit": true
+            }
+          ],
+          "first_evidence_rank": 3,
+          "hit_at_1": false,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:26:paragraph:1",
+            "think-python-2e:26:paragraph:2",
+            "think-python-2e:29:paragraph:2"
+          ],
+          "context": "[think-python-2e:26:paragraph:1 | think-python-2e.pdf | page 26]\n4 Chapter 1. The way of the program\n1.5 Values and types\n\nAvalueis one of the basic things a program works with, like a letter or a number. Some\nvalues we have seen so far are2,42.0, and'Hello, World!'.\n\nThese values belong to differenttypes:2is aninteger,42.0is afloating-point number, and\n'Hello, World!'is astring, so-called because the letters it contains are strung together.\n\n[think-python-2e:26:paragraph:2 | think-python-2e.pdf | page 26]\nIf you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.\n\n[think-python-2e:29:paragraph:2 | think-python-2e.pdf | page 29]\ninteger:A type that represents whole numbers.\n\nfloating-point:A type that represents numbers with fractional parts.\n\nstring:A type that represents sequences of characters.\n\nnatural language:Any one of the languages that people speak that evolved naturally.\n\nformal language:Any one of the languages that people have designed for specific pur-\nposes, such as representing mathematical ideas or computer programs; all program-\nming languages are formal languages.",
+          "retrieval_ms": 46.79079999914393
+        },
+        {
+          "query_id": "Q05",
+          "query": "Trong ví dụ đầu tiên về phép gán, biến n nhận giá trị nào?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 31,
+              "evidence": "the second gives the integer17ton;"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8036151166421093,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:70:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 70,
+              "text": "48 Chapter 5. Conditionals and recursion\n\nExercise 5.2.Fermat’s Last Theorem says that there are no positive integers a, b, and c such that\n\nan +b n =c n\nfor any values of n greater than 2.\n\n1. Write a function namedcheck_fermatthat takes four parameters—a, b, candn—and\nchecks to see if Fermat’s theorem holds. If n is greater than 2 and\n\nan +b n =c n\nthe program should print, “Holy smokes, Fermat was wrong!” Otherwise the program should\nprint, “No, that doesn’t work.”",
+              "metadata": {
+                "page": 70,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.7873517059054914,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:66:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 66,
+              "text": "Ifn <= 0thereturn statementexits the function. The flow of execution immediately re-\nturns to the caller, and the remaining lines of the function don’t run.\nThe rest of the function is similar tocountdown: it displayssand then calls itself to display\nsn−1 additional times. So the number of lines of output is1 + (n - 1), which adds up\nton.\nFor simple examples like this, it is probably easier to use aforloop. But we will see\nexamples later that are hard to write with aforloop and easy to write",
+              "metadata": {
+                "page": 66,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.7771004240929336,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:70:paragraph:1",
+            "think-python-2e:66:paragraph:2"
+          ],
+          "context": "[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:70:paragraph:1 | think-python-2e.pdf | page 70]\n48 Chapter 5. Conditionals and recursion\n\nExercise 5.2.Fermat’s Last Theorem says that there are no positive integers a, b, and c such that\n\nan +b n =c n\nfor any values of n greater than 2.\n\n1. Write a function namedcheck_fermatthat takes four parameters—a, b, candn—and\nchecks to see if Fermat’s theorem holds. If n is greater than 2 and\n\nan +b n =c n\nthe program should print, “Holy smokes, Fermat was wrong!” Otherwise the program should\nprint, “No, that doesn’t work.”\n\n[think-python-2e:66:paragraph:2 | think-python-2e.pdf | page 66]\nIfn <= 0thereturn statementexits the function. The flow of execution immediately re-\nturns to the caller, and the remaining lines of the function don’t run.\nThe rest of the function is similar tocountdown: it displayssand then calls itself to display\nsn−1 additional times. So the number of lines of output is1 + (n - 1), which adds up\nton.\nFor simple examples like this, it is probably easier to use aforloop. But we will see\nexamples later that are hard to write with aforloop and easy to write",
+          "retrieval_ms": 32.5252000184264
+        },
+        {
+          "query_id": "Q06",
+          "query": "Tên biến trong Python có thể chứa chữ số ở vị trí nào?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 32,
+              "evidence": "They can contain both letters and numbers, but\nthey can’t begin with a number."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8207184076309204,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:45:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "For example, if you try to accesscatfrom within, you get aNameErrorprint_twice:\nTraceback (innermost last):\nFile \"test.py\", line 13, in __main__\ncat_twice(line1, line2)\nFile \"test.py\", line 5, in cat_twice\nprint_twice(cat)\nFile \"test.py\", line 9, in print_twice\nprint(cat)\nNameError: name'cat'is not defined",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8130022994874552,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:44:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 44,
+              "text": "You can also use a variable as an argument:\n>>> michael ='Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.\nThe name of the variable we pass as an argument (michael) has nothing to do with the\nname of the parameter (bruce). It doesn’t matter what the value was called back home (in\nthe caller); here inprint_twice, we call everybodybruce.\n\n3.8 Variables and parameters are local",
+              "metadata": {
+                "page": 44,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8119409792458442,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:45:paragraph:5",
+            "think-python-2e:44:paragraph:3"
+          ],
+          "context": "[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:45:paragraph:5 | think-python-2e.pdf | page 45]\nFor example, if you try to accesscatfrom within, you get aNameErrorprint_twice:\nTraceback (innermost last):\nFile \"test.py\", line 13, in __main__\ncat_twice(line1, line2)\nFile \"test.py\", line 5, in cat_twice\nprint_twice(cat)\nFile \"test.py\", line 9, in print_twice\nprint(cat)\nNameError: name'cat'is not defined\n\n[think-python-2e:44:paragraph:3 | think-python-2e.pdf | page 44]\nYou can also use a variable as an argument:\n>>> michael ='Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.\nThe name of the variable we pass as an argument (michael) has nothing to do with the\nname of the parameter (bruce). It doesn’t matter what the value was called back home (in\nthe caller); here inprint_twice, we call everybodybruce.\n\n3.8 Variables and parameters are local",
+          "retrieval_ms": 31.307199998991564
+        },
+        {
+          "query_id": "Q07",
+          "query": "Theo quy ước được nêu trong mục Script mode, tên file script Python có đuôi gì?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 33,
+              "evidence": "By convention, Python scripts have names that end with.py."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:36:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 36,
+              "text": "script mode:A way of using the Python interpreter to read code from a script and run it.\n\nscript:A program stored in a file.\n\norder of operations:Rules governing the order in which expressions involving multiple\noperators and operands are evaluated.\n\nconcatenate:To join two operands end-to-end.\n\ncomment:Information in a program that is meant for other programmers (or anyone read-\ning the source code) and has no effect on the execution of the program.",
+              "metadata": {
+                "page": 36,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8173012733459473,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:45:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "For example, if you try to accesscatfrom within, you get aNameErrorprint_twice:\nTraceback (innermost last):\nFile \"test.py\", line 13, in __main__\ncat_twice(line1, line2)\nFile \"test.py\", line 5, in cat_twice\nprint_twice(cat)\nFile \"test.py\", line 9, in print_twice\nprint(cat)\nNameError: name'cat'is not defined",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8138919583623448,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:33:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 33,
+              "text": "erwise I recommend using PythonAnywhere again. I have posted instructions for running\nin script mode athttp://tinyurl.com/thinkpython2e.\nBecause Python provides both modes, you can test bits of code in interactive mode before\nyou put them in a script. But there are differences between interactive mode and script\nmode that can be confusing.\nFor example, if you are using Python as a calculator, you might type\n>>> miles = 26.2\n>>> miles * 1.61\n42.182\nThe first line assigns a value tomiles, but it",
+              "metadata": {
+                "page": 33,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8120333198318879,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:36:paragraph:3",
+            "think-python-2e:45:paragraph:5",
+            "think-python-2e:33:paragraph:3"
+          ],
+          "context": "[think-python-2e:36:paragraph:3 | think-python-2e.pdf | page 36]\nscript mode:A way of using the Python interpreter to read code from a script and run it.\n\nscript:A program stored in a file.\n\norder of operations:Rules governing the order in which expressions involving multiple\noperators and operands are evaluated.\n\nconcatenate:To join two operands end-to-end.\n\ncomment:Information in a program that is meant for other programmers (or anyone read-\ning the source code) and has no effect on the execution of the program.\n\n[think-python-2e:45:paragraph:5 | think-python-2e.pdf | page 45]\nFor example, if you try to accesscatfrom within, you get aNameErrorprint_twice:\nTraceback (innermost last):\nFile \"test.py\", line 13, in __main__\ncat_twice(line1, line2)\nFile \"test.py\", line 5, in cat_twice\nprint_twice(cat)\nFile \"test.py\", line 9, in print_twice\nprint(cat)\nNameError: name'cat'is not defined\n\n[think-python-2e:33:paragraph:3 | think-python-2e.pdf | page 33]\nerwise I recommend using PythonAnywhere again. I have posted instructions for running\nin script mode athttp://tinyurl.com/thinkpython2e.\nBecause Python provides both modes, you can test bits of code in interactive mode before\nyou put them in a script. But there are differences between interactive mode and script\nmode that can be confusing.\nFor example, if you are using Python as a calculator, you might type\n>>> miles = 26.2\n>>> miles * 1.61\n42.182\nThe first line assigns a value tomiles, but it",
+          "retrieval_ms": 29.36259997659363
+        },
+        {
+          "query_id": "Q08",
+          "query": "Theo mục String operations, nếu một toán hạng của phép nhân là chuỗi thì toán hạng kia phải có kiểu gì?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 34,
+              "evidence": "If one of the values is a string, the other has to be an integer."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:34:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 34,
+              "text": "I don’t work very hard to remember the precedence of operators. If I can’t tell by looking\nat the expression, I use parentheses to make it obvious.\n\n2.6 String operations\n\nIn general, you can’t perform mathematical operations on strings, even if the strings look\nlike numbers, so the following are illegal:\n'chinese'-'food' 'eggs'/'easy' 'third'*'a charm'\nBut there are two exceptions,+and*.",
+              "metadata": {
+                "page": 34,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8279246091842651,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8256251811981201,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:64:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 64,
+              "text": "if x < y:\nprint('x is less than y')\nelif x > y:\nprint('x is greater than y')\nelse:\nprint('x and y are equal')\nelifis an abbreviation of “else if”. Again, exactly one branch will run. There is no limit on\nthe number ofelifstatements. If there is anelseclause, it has to be at the end, but there\ndoesn’t have to be one.\nif choice =='a':\ndraw_a()\nelif choice =='b':\ndraw_b()\nelif choice =='c':\ndraw_c()\nEach condition is checked in order. If the first is false, the next is checked, and so on. If one\nof",
+              "metadata": {
+                "page": 64,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8244377970695496,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:34:paragraph:3",
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:64:paragraph:2"
+          ],
+          "context": "[think-python-2e:34:paragraph:3 | think-python-2e.pdf | page 34]\nI don’t work very hard to remember the precedence of operators. If I can’t tell by looking\nat the expression, I use parentheses to make it obvious.\n\n2.6 String operations\n\nIn general, you can’t perform mathematical operations on strings, even if the strings look\nlike numbers, so the following are illegal:\n'chinese'-'food' 'eggs'/'easy' 'third'*'a charm'\nBut there are two exceptions,+and*.\n\n[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:64:paragraph:2 | think-python-2e.pdf | page 64]\nif x < y:\nprint('x is less than y')\nelif x > y:\nprint('x is greater than y')\nelse:\nprint('x and y are equal')\nelifis an abbreviation of “else if”. Again, exactly one branch will run. There is no limit on\nthe number ofelifstatements. If there is anelseclause, it has to be at the end, but there\ndoesn’t have to be one.\nif choice =='a':\ndraw_a()\nelif choice =='b':\ndraw_b()\nelif choice =='c':\ndraw_c()\nEach condition is checked in order. If the first is false, the next is checked, and so on. If one\nof",
+          "retrieval_ms": 32.14489997480996
+        },
+        {
+          "query_id": "Q09",
+          "query": "Khi có chú thích bằng dấu # ở cuối dòng lệnh, Python xử lý phần từ dấu # tới hết dòng thế nào?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 35,
+              "evidence": "Everything from the#to the end of the line is ignored"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8413485979230062,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:43:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 43,
+              "text": "That sounds simple enough, until you remember that one function can call another. While\nin the middle of one function, the program might have to run the statements in another\nfunction. Then, while running that new function, the program might have to run yet an-\nother function!\nFortunately, Python is good at keeping track of where it is, so each time a function com-\npletes, the program picks up where it left off in the function that called it. When it gets to\nthe end of the program, it",
+              "metadata": {
+                "page": 43,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8365402915155729,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:49:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 49,
+              "text": "+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n\nHint: to print more than one value on a line, you can print a comma-separated sequence of\nvalues:\n\nprint('+','-')\nBy default,printadvances to the next line, but you can override that behavior and put a\nspace at the end, like this:\nprint('+', end=' ')\nprint('-')",
+              "metadata": {
+                "page": 49,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.835014055072425,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:43:paragraph:5",
+            "think-python-2e:49:paragraph:4"
+          ],
+          "context": "[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:43:paragraph:5 | think-python-2e.pdf | page 43]\nThat sounds simple enough, until you remember that one function can call another. While\nin the middle of one function, the program might have to run the statements in another\nfunction. Then, while running that new function, the program might have to run yet an-\nother function!\nFortunately, Python is good at keeping track of where it is, so each time a function com-\npletes, the program picks up where it left off in the function that called it. When it gets to\nthe end of the program, it\n\n[think-python-2e:49:paragraph:4 | think-python-2e.pdf | page 49]\n+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n\nHint: to print more than one value on a line, you can print a comma-separated sequence of\nvalues:\n\nprint('+','-')\nBy default,printadvances to the next line, but you can override that behavior and put a\nspace at the end, like this:\nprint('+', end=' ')\nprint('-')",
+          "retrieval_ms": 31.611899990821257
+        },
+        {
+          "query_id": "Q10",
+          "query": "Khi chuyển một số thực sang số nguyên bằng int(), hàm làm gì với phần thập phân?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 39,
+              "evidence": "intcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:39:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "it can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8444400522446617,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8143805265426636,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:39:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "We have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8076778650283813,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:39:paragraph:3",
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:39:paragraph:2"
+          ],
+          "context": "[think-python-2e:39:paragraph:3 | think-python-2e.pdf | page 39]\nit can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159\n\n[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:39:paragraph:2 | think-python-2e.pdf | page 39]\nWe have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+          "retrieval_ms": 29.532099986681715
+        },
+        {
+          "query_id": "Q11",
+          "query": "Trong chương Functions, sách viết cách gọi hàm nằm trong một module bằng cú pháp nào?",
+          "filter": {
+            "chapter": "Functions"
+          },
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 40,
+              "evidence": "the name of the module and the name of the\nfunction, separated by a dot (also known as a period)."
+            },
+            {
+              "source_id": "think-python-2e",
+              "page": 48,
+              "evidence": "dot notation:The syntax for calling a function in another module by specifying the mod-\nule name followed by a dot (period) and the function name."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:40:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 40,
+              "text": "Before we can use the functions in a module, we have to import it with animport state-\nment:\n>>> import math\nThis statement creates amodule objectnamed math. If you display the module object, you\nget some information about it:\n>>> math\n<module'math'(built-in)>\nThe module object contains the functions and variables defined in the module. To access\none of the functions, you have to specify the name of the module and the name of the\nfunction, separated by a dot (also known as a period). This format",
+              "metadata": {
+                "page": 40,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8350221115324364,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:39:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "We have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8242323503355786,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:40:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 40,
+              "text": "18 Chapter 3. Functions\n\nFinally,strconverts its argument to a string:\n>>> str(32)\n'32'\n>>> str(3.14159)\n'3.14159'\n\n3.2 Math functions\n\nPython has a math module that provides most of the familiar mathematical functions. A\nmoduleis a file that contains a collection of related functions.",
+              "metadata": {
+                "page": 40,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8241220817493167,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:40:paragraph:2",
+            "think-python-2e:39:paragraph:2",
+            "think-python-2e:40:paragraph:1"
+          ],
+          "context": "[think-python-2e:40:paragraph:2 | think-python-2e.pdf | page 40]\nBefore we can use the functions in a module, we have to import it with animport state-\nment:\n>>> import math\nThis statement creates amodule objectnamed math. If you display the module object, you\nget some information about it:\n>>> math\n<module'math'(built-in)>\nThe module object contains the functions and variables defined in the module. To access\none of the functions, you have to specify the name of the module and the name of the\nfunction, separated by a dot (also known as a period). This format\n\n[think-python-2e:39:paragraph:2 | think-python-2e.pdf | page 39]\nWe have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if\n\n[think-python-2e:40:paragraph:1 | think-python-2e.pdf | page 40]\n18 Chapter 3. Functions\n\nFinally,strconverts its argument to a string:\n>>> str(32)\n'32'\n>>> str(3.14159)\n'3.14159'\n\n3.2 Math functions\n\nPython has a math module that provides most of the familiar mathematical functions. A\nmoduleis a file that contains a collection of related functions.",
+          "retrieval_ms": 34.714600013103336
+        },
+        {
+          "query_id": "Q12",
+          "query": "Khi Python thực thi một định nghĩa hàm, lúc nào các câu lệnh trong thân hàm mới chạy?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 42,
+              "evidence": "The statements inside the function do not run until the function is called"
+            },
+            {
+              "source_id": "think-python-2e",
+              "page": 43,
+              "evidence": "statements inside the function don’t run until the function is called."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8290359479763554,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:43:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 43,
+              "text": "That sounds simple enough, until you remember that one function can call another. While\nin the middle of one function, the program might have to run the statements in another\nfunction. Then, while running that new function, the program might have to run yet an-\nother function!\nFortunately, Python is good at keeping track of where it is, so each time a function com-\npletes, the program picks up where it left off in the function that called it. When it gets to\nthe end of the program, it",
+              "metadata": {
+                "page": 43,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8256933196965877,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:45:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "For example, if you try to accesscatfrom within, you get aNameErrorprint_twice:\nTraceback (innermost last):\nFile \"test.py\", line 13, in __main__\ncat_twice(line1, line2)\nFile \"test.py\", line 5, in cat_twice\nprint_twice(cat)\nFile \"test.py\", line 9, in print_twice\nprint(cat)\nNameError: name'cat'is not defined",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8196358299689496,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:43:paragraph:5",
+            "think-python-2e:45:paragraph:5"
+          ],
+          "context": "[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:43:paragraph:5 | think-python-2e.pdf | page 43]\nThat sounds simple enough, until you remember that one function can call another. While\nin the middle of one function, the program might have to run the statements in another\nfunction. Then, while running that new function, the program might have to run yet an-\nother function!\nFortunately, Python is good at keeping track of where it is, so each time a function com-\npletes, the program picks up where it left off in the function that called it. When it gets to\nthe end of the program, it\n\n[think-python-2e:45:paragraph:5 | think-python-2e.pdf | page 45]\nFor example, if you try to accesscatfrom within, you get aNameErrorprint_twice:\nTraceback (innermost last):\nFile \"test.py\", line 13, in __main__\ncat_twice(line1, line2)\nFile \"test.py\", line 5, in cat_twice\nprint_twice(cat)\nFile \"test.py\", line 9, in print_twice\nprint(cat)\nNameError: name'cat'is not defined",
+          "retrieval_ms": 40.22290001739748
+        },
+        {
+          "query_id": "Q13",
+          "query": "Trong mục Parameters and arguments, sách gọi những biến nhận đối số bên trong hàm là gì?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 43,
+              "evidence": "Inside the function, the arguments are assigned to variables calledparameters."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:45:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "The frames are arranged in a stack that indicates which function called which, and so\non. In this example,print_twicewas called bycat_twice, andcat_twicewas called\nby__main__, which is a special name for the topmost frame. When you create a variable\noutside of any function, it belongs to__main__.\n\nEach parameter refers to the same value as its corresponding argument. So,part1has the\nsame value asline1,part2has the same value asline2, andbrucehas the same value as\ncat.",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8210052954551416,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:43:paragraph:7",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 43,
+              "text": "3.7 Parameters and arguments\n\nSome of the functions we have seen require arguments. For example, when you call\nmath.sinyou pass a number as an argument. Some functions take more than one ar-\ngument:math.powtakes two, the base and the exponent.",
+              "metadata": {
+                "page": 43,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8155410995756939,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:70:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 70,
+              "text": "48 Chapter 5. Conditionals and recursion\n\nExercise 5.2.Fermat’s Last Theorem says that there are no positive integers a, b, and c such that\n\nan +b n =c n\nfor any values of n greater than 2.\n\n1. Write a function namedcheck_fermatthat takes four parameters—a, b, candn—and\nchecks to see if Fermat’s theorem holds. If n is greater than 2 and\n\nan +b n =c n\nthe program should print, “Holy smokes, Fermat was wrong!” Otherwise the program should\nprint, “No, that doesn’t work.”",
+              "metadata": {
+                "page": 70,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8152413588474561,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:45:paragraph:3",
+            "think-python-2e:43:paragraph:7",
+            "think-python-2e:70:paragraph:1"
+          ],
+          "context": "[think-python-2e:45:paragraph:3 | think-python-2e.pdf | page 45]\nThe frames are arranged in a stack that indicates which function called which, and so\non. In this example,print_twicewas called bycat_twice, andcat_twicewas called\nby__main__, which is a special name for the topmost frame. When you create a variable\noutside of any function, it belongs to__main__.\n\nEach parameter refers to the same value as its corresponding argument. So,part1has the\nsame value asline1,part2has the same value asline2, andbrucehas the same value as\ncat.\n\n[think-python-2e:43:paragraph:7 | think-python-2e.pdf | page 43]\n3.7 Parameters and arguments\n\nSome of the functions we have seen require arguments. For example, when you call\nmath.sinyou pass a number as an argument. Some functions take more than one ar-\ngument:math.powtakes two, the base and the exponent.\n\n[think-python-2e:70:paragraph:1 | think-python-2e.pdf | page 70]\n48 Chapter 5. Conditionals and recursion\n\nExercise 5.2.Fermat’s Last Theorem says that there are no positive integers a, b, and c such that\n\nan +b n =c n\nfor any values of n greater than 2.\n\n1. Write a function namedcheck_fermatthat takes four parameters—a, b, candn—and\nchecks to see if Fermat’s theorem holds. If n is greater than 2 and\n\nan +b n =c n\nthe program should print, “Holy smokes, Fermat was wrong!” Otherwise the program should\nprint, “No, that doesn’t work.”",
+          "retrieval_ms": 28.804700006730855
+        },
+        {
+          "query_id": "Q14",
+          "query": "Trong ví dụ stack diagram ở mục 3.9, một frame hiển thị những thông tin gì?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 45,
+              "evidence": "A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:66:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 66,
+              "text": "In Section 3.9, we used a stack diagram to represent the state of a program during a function\ncall. The same kind of diagram can help interpret a recursive function.\nEvery time a function gets called, Python creates a frame to contain the function’s local\nvariables and parameters. For a recursive function, there might be more than one frame on\nthe stack at the same time.\nFigure 5.1 shows a stack diagram forcountdowncalled withn = 3.\nAs usual, the top of the stack is the frame for__main__. It is",
+              "metadata": {
+                "page": 66,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8302485942840576,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:48:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 48,
+              "text": "stack diagram:A graphical representation of a stack of functions, their variables, and the\nvalues they refer to.\n\nframe:A box in a stack diagram that represents a function call. It contains the local vari-\nables and parameters of the function.\n\ntraceback:A list of the functions that are executing, printed when an exception occurs.\n\n3.14 Exercises",
+              "metadata": {
+                "page": 48,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8274288876397096,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:45:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "Each function is represented by aframe. A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it. The stack diagram for\nthe previous example is shown in Figure 3.1.",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8161119332246835,
+              "rank": 3,
+              "evidence_hit": true
+            }
+          ],
+          "first_evidence_rank": 3,
+          "hit_at_1": false,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:66:paragraph:5",
+            "think-python-2e:48:paragraph:4",
+            "think-python-2e:45:paragraph:2"
+          ],
+          "context": "[think-python-2e:66:paragraph:5 | think-python-2e.pdf | page 66]\nIn Section 3.9, we used a stack diagram to represent the state of a program during a function\ncall. The same kind of diagram can help interpret a recursive function.\nEvery time a function gets called, Python creates a frame to contain the function’s local\nvariables and parameters. For a recursive function, there might be more than one frame on\nthe stack at the same time.\nFigure 5.1 shows a stack diagram forcountdowncalled withn = 3.\nAs usual, the top of the stack is the frame for__main__. It is\n\n[think-python-2e:48:paragraph:4 | think-python-2e.pdf | page 48]\nstack diagram:A graphical representation of a stack of functions, their variables, and the\nvalues they refer to.\n\nframe:A box in a stack diagram that represents a function call. It contains the local vari-\nables and parameters of the function.\n\ntraceback:A list of the functions that are executing, printed when an exception occurs.\n\n3.14 Exercises\n\n[think-python-2e:45:paragraph:2 | think-python-2e.pdf | page 45]\nEach function is represented by aframe. A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it. The stack diagram for\nthe previous example is shown in Figure 3.1.",
+          "retrieval_ms": 50.32859998755157
+        },
+        {
+          "query_id": "Q15",
+          "query": "Nếu gọi một hàm có giá trị trả về dưới dạng một dòng đứng riêng trong script, giá trị trả về sẽ ra sao?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 46,
+              "evidence": "But in a script, if you call a fruitful function all by itself, the return value is lost forever!"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:68:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 68,
+              "text": "Traceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is",
+              "metadata": {
+                "page": 68,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8330878267612409,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.825745701789856,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:39:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "it can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8217533933071274,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:68:paragraph:5",
+            "think-python-2e:32:paragraph:8",
+            "think-python-2e:39:paragraph:3"
+          ],
+          "context": "[think-python-2e:68:paragraph:5 | think-python-2e.pdf | page 68]\nTraceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is\n\n[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)\n\n[think-python-2e:39:paragraph:3 | think-python-2e.pdf | page 39]\nit can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159",
+          "retrieval_ms": 44.662300002528355
+        }
+      ]
+    },
+    "dense-english": {
+      "evaluation_seconds": 13.38900629998534,
+      "metrics": {
+        "hit_at_1": {
+          "hits": 8,
+          "total": 15,
+          "rate": 0.5333333333333333
+        },
+        "evidence_hit_at_3": {
+          "hits": 9,
+          "total": 15,
+          "rate": 0.6
+        },
+        "packed_context_evidence": {
+          "hits": 9,
+          "total": 15,
+          "rate": 0.6
+        }
+      },
+      "median_retrieval_ms": 44.47729999083094,
+      "skipped_unanswerable_ids": [
+        "D16",
+        "D17"
+      ],
+      "traces": [
+        {
+          "query_id": "Q01",
+          "query": "Python 3 print Hello World!",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 25,
+              "evidence": ">>> print('Hello, World!')"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:25:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "Traditionally, the first program you write in a new language is called “Hello, World!” be-\ncause all it does is display the words “Hello, World!”. In Python, it looks like this:\n>>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\nThe quotation marks in the program mark the beginning and end of the text to be dis-\nplayed; they don’t appear in",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8772214201424813,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:25:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "The parentheses indicate thatprintis a function. We’ll get to functions in Chapter 3.\n\nIn Python 2, the print statement is slightly different; it is not a function, so it doesn’t use\nparentheses.\n>>> print'Hello, World!'\nThis distinction will make more sense soon, but that’s enough to get started.\n\n1.4 Arithmetic operators\n\nAfter “Hello, World”, the next step is arithmetic. Python providesoperators, which are\nspecial symbols that represent computations like addition and multiplication.",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8678153314810596,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:32:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 32,
+              "text": ">>> n = 17\n>>> print(n)",
+              "metadata": {
+                "page": 32,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.845474967630211,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:25:paragraph:2",
+            "think-python-2e:25:paragraph:4",
+            "think-python-2e:32:paragraph:8"
+          ],
+          "context": "[think-python-2e:25:paragraph:2 | think-python-2e.pdf | page 25]\nTraditionally, the first program you write in a new language is called “Hello, World!” be-\ncause all it does is display the words “Hello, World!”. In Python, it looks like this:\n>>> print('Hello, World!')\nThis is an example of aprint statement, although it doesn’t actually print anything on\npaper. It displays a result on the screen. In this case, the result is the words\nHello, World!\nThe quotation marks in the program mark the beginning and end of the text to be dis-\nplayed; they don’t appear in\n\n[think-python-2e:25:paragraph:4 | think-python-2e.pdf | page 25]\nThe parentheses indicate thatprintis a function. We’ll get to functions in Chapter 3.\n\nIn Python 2, the print statement is slightly different; it is not a function, so it doesn’t use\nparentheses.\n>>> print'Hello, World!'\nThis distinction will make more sense soon, but that’s enough to get started.\n\n1.4 Arithmetic operators\n\nAfter “Hello, World”, the next step is arithmetic. Python providesoperators, which are\nspecial symbols that represent computations like addition and multiplication.\n\n[think-python-2e:32:paragraph:8 | think-python-2e.pdf | page 32]\n>>> n = 17\n>>> print(n)",
+          "retrieval_ms": 47.75689999223687,
+          "original_query": "Trong mục chương trình đầu tiên của sách, lệnh Python 3 nào hiển thị lời chào Hello, World!?",
+          "translation_ms": 5562.495100020897
+        },
+        {
+          "query_id": "Q02",
+          "query": "python string literal integer value",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 26,
+              "evidence": ">>> type('2')\n<class'str'>"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:39:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "it can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8825635453982895,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:26:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "When you type a large integer, you might be tempted to use commas between groups of\ndigits, as in1,000,000. This is not a legalintegerin Python, but it is legal:\n>>> 1,000,000\n(1, 0, 0)\nThat’s not what we expected at all! Python interprets1,000,000as a comma-separated\nsequence of integers. We’ll learn more about this kind of sequence later.\n\n1.6 Formal and natural languages",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8706985193074648,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:26:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "If you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8689137775353342,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:39:paragraph:3",
+            "think-python-2e:26:paragraph:4",
+            "think-python-2e:26:paragraph:2"
+          ],
+          "context": "[think-python-2e:39:paragraph:3 | think-python-2e.pdf | page 39]\nit can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159\n\n[think-python-2e:26:paragraph:4 | think-python-2e.pdf | page 26]\nWhen you type a large integer, you might be tempted to use commas between groups of\ndigits, as in1,000,000. This is not a legalintegerin Python, but it is legal:\n>>> 1,000,000\n(1, 0, 0)\nThat’s not what we expected at all! Python interprets1,000,000as a comma-separated\nsequence of integers. We’ll learn more about this kind of sequence later.\n\n1.6 Formal and natural languages\n\n[think-python-2e:26:paragraph:2 | think-python-2e.pdf | page 26]\nIf you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.",
+          "retrieval_ms": 43.832600000314415,
+          "original_query": "Nếu đặt số nguyên 2 trong dấu nháy đơn, Python xếp giá trị đó vào kiểu nào?",
+          "translation_ms": 388.5436000127811
+        },
+        {
+          "query_id": "Q03",
+          "query": "Why is the expression 3+/3 invalid syntax even though the plus and slash are valid operators?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 27,
+              "evidence": "3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:27:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 27,
+              "text": "The second type of syntax rule pertains to the way tokens are combined. The equation\n3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other. Similarly, in a chemical formula the subscript comes after the element name,\nnot before.\n\nThis is @ well-structured Engli$h sentence with invalid t*kens in it. This sentence all valid\ntokens has, but invalid structure with.",
+              "metadata": {
+                "page": 27,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8948715658524201,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:34:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 34,
+              "text": "The+operator performsstring concatenation, which means it joins the strings by linking\nthem end-to-end. For example:\n>>> first ='throat'\n>>> second ='warbler'\n>>> first + second\nthroatwarbler\nThe*operator also works on strings; it performs repetition. For example,'Spam'*3is\n'SpamSpamSpam'. If one of the values is a string, the other has to be an integer.",
+              "metadata": {
+                "page": 34,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8891809913760164,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:34:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 34,
+              "text": "This use of+and*makes sense by analogy with addition and multiplication. Just as4*3\nis equivalent to4+4+4, we expect'Spam'*3to be the same as'Spam'+'Spam', and'+'Spam\nit is. On the other hand, there is a significant way in which string concatenation and repe-\ntition are different from integer addition and multiplication. Can you think of a property\nthat addition has that string concatenation does not?\n\n2.7 Comments",
+              "metadata": {
+                "page": 34,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8800796008086359,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:27:paragraph:3",
+            "think-python-2e:34:paragraph:4",
+            "think-python-2e:34:paragraph:5"
+          ],
+          "context": "[think-python-2e:27:paragraph:3 | think-python-2e.pdf | page 27]\nThe second type of syntax rule pertains to the way tokens are combined. The equation\n3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other. Similarly, in a chemical formula the subscript comes after the element name,\nnot before.\n\nThis is @ well-structured Engli$h sentence with invalid t*kens in it. This sentence all valid\ntokens has, but invalid structure with.\n\n[think-python-2e:34:paragraph:4 | think-python-2e.pdf | page 34]\nThe+operator performsstring concatenation, which means it joins the strings by linking\nthem end-to-end. For example:\n>>> first ='throat'\n>>> second ='warbler'\n>>> first + second\nthroatwarbler\nThe*operator also works on strings; it performs repetition. For example,'Spam'*3is\n'SpamSpamSpam'. If one of the values is a string, the other has to be an integer.\n\n[think-python-2e:34:paragraph:5 | think-python-2e.pdf | page 34]\nThis use of+and*makes sense by analogy with addition and multiplication. Just as4*3\nis equivalent to4+4+4, we expect'Spam'*3to be the same as'Spam'+'Spam', and'+'Spam\nit is. On the other hand, there is a significant way in which string concatenation and repe-\ntition are different from integer addition and multiplication. Can you think of a property\nthat addition has that string concatenation does not?\n\n2.7 Comments",
+          "retrieval_ms": 44.76690001320094,
+          "original_query": "Vì sao biểu thức 3+/3 sai cú pháp dù dấu cộng và dấu chia đều là ký hiệu hợp lệ?",
+          "translation_ms": 592.6063000224531
+        },
+        {
+          "query_id": "Q04",
+          "query": "string data type in Think Python book chapter The way of the program",
+          "filter": {
+            "chapter": "The way of the program"
+          },
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 29,
+              "evidence": "string:A type that represents sequences of characters."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:28:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 28,
+              "text": "6 Chapter 1. The way of the program",
+              "metadata": {
+                "page": 28,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8630763969971912,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:26:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "4 Chapter 1. The way of the program\n1.5 Values and types\n\nAvalueis one of the basic things a program works with, like a letter or a number. Some\nvalues we have seen so far are2,42.0, and'Hello, World!'.\n\nThese values belong to differenttypes:2is aninteger,42.0is afloating-point number, and\n'Hello, World!'is astring, so-called because the letters it contains are strung together.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8518834290643419,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:26:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 26,
+              "text": "If you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.",
+              "metadata": {
+                "page": 26,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.850844213316191,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:28:paragraph:1",
+            "think-python-2e:26:paragraph:1",
+            "think-python-2e:26:paragraph:2"
+          ],
+          "context": "[think-python-2e:28:paragraph:1 | think-python-2e.pdf | page 28]\n6 Chapter 1. The way of the program\n\n[think-python-2e:26:paragraph:1 | think-python-2e.pdf | page 26]\n4 Chapter 1. The way of the program\n1.5 Values and types\n\nAvalueis one of the basic things a program works with, like a letter or a number. Some\nvalues we have seen so far are2,42.0, and'Hello, World!'.\n\nThese values belong to differenttypes:2is aninteger,42.0is afloating-point number, and\n'Hello, World!'is astring, so-called because the letters it contains are strung together.\n\n[think-python-2e:26:paragraph:2 | think-python-2e.pdf | page 26]\nIf you are not sure what type a value has, the interpreter can tell you:\n>>> type(2)\n<class'int'>\n>>> type(42.0)\n<class'float'>\n>>> type('Hello, World!')\n<class'str'>\nIn these results, the word “class” is used in the sense of a category; a type is a category of\nvalues.\n\nNot surprisingly, integers belong to the typeint, strings belong tostrand floating-point\nnumbers belong tofloat.",
+          "retrieval_ms": 43.59519999707118,
+          "original_query": "Trong bảng thuật ngữ của chương The way of the program, kiểu string biểu diễn loại dữ liệu gì?",
+          "translation_ms": 666.0671000136063
+        },
+        {
+          "query_id": "Q05",
+          "query": "What value does variable n take in the first example of assignment in Think Python?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 31,
+              "evidence": "the second gives the integer17ton;"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:31:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 31,
+              "text": "Anassignment statementcreates a new variable and gives it a value:\n>>> message ='And now for something completely different'\n>>> n = 17\n>>> pi = 3.1415926535897932\nThis example makes three assignments. The first assigns a string to a new variable named\nmessage; the second gives the integer17ton; the third assigns the (approximate) value of\nπtopi.\nA common way to represent variables on paper is to write the name with an arrow pointing\nto its value. This kind of figure is called astate",
+              "metadata": {
+                "page": 31,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.884700841623496,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:44:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 44,
+              "text": "When you create a variable inside a function, it islocal, which means that it only exists\ninside the function. For example:\ndef cat_twice(part1, part2):\ncat = part1 + part2\nprint_twice(cat)\nThis function takes two arguments, concatenates them, and prints the result twice. Here is\nan example that uses it:\n>>> line1 ='Bing tiddle'\n>>> line2 ='tiddle bang.'\n>>> cat_twice(line1, line2)\nBing tiddle tiddle bang.\nBing tiddle tiddle bang.\nWhencat_twiceterminates, the variablecatis destroyed. If we try",
+              "metadata": {
+                "page": 44,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.849662806083644,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:41:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 41,
+              "text": "value, you can put an arbitrary expression, with one ex-\nception: the left side of an assignment statement has to be a variable name. Any other\nexpression on the left side is a syntax error (we will see exceptions to this rule later).\n>>> minutes = hours * 60 # right\n>>> hours * 60 = minutes # wrong!\nSyntaxError: can't assign to operator",
+              "metadata": {
+                "page": 41,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8488752335980411,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:31:paragraph:2",
+            "think-python-2e:44:paragraph:4",
+            "think-python-2e:41:paragraph:3"
+          ],
+          "context": "[think-python-2e:31:paragraph:2 | think-python-2e.pdf | page 31]\nAnassignment statementcreates a new variable and gives it a value:\n>>> message ='And now for something completely different'\n>>> n = 17\n>>> pi = 3.1415926535897932\nThis example makes three assignments. The first assigns a string to a new variable named\nmessage; the second gives the integer17ton; the third assigns the (approximate) value of\nπtopi.\nA common way to represent variables on paper is to write the name with an arrow pointing\nto its value. This kind of figure is called astate\n\n[think-python-2e:44:paragraph:4 | think-python-2e.pdf | page 44]\nWhen you create a variable inside a function, it islocal, which means that it only exists\ninside the function. For example:\ndef cat_twice(part1, part2):\ncat = part1 + part2\nprint_twice(cat)\nThis function takes two arguments, concatenates them, and prints the result twice. Here is\nan example that uses it:\n>>> line1 ='Bing tiddle'\n>>> line2 ='tiddle bang.'\n>>> cat_twice(line1, line2)\nBing tiddle tiddle bang.\nBing tiddle tiddle bang.\nWhencat_twiceterminates, the variablecatis destroyed. If we try\n\n[think-python-2e:41:paragraph:3 | think-python-2e.pdf | page 41]\nvalue, you can put an arbitrary expression, with one ex-\nception: the left side of an assignment statement has to be a variable name. Any other\nexpression on the left side is a syntax error (we will see exceptions to this rule later).\n>>> minutes = hours * 60 # right\n>>> hours * 60 = minutes # wrong!\nSyntaxError: can't assign to operator",
+          "retrieval_ms": 55.1125000056345,
+          "original_query": "Trong ví dụ đầu tiên về phép gán, biến n nhận giá trị nào?",
+          "translation_ms": 546.4398000040092
+        },
+        {
+          "query_id": "Q06",
+          "query": "Python variable name position with numbers",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 32,
+              "evidence": "They can contain both letters and numbers, but\nthey can’t begin with a number."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:44:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 44,
+              "text": "You can also use a variable as an argument:\n>>> michael ='Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.\nThe name of the variable we pass as an argument (michael) has nothing to do with the\nname of the parameter (bruce). It doesn’t matter what the value was called back home (in\nthe caller); here inprint_twice, we call everybodybruce.\n\n3.8 Variables and parameters are local",
+              "metadata": {
+                "page": 44,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8623036310310803,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:64:paragraph:7",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 64,
+              "text": "get the same\neffect with theandoperator:\nif 0 < x and x < 10:\nprint('x is a positive single-digit number.')",
+              "metadata": {
+                "page": 64,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8621085368330174,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:41:paragraph:6",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 41,
+              "text": "names are the same as for variable names: letters,\nnumbers and underscore are legal, but the first character can’t be a number. You can’t use a\nkeyword as the name of a function, and you should avoid having a variable and a function\nwith the same name.",
+              "metadata": {
+                "page": 41,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8574903692310843,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:44:paragraph:3",
+            "think-python-2e:64:paragraph:7",
+            "think-python-2e:41:paragraph:6"
+          ],
+          "context": "[think-python-2e:44:paragraph:3 | think-python-2e.pdf | page 44]\nYou can also use a variable as an argument:\n>>> michael ='Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.\nThe name of the variable we pass as an argument (michael) has nothing to do with the\nname of the parameter (bruce). It doesn’t matter what the value was called back home (in\nthe caller); here inprint_twice, we call everybodybruce.\n\n3.8 Variables and parameters are local\n\n[think-python-2e:64:paragraph:7 | think-python-2e.pdf | page 64]\nget the same\neffect with theandoperator:\nif 0 < x and x < 10:\nprint('x is a positive single-digit number.')\n\n[think-python-2e:41:paragraph:6 | think-python-2e.pdf | page 41]\nnames are the same as for variable names: letters,\nnumbers and underscore are legal, but the first character can’t be a number. You can’t use a\nkeyword as the name of a function, and you should avoid having a variable and a function\nwith the same name.",
+          "retrieval_ms": 47.81129999901168,
+          "original_query": "Tên biến trong Python có thể chứa chữ số ở vị trí nào?",
+          "translation_ms": 360.2293999865651
+        },
+        {
+          "query_id": "Q07",
+          "query": "Python script file extension in Think Python book",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 33,
+              "evidence": "By convention, Python scripts have names that end with.py."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:36:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 36,
+              "text": "script mode:A way of using the Python interpreter to read code from a script and run it.\n\nscript:A program stored in a file.\n\norder of operations:Rules governing the order in which expressions involving multiple\noperators and operands are evaluated.\n\nconcatenate:To join two operands end-to-end.\n\ncomment:Information in a program that is meant for other programmers (or anyone read-\ning the source code) and has no effect on the execution of the program.",
+              "metadata": {
+                "page": 36,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.837954426942898,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:50:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 50,
+              "text": "28 Chapter 3. Functions\n\nThe output of these statements is'+ -'on the same line. The output from the next print\nstatement would begin on the next line.\n\n2. Write a function that draws a similar grid with four rows and four columns.\n\nSolution:https: // thinkpython. com/ code/ grid. py. Credit: This exercise is based on an\nexercise in Oualline,Practical C Programming, Third Edition, O’Reilly Media, 1997.",
+              "metadata": {
+                "page": 50,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8379352342467083,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:49:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 49,
+              "text": "2. Modifydo_twiceso that it takes two arguments, a function object and a value, and calls the\nfunction twice, passing the value as an argument.\n\n3. Copy the definition ofprint_twicefrom earlier in this chapter to your script.\n\n4. Use the modified version ofdo_twiceto callprint_twicetwice, passing'spam'as an\nargument.",
+              "metadata": {
+                "page": 49,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8360048781634835,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:36:paragraph:3",
+            "think-python-2e:50:paragraph:1",
+            "think-python-2e:49:paragraph:2"
+          ],
+          "context": "[think-python-2e:36:paragraph:3 | think-python-2e.pdf | page 36]\nscript mode:A way of using the Python interpreter to read code from a script and run it.\n\nscript:A program stored in a file.\n\norder of operations:Rules governing the order in which expressions involving multiple\noperators and operands are evaluated.\n\nconcatenate:To join two operands end-to-end.\n\ncomment:Information in a program that is meant for other programmers (or anyone read-\ning the source code) and has no effect on the execution of the program.\n\n[think-python-2e:50:paragraph:1 | think-python-2e.pdf | page 50]\n28 Chapter 3. Functions\n\nThe output of these statements is'+ -'on the same line. The output from the next print\nstatement would begin on the next line.\n\n2. Write a function that draws a similar grid with four rows and four columns.\n\nSolution:https: // thinkpython. com/ code/ grid. py. Credit: This exercise is based on an\nexercise in Oualline,Practical C Programming, Third Edition, O’Reilly Media, 1997.\n\n[think-python-2e:49:paragraph:2 | think-python-2e.pdf | page 49]\n2. Modifydo_twiceso that it takes two arguments, a function object and a value, and calls the\nfunction twice, passing the value as an argument.\n\n3. Copy the definition ofprint_twicefrom earlier in this chapter to your script.\n\n4. Use the modified version ofdo_twiceto callprint_twicetwice, passing'spam'as an\nargument.",
+          "retrieval_ms": 61.91590000526048,
+          "original_query": "Theo quy ước được nêu trong mục Script mode, tên file script Python có đuôi gì?",
+          "translation_ms": 462.7541000081692
+        },
+        {
+          "query_id": "Q08",
+          "query": "python string multiplication operand type",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 34,
+              "evidence": "If one of the values is a string, the other has to be an integer."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:62:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 62,
+              "text": "Strictly speaking, the operands of the logical operators should be boolean expressions, but\nPython is not very strict. Any nonzero number is interpreted asTrue:",
+              "metadata": {
+                "page": 62,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8682027616259206,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:29:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 29,
+              "text": "1.9. Exercises 7\n\nprint statement:An instruction that causes the Python interpreter to display a value on\nthe screen.\n\noperator:A special symbol that represents a simple computation like addition, multipli-\ncation, or string concatenation.\n\nvalue:One of the basic units of data, like a number or string, that a program manipulates.\n\ntype:A category of values. The types we have seen so far are integers (typeint), floating-\npoint numbers (typefloat), and strings (typestr).",
+              "metadata": {
+                "page": 29,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8608027696609497,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:25:paragraph:6",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 25,
+              "text": "Finally, the operator**performs exponentiation; that is, it raises a number to a power:\n>>> 6**2 + 6\n42\nIn some other languages,^is used for exponentiation, but in Python it is a bitwise operator\ncalled XOR. If you are not familiar with bitwise operators, the result will surprise you:\n>>> 6 ^ 2\n4\nI won’t cover bitwise operators in this book, but you can read about them athttp://wiki.\npython.org/moin/BitwiseOperators.",
+              "metadata": {
+                "page": 25,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.859404929911798,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:62:paragraph:5",
+            "think-python-2e:29:paragraph:1",
+            "think-python-2e:25:paragraph:6"
+          ],
+          "context": "[think-python-2e:62:paragraph:5 | think-python-2e.pdf | page 62]\nStrictly speaking, the operands of the logical operators should be boolean expressions, but\nPython is not very strict. Any nonzero number is interpreted asTrue:\n\n[think-python-2e:29:paragraph:1 | think-python-2e.pdf | page 29]\n1.9. Exercises 7\n\nprint statement:An instruction that causes the Python interpreter to display a value on\nthe screen.\n\noperator:A special symbol that represents a simple computation like addition, multipli-\ncation, or string concatenation.\n\nvalue:One of the basic units of data, like a number or string, that a program manipulates.\n\ntype:A category of values. The types we have seen so far are integers (typeint), floating-\npoint numbers (typefloat), and strings (typestr).\n\n[think-python-2e:25:paragraph:6 | think-python-2e.pdf | page 25]\nFinally, the operator**performs exponentiation; that is, it raises a number to a power:\n>>> 6**2 + 6\n42\nIn some other languages,^is used for exponentiation, but in Python it is a bitwise operator\ncalled XOR. If you are not familiar with bitwise operators, the result will surprise you:\n>>> 6 ^ 2\n4\nI won’t cover bitwise operators in this book, but you can read about them athttp://wiki.\npython.org/moin/BitwiseOperators.",
+          "retrieval_ms": 41.9357999926433,
+          "original_query": "Theo mục String operations, nếu một toán hạng của phép nhân là chuỗi thì toán hạng kia phải có kiểu gì?",
+          "translation_ms": 371.4075000025332
+        },
+        {
+          "query_id": "Q09",
+          "query": "Python comment until end of line after # symbol",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 35,
+              "evidence": "Everything from the#to the end of the line is ignored"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:35:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 35,
+              "text": "For this reason, it is a good idea to add notes to your programs to explain in natural lan-\nguage what the program is doing. These notes are calledcomments, and they start with\nthe#symbol:\n# compute the percentage of the hour that has elapsed\npercentage = (minute * 100) / 60\nIn this case, the comment appears on a line by itself. You can also put comments at the end\nof a line:\npercentage = (minute * 100) / 60 # percentage of an hour\nEverything from the#to the end of the line is ignored—it has no",
+              "metadata": {
+                "page": 35,
+                "source": "think-python-2e.pdf",
+                "chapter": "Variables, expressions and statements",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8838989207804862,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:24:paragraph:7",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 24,
+              "text": "The last line is apromptthat indicates that the interpreter is ready for you to enter code. If\nyou type a line of code and hit Enter, the interpreter displays the result:\n>>> 1 + 1\n2\nNow you’re ready to get started. From here on, I assume that you know how to start the\nPython interpreter and run code.",
+              "metadata": {
+                "page": 24,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8613118694648898,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:49:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 49,
+              "text": "+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n\nHint: to print more than one value on a line, you can print a comma-separated sequence of\nvalues:\n\nprint('+','-')\nBy default,printadvances to the next line, but you can override that behavior and put a\nspace at the end, like this:\nprint('+', end=' ')\nprint('-')",
+              "metadata": {
+                "page": 49,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8592629516564055,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:35:paragraph:2",
+            "think-python-2e:24:paragraph:7",
+            "think-python-2e:49:paragraph:4"
+          ],
+          "context": "[think-python-2e:35:paragraph:2 | think-python-2e.pdf | page 35]\nFor this reason, it is a good idea to add notes to your programs to explain in natural lan-\nguage what the program is doing. These notes are calledcomments, and they start with\nthe#symbol:\n# compute the percentage of the hour that has elapsed\npercentage = (minute * 100) / 60\nIn this case, the comment appears on a line by itself. You can also put comments at the end\nof a line:\npercentage = (minute * 100) / 60 # percentage of an hour\nEverything from the#to the end of the line is ignored—it has no\n\n[think-python-2e:24:paragraph:7 | think-python-2e.pdf | page 24]\nThe last line is apromptthat indicates that the interpreter is ready for you to enter code. If\nyou type a line of code and hit Enter, the interpreter displays the result:\n>>> 1 + 1\n2\nNow you’re ready to get started. From here on, I assume that you know how to start the\nPython interpreter and run code.\n\n[think-python-2e:49:paragraph:4 | think-python-2e.pdf | page 49]\n+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n| | |\n| | |\n| | |\n| | |\n+ - - - - + - - - - +\n\nHint: to print more than one value on a line, you can print a comma-separated sequence of\nvalues:\n\nprint('+','-')\nBy default,printadvances to the next line, but you can override that behavior and put a\nspace at the end, like this:\nprint('+', end=' ')\nprint('-')",
+          "retrieval_ms": 35.87819999665953,
+          "original_query": "Khi có chú thích bằng dấu # ở cuối dòng lệnh, Python xử lý phần từ dấu # tới hết dòng thế nào?",
+          "translation_ms": 537.0850999897812
+        },
+        {
+          "query_id": "Q10",
+          "query": "What happens to the decimal part when converting a real number to an integer in Python?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 39,
+              "evidence": "intcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:39:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "it can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8773970227127647,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:64:paragraph:7",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 64,
+              "text": "get the same\neffect with theandoperator:\nif 0 < x and x < 10:\nprint('x is a positive single-digit number.')",
+              "metadata": {
+                "page": 64,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8657822768947809,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:68:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 68,
+              "text": "Traceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is",
+              "metadata": {
+                "page": 68,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8620927159107379,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:39:paragraph:3",
+            "think-python-2e:64:paragraph:7",
+            "think-python-2e:68:paragraph:5"
+          ],
+          "context": "[think-python-2e:39:paragraph:3 | think-python-2e.pdf | page 39]\nit can, or complains otherwise:\n>>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello\nintcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:\n>>> int(3.99999)\n3\n>>> int(-2.3)\n-2\nfloatconverts integers and strings to floating-point numbers:\n>>> float(32)\n32.0\n>>> float('3.14159')\n3.14159\n\n[think-python-2e:64:paragraph:7 | think-python-2e.pdf | page 64]\nget the same\neffect with theandoperator:\nif 0 < x and x < 10:\nprint('x is a positive single-digit number.')\n\n[think-python-2e:68:paragraph:5 | think-python-2e.pdf | page 68]\nTraceback (most recent call last):\nFile \"snr.py\", line 5, in ?\ndecibels = 10 * math.log10(ratio)\nValueError: math domain error\nThe error message indicates line 5, but there is nothing wrong with that line. To find the\nreal error, it might be useful to print the value ofratio, which turns out to be 0. The\nproblem is in line 4, which uses floor division instead of floating-point division.\nYou should take the time to read error messages carefully, but don’t assume that everything\nthey say is",
+          "retrieval_ms": 40.171500004362315,
+          "original_query": "Khi chuyển một số thực sang số nguyên bằng int(), hàm làm gì với phần thập phân?",
+          "translation_ms": 483.8003999902867
+        },
+        {
+          "query_id": "Q11",
+          "query": "how to call a function in a module in Think Python book chapter Functions",
+          "filter": {
+            "chapter": "Functions"
+          },
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 40,
+              "evidence": "the name of the module and the name of the\nfunction, separated by a dot (also known as a period)."
+            },
+            {
+              "source_id": "think-python-2e",
+              "page": 48,
+              "evidence": "dot notation:The syntax for calling a function in another module by specifying the mod-\nule name followed by a dot (period) and the function name."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:40:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 40,
+              "text": "Before we can use the functions in a module, we have to import it with animport state-\nment:\n>>> import math\nThis statement creates amodule objectnamed math. If you display the module object, you\nget some information about it:\n>>> math\n<module'math'(built-in)>\nThe module object contains the functions and variables defined in the module. To access\none of the functions, you have to specify the name of the module and the name of the\nfunction, separated by a dot (also known as a period). This format",
+              "metadata": {
+                "page": 40,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8881241216511582,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:39:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "We have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8736589626277127,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:49:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 49,
+              "text": "5. Define a new function calleddo_fourthat takes a function object and a value and calls the\nfunction four times, passing the value as a parameter. There should be only two statements in\nthe body of this function, not four.\n\nSolution:https: // thinkpython. com/ code/ do_ four. py.\nExercise 3.3.Note: This exercise should be done using only the statements and other features we\nhave learned so far.\n\n1. Write a function that draws a grid like the following:",
+              "metadata": {
+                "page": 49,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8732185514904796,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:40:paragraph:2",
+            "think-python-2e:39:paragraph:2"
+          ],
+          "context": "[think-python-2e:40:paragraph:2 | think-python-2e.pdf | page 40]\nBefore we can use the functions in a module, we have to import it with animport state-\nment:\n>>> import math\nThis statement creates amodule objectnamed math. If you display the module object, you\nget some information about it:\n>>> math\n<module'math'(built-in)>\nThe module object contains the functions and variables defined in the module. To access\none of the functions, you have to specify the name of the module and the name of the\nfunction, separated by a dot (also known as a period). This format\n\n[think-python-2e:39:paragraph:2 | think-python-2e.pdf | page 39]\nWe have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+          "retrieval_ms": 38.70710000046529,
+          "original_query": "Trong chương Functions, sách viết cách gọi hàm nằm trong một module bằng cú pháp nào?",
+          "translation_ms": 595.4690999933518
+        },
+        {
+          "query_id": "Q12",
+          "query": "when do statements in a python function body run during function definition execution",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 42,
+              "evidence": "The statements inside the function do not run until the function is called"
+            },
+            {
+              "source_id": "think-python-2e",
+              "page": 43,
+              "evidence": "statements inside the function don’t run until the function is called."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:43:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 43,
+              "text": "3.6 Flow of execution\n\nTo ensure that a function is defined before its first use, you have to know the order state-\nments run in, which is called theflow of execution.\nExecution always begins at the first statement of the program. Statements are run one at a\ntime, in order from top to bottom.\n\nFunction definitions do not alter the flow of execution of the program, but remember that\nstatements inside the function don’t run until the function is called.",
+              "metadata": {
+                "page": 43,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8951483964920044,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:43:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 43,
+              "text": "That sounds simple enough, until you remember that one function can call another. While\nin the middle of one function, the program might have to run the statements in another\nfunction. Then, while running that new function, the program might have to run yet an-\nother function!\nFortunately, Python is good at keeping track of where it is, so each time a function com-\npletes, the program picks up where it left off in the function that called it. When it gets to\nthe end of the program, it",
+              "metadata": {
+                "page": 43,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8758069276809692,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:48:paragraph:1",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 48,
+              "text": "26 Chapter 3. Functions\n\nbody:The sequence of statements inside a function definition.\n\nparameter:A name used inside a function to refer to the value passed as an argument.\n\nfunction call:A statement that runs a function. It consists of the function name followed\nby an argument list in parentheses.\n\nargument:A value provided to a function when the function is called. This value is as-\nsigned to the corresponding parameter in the function.",
+              "metadata": {
+                "page": 48,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8687972504617438,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:43:paragraph:3",
+            "think-python-2e:43:paragraph:5",
+            "think-python-2e:48:paragraph:1"
+          ],
+          "context": "[think-python-2e:43:paragraph:3 | think-python-2e.pdf | page 43]\n3.6 Flow of execution\n\nTo ensure that a function is defined before its first use, you have to know the order state-\nments run in, which is called theflow of execution.\nExecution always begins at the first statement of the program. Statements are run one at a\ntime, in order from top to bottom.\n\nFunction definitions do not alter the flow of execution of the program, but remember that\nstatements inside the function don’t run until the function is called.\n\n[think-python-2e:43:paragraph:5 | think-python-2e.pdf | page 43]\nThat sounds simple enough, until you remember that one function can call another. While\nin the middle of one function, the program might have to run the statements in another\nfunction. Then, while running that new function, the program might have to run yet an-\nother function!\nFortunately, Python is good at keeping track of where it is, so each time a function com-\npletes, the program picks up where it left off in the function that called it. When it gets to\nthe end of the program, it\n\n[think-python-2e:48:paragraph:1 | think-python-2e.pdf | page 48]\n26 Chapter 3. Functions\n\nbody:The sequence of statements inside a function definition.\n\nparameter:A name used inside a function to refer to the value passed as an argument.\n\nfunction call:A statement that runs a function. It consists of the function name followed\nby an argument list in parentheses.\n\nargument:A value provided to a function when the function is called. This value is as-\nsigned to the corresponding parameter in the function.",
+          "retrieval_ms": 45.02729998785071,
+          "original_query": "Khi Python thực thi một định nghĩa hàm, lúc nào các câu lệnh trong thân hàm mới chạy?",
+          "translation_ms": 454.84619998023845
+        },
+        {
+          "query_id": "Q13",
+          "query": "What are parameters and arguments in Think Python book?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 43,
+              "evidence": "Inside the function, the arguments are assigned to variables calledparameters."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:43:paragraph:8",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 43,
+              "text": "Inside the function, the arguments are assigned to variables calledparameters. Here is a\ndefinition for a function that takes an argument:\ndef print_twice(bruce):\nprint(bruce)\nprint(bruce)\nThis function assigns the argument to a parameter namedbruce. When the function is\ncalled, it prints the value of the parameter (whatever it is) twice.\n\nThis function works with any value that can be printed.",
+              "metadata": {
+                "page": 43,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8748469948768616,
+              "rank": 1,
+              "evidence_hit": true
+            },
+            {
+              "id": "think-python-2e:44:paragraph:3",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 44,
+              "text": "You can also use a variable as an argument:\n>>> michael ='Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.\nThe name of the variable we pass as an argument (michael) has nothing to do with the\nname of the parameter (bruce). It doesn’t matter what the value was called back home (in\nthe caller); here inprint_twice, we call everybodybruce.\n\n3.8 Variables and parameters are local",
+              "metadata": {
+                "page": 44,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8575787629140176,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:23:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 23,
+              "text": "The goal of this book is to teach you to think like a computer scientist. This way of think-\ning combines some of the best features of mathematics, engineering, and natural science.\nLike mathematicians, computer scientists use formal languages to denote ideas (specifi-\ncally computations). Like engineers, they design things, assembling components into sys-\ntems and evaluating tradeoffs among alternatives. Like scientists, they observe the behav-\nior of complex systems, form hypotheses, and test",
+              "metadata": {
+                "page": 23,
+                "source": "think-python-2e.pdf",
+                "chapter": "The way of the program",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8573842133650668,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": 1,
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:43:paragraph:8",
+            "think-python-2e:44:paragraph:3",
+            "think-python-2e:23:paragraph:2"
+          ],
+          "context": "[think-python-2e:43:paragraph:8 | think-python-2e.pdf | page 43]\nInside the function, the arguments are assigned to variables calledparameters. Here is a\ndefinition for a function that takes an argument:\ndef print_twice(bruce):\nprint(bruce)\nprint(bruce)\nThis function assigns the argument to a parameter namedbruce. When the function is\ncalled, it prints the value of the parameter (whatever it is) twice.\n\nThis function works with any value that can be printed.\n\n[think-python-2e:44:paragraph:3 | think-python-2e.pdf | page 44]\nYou can also use a variable as an argument:\n>>> michael ='Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.\nThe name of the variable we pass as an argument (michael) has nothing to do with the\nname of the parameter (bruce). It doesn’t matter what the value was called back home (in\nthe caller); here inprint_twice, we call everybodybruce.\n\n3.8 Variables and parameters are local\n\n[think-python-2e:23:paragraph:2 | think-python-2e.pdf | page 23]\nThe goal of this book is to teach you to think like a computer scientist. This way of think-\ning combines some of the best features of mathematics, engineering, and natural science.\nLike mathematicians, computer scientists use formal languages to denote ideas (specifi-\ncally computations). Like engineers, they design things, assembling components into sys-\ntems and evaluating tradeoffs among alternatives. Like scientists, they observe the behav-\nior of complex systems, form hypotheses, and test",
+          "retrieval_ms": 35.4014000040479,
+          "original_query": "Trong mục Parameters and arguments, sách gọi những biến nhận đối số bên trong hàm là gì?",
+          "translation_ms": 468.06199999991804
+        },
+        {
+          "query_id": "Q14",
+          "query": "What information is displayed in a frame in the stack diagram in chapter 3.9 of Think Python",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 45,
+              "evidence": "A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it."
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:66:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 66,
+              "text": "In Section 3.9, we used a stack diagram to represent the state of a program during a function\ncall. The same kind of diagram can help interpret a recursive function.\nEvery time a function gets called, Python creates a frame to contain the function’s local\nvariables and parameters. For a recursive function, there might be more than one frame on\nthe stack at the same time.\nFigure 5.1 shows a stack diagram forcountdowncalled withn = 3.\nAs usual, the top of the stack is the frame for__main__. It is",
+              "metadata": {
+                "page": 66,
+                "source": "think-python-2e.pdf",
+                "chapter": "Conditionals and recursion",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8935865430112647,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:48:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 48,
+              "text": "stack diagram:A graphical representation of a stack of functions, their variables, and the\nvalues they refer to.\n\nframe:A box in a stack diagram that represents a function call. It contains the local vari-\nables and parameters of the function.\n\ntraceback:A list of the functions that are executing, printed when an exception occurs.\n\n3.14 Exercises",
+              "metadata": {
+                "page": 48,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.880874726746243,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:45:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "Each function is represented by aframe. A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it. The stack diagram for\nthe previous example is shown in Figure 3.1.",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8657275180301844,
+              "rank": 3,
+              "evidence_hit": true
+            }
+          ],
+          "first_evidence_rank": 3,
+          "hit_at_1": false,
+          "evidence_hit_at_3": true,
+          "packed_context_evidence": true,
+          "context_ids": [
+            "think-python-2e:66:paragraph:5",
+            "think-python-2e:48:paragraph:4",
+            "think-python-2e:45:paragraph:2"
+          ],
+          "context": "[think-python-2e:66:paragraph:5 | think-python-2e.pdf | page 66]\nIn Section 3.9, we used a stack diagram to represent the state of a program during a function\ncall. The same kind of diagram can help interpret a recursive function.\nEvery time a function gets called, Python creates a frame to contain the function’s local\nvariables and parameters. For a recursive function, there might be more than one frame on\nthe stack at the same time.\nFigure 5.1 shows a stack diagram forcountdowncalled withn = 3.\nAs usual, the top of the stack is the frame for__main__. It is\n\n[think-python-2e:48:paragraph:4 | think-python-2e.pdf | page 48]\nstack diagram:A graphical representation of a stack of functions, their variables, and the\nvalues they refer to.\n\nframe:A box in a stack diagram that represents a function call. It contains the local vari-\nables and parameters of the function.\n\ntraceback:A list of the functions that are executing, printed when an exception occurs.\n\n3.14 Exercises\n\n[think-python-2e:45:paragraph:2 | think-python-2e.pdf | page 45]\nEach function is represented by aframe. A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it. The stack diagram for\nthe previous example is shown in Figure 3.1.",
+          "retrieval_ms": 49.277300015091896,
+          "original_query": "Trong ví dụ stack diagram ở mục 3.9, một frame hiển thị những thông tin gì?",
+          "translation_ms": 547.9905999964103
+        },
+        {
+          "query_id": "Q15",
+          "query": "What happens when calling a function that returns a value on a separate line in Python script?",
+          "filter": null,
+          "gold": [
+            {
+              "source_id": "think-python-2e",
+              "page": 46,
+              "evidence": "But in a script, if you call a fruitful function all by itself, the return value is lost forever!"
+            }
+          ],
+          "results": [
+            {
+              "id": "think-python-2e:46:paragraph:5",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 46,
+              "text": "Void functions might display something on the screen or have some other effect, but they\ndon’t have a return value. If you assign the result to a variable, you get a special value\ncalledNone.\n>>> result = print_twice('Bing')\nBing\nBing\n>>> print(result)\nNone\nThe valueNoneis not the same as the string'None'. It is a special value that has its own\ntype:\n>>> type(None)\n<class'>'NoneType\nThe functions we have written so far are all void. We will start writing fruitful functions in\na few chapters.",
+              "metadata": {
+                "page": 46,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.884978732172479,
+              "rank": 1,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:45:paragraph:4",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 45,
+              "text": "If an error occurs during a function call, Python prints the name of the function, the name\nof the function that called it, and the name of the function that calledthat, all the way back\nto__main__.",
+              "metadata": {
+                "page": 45,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8821986528279822,
+              "rank": 2,
+              "evidence_hit": false
+            },
+            {
+              "id": "think-python-2e:39:paragraph:2",
+              "source_id": "think-python-2e",
+              "source": "think-python-2e.pdf",
+              "page": 39,
+              "text": "We have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+              "metadata": {
+                "page": 39,
+                "source": "think-python-2e.pdf",
+                "chapter": "Functions",
+                "has_text": true,
+                "language": "en",
+                "document_id": "think-python-2e"
+              },
+              "score": 0.8804906749140474,
+              "rank": 3,
+              "evidence_hit": false
+            }
+          ],
+          "first_evidence_rank": null,
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "packed_context_evidence": false,
+          "context_ids": [
+            "think-python-2e:46:paragraph:5",
+            "think-python-2e:45:paragraph:4",
+            "think-python-2e:39:paragraph:2"
+          ],
+          "context": "[think-python-2e:46:paragraph:5 | think-python-2e.pdf | page 46]\nVoid functions might display something on the screen or have some other effect, but they\ndon’t have a return value. If you assign the result to a variable, you get a special value\ncalledNone.\n>>> result = print_twice('Bing')\nBing\nBing\n>>> print(result)\nNone\nThe valueNoneis not the same as the string'None'. It is a special value that has its own\ntype:\n>>> type(None)\n<class'>'NoneType\nThe functions we have written so far are all void. We will start writing fruitful functions in\na few chapters.\n\n[think-python-2e:45:paragraph:4 | think-python-2e.pdf | page 45]\nIf an error occurs during a function call, Python prints the name of the function, the name\nof the function that called it, and the name of the function that calledthat, all the way back\nto__main__.\n\n[think-python-2e:39:paragraph:2 | think-python-2e.pdf | page 39]\nWe have already seen one example of afunction call:\n>>> type(42)\n<class'int'>\nThe name of the function istype. The expression in parentheses is called theargumentof\nthe function. The result, for this function, is the type of the argument.\nIt is common to say that a function “takes” an argument and “returns” a result. The result\nis also called thereturn value.\nPython provides functions that convert values from one type to another. Theintfunction\ntakes any value and converts it to an integer, if",
+          "retrieval_ms": 44.47729999083094,
+          "original_query": "Nếu gọi một hàm có giá trị trả về dưới dạng một dòng đứng riêng trong script, giá trị trả về sẽ ra sao?",
+          "translation_ms": 674.5164000021759
+        }
+      ],
+      "median_translation_ms": 537.0850999897812,
+      "median_translate_and_retrieve_ms": 572.9632999864407
+    }
+  }
+}

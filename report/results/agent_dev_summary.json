@@ -1,0 +1,57 @@
+{
+  "split": "dev",
+  "model": "llama3.2:latest",
+  "context_budget_chars": 1600,
+  "api_cost_usd": 0,
+  "review_method": "Codex đọc câu trả lời và đối chiếu thủ công với đoạn nguồn trong trace, không dùng ID citation để suy ra chất lượng.",
+  "metrics": {
+    "cases": 17,
+    "provider_errors": 0,
+    "tool_use": {
+      "n": 17,
+      "N": 17
+    },
+    "grounded_answer": {
+      "0": 12,
+      "1": 0,
+      "2": 3,
+      "N": 15,
+      "mean": 0.4
+    },
+    "citation_validity": {
+      "n": 3,
+      "N": 8
+    },
+    "answer_citation_coverage": {
+      "n": 8,
+      "N": 8
+    },
+    "abstention": {
+      "n": 2,
+      "N": 2
+    },
+    "false_abstention": {
+      "n": 7,
+      "N": 15
+    }
+  },
+  "search_call_distribution": {
+    "1": 15,
+    "2": 2
+  },
+  "final_context_exact_evidence": {
+    "n": 6,
+    "N": 15,
+    "rate": 0.4,
+    "query_ids": [
+      "Q01",
+      "Q03",
+      "Q04",
+      "Q10",
+      "Q11",
+      "Q14"
+    ]
+  },
+  "median_elapsed_seconds": 2.9311295000079554,
+  "total_case_elapsed_seconds": 65.82507530000294
+}

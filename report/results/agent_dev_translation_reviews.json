@@ -1,0 +1,18 @@
+[
+  {"query_id":"Q02","answer_grade":0,"citation_support":[false],"reason":"Trả lời int thay vì str. Nguồn ở trang PDF 39 nói về hàm int() chuyển chuỗi '32', không trả lời kiểu của '2'."},
+  {"query_id":"Q03","answer_grade":0,"citation_support":[false],"reason":"Context có quy tắc cú pháp ở trang 27, nhưng câu trả lời không giải thích quy tắc. Đoạn dẫn trang 34 nói về nối chuỗi."},
+  {"query_id":"Q04","answer_grade":0,"citation_support":[],"reason":"Bản dịch bỏ mất chi tiết bảng thuật ngữ, đoạn trang 29 không vào context. Model thử trả lời int và gửi citation sai định dạng."},
+  {"query_id":"Q05","answer_grade":0,"citation_support":[],"reason":"Context có đúng ví dụ ở trang 31 và model nêu đúng 17. Kiểm tra đoạn trích thất bại nên đầu ra cuối từ chối."},
+  {"query_id":"Q06","answer_grade":0,"citation_support":[false],"reason":"Model trả lời vị trí đầu tiên, ngược với chính đoạn trích nói ký tự đầu tiên không thể là chữ số."},
+  {"query_id":"Q07","answer_grade":0,"citation_support":[],"reason":"Agent từ chối. Context thiếu đoạn trang 33 nói về đuôi .py."},
+  {"query_id":"Q08","answer_grade":0,"citation_support":[],"reason":"Hai lượt tìm lặp cùng từ khóa. Context thiếu quy tắc nhân chuỗi với số nguyên và agent từ chối."},
+  {"query_id":"Q09","answer_grade":2,"citation_support":[true],"reason":"Trả đúng rằng phần sau dấu # tới hết dòng bị bỏ qua. Đoạn được dẫn ở trang 35 xác nhận quy tắc."},
+  {"query_id":"Q10","answer_grade":2,"citation_support":[true],"reason":"Trả đúng rằng int() cắt phần thập phân. Đoạn được dẫn ở trang 39 nêu rõ hàm không làm tròn."},
+  {"query_id":"Q11","answer_grade":0,"citation_support":[],"reason":"Context có cú pháp dùng dấu chấm ở trang 40 nhưng model chỉ nêu import. Ứng dụng từ chối vì model gửi tên file và trang dưới dạng ID."},
+  {"query_id":"Q12","answer_grade":0,"citation_support":[],"reason":"Có bằng chứng đúng ở trang 43. Model nêu đáp án đúng nhưng dẫn định nghĩa thân hàm ở trang 48, định dạng ID sai và đoạn đó thiếu điều kiện khi hàm được gọi."},
+  {"query_id":"Q13","answer_grade":0,"citation_support":[],"reason":"Trang 43 có thuật ngữ parameters. Model lặp lại mô tả biến nhận đối số, gửi thêm các cặp ID và trích đoạn không khớp nên ứng dụng từ chối."},
+  {"query_id":"Q14","answer_grade":0,"citation_support":[],"reason":"Đoạn trang 45 chứa đủ tên hàm, tham số và biến. Model bỏ tên hàm và đưa đoạn trích không khớp văn bản chunk được dẫn ở trang 48."},
+  {"query_id":"Q15","answer_grade":0,"citation_support":[],"reason":"Context thiếu quy tắc về bỏ qua giá trị trả về. Model trả lời None và trích đoạn không khớp nguồn."},
+  {"query_id":"D16","abstention_correct":true,"citation_support":[],"reason":"Hai lượt tìm không có hướng dẫn venv trên PowerShell. Model chủ động từ chối."},
+  {"query_id":"D17","abstention_correct":true,"citation_support":[],"reason":"Model chủ động từ chối sau khi tìm, không bổ sung cú pháp asyncio.gather ngoài sách."}
+]

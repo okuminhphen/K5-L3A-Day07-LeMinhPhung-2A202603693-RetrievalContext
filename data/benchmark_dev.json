@@ -1,0 +1,244 @@
+[
+  {
+    "id": "Q01",
+    "split": "dev",
+    "question": "Trong mục chương trình đầu tiên của sách, lệnh Python 3 nào hiển thị lời chào Hello, World!?",
+    "expected_answer": "Dùng print('Hello, World!').",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 25,
+        "evidence": ">>> print('Hello, World!')"
+      }
+    ]
+  },
+  {
+    "id": "Q02",
+    "split": "dev",
+    "question": "Nếu đặt số nguyên 2 trong dấu nháy đơn, Python xếp giá trị đó vào kiểu nào?",
+    "expected_answer": "Kiểu chuỗi str.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 26,
+        "evidence": ">>> type('2')\n<class'str'>"
+      }
+    ]
+  },
+  {
+    "id": "Q03",
+    "split": "dev",
+    "question": "Vì sao biểu thức 3+/3 sai cú pháp dù dấu cộng và dấu chia đều là ký hiệu hợp lệ?",
+    "expected_answer": "Vì quy tắc cấu trúc của biểu thức không cho phép hai toán tử này đứng ngay cạnh nhau.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 27,
+        "evidence": "3+/3 is illegal because even though+and / are legal tokens, you can’t have one right\nafter the other."
+      }
+    ]
+  },
+  {
+    "id": "Q04",
+    "split": "dev",
+    "question": "Trong bảng thuật ngữ của chương The way of the program, kiểu string biểu diễn loại dữ liệu gì?",
+    "expected_answer": "Một dãy ký tự.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 29,
+        "evidence": "string:A type that represents sequences of characters."
+      }
+    ],
+    "filter": {
+      "chapter": "The way of the program"
+    }
+  },
+  {
+    "id": "Q05",
+    "split": "dev",
+    "question": "Trong ví dụ đầu tiên về phép gán, biến n nhận giá trị nào?",
+    "expected_answer": "Biến n nhận số nguyên 17.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 31,
+        "evidence": "the second gives the integer17ton;"
+      }
+    ]
+  },
+  {
+    "id": "Q06",
+    "split": "dev",
+    "question": "Tên biến trong Python có thể chứa chữ số ở vị trí nào?",
+    "expected_answer": "Tên biến có thể chứa chữ số, miễn là ký tự đầu tiên không phải chữ số.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 32,
+        "evidence": "They can contain both letters and numbers, but\nthey can’t begin with a number."
+      }
+    ]
+  },
+  {
+    "id": "Q07",
+    "split": "dev",
+    "question": "Theo quy ước được nêu trong mục Script mode, tên file script Python có đuôi gì?",
+    "expected_answer": ".py",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 33,
+        "evidence": "By convention, Python scripts have names that end with.py."
+      }
+    ]
+  },
+  {
+    "id": "Q08",
+    "split": "dev",
+    "question": "Theo mục String operations, nếu một toán hạng của phép nhân là chuỗi thì toán hạng kia phải có kiểu gì?",
+    "expected_answer": "Toán hạng kia phải là số nguyên.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 34,
+        "evidence": "If one of the values is a string, the other has to be an integer."
+      }
+    ]
+  },
+  {
+    "id": "Q09",
+    "split": "dev",
+    "question": "Khi có chú thích bằng dấu # ở cuối dòng lệnh, Python xử lý phần từ dấu # tới hết dòng thế nào?",
+    "expected_answer": "Python bỏ qua phần đó khi thực thi.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 35,
+        "evidence": "Everything from the#to the end of the line is ignored"
+      }
+    ]
+  },
+  {
+    "id": "Q10",
+    "split": "dev",
+    "question": "Khi chuyển một số thực sang số nguyên bằng int(), hàm làm gì với phần thập phân?",
+    "expected_answer": "Hàm cắt bỏ phần thập phân, không làm tròn.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 39,
+        "evidence": "intcan convert floating-point values to integers, but it doesn’t round off; it chops off the\nfraction part:"
+      }
+    ]
+  },
+  {
+    "id": "Q11",
+    "split": "dev",
+    "question": "Trong chương Functions, sách viết cách gọi hàm nằm trong một module bằng cú pháp nào?",
+    "expected_answer": "Dùng tên module, dấu chấm, rồi tên hàm, ví dụ math.sin(...).",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 40,
+        "evidence": "the name of the module and the name of the\nfunction, separated by a dot (also known as a period)."
+      },
+      {
+        "source_id": "think-python-2e",
+        "page": 48,
+        "evidence": "dot notation:The syntax for calling a function in another module by specifying the mod-\nule name followed by a dot (period) and the function name."
+      }
+    ],
+    "filter": {
+      "chapter": "Functions"
+    }
+  },
+  {
+    "id": "Q12",
+    "split": "dev",
+    "question": "Khi Python thực thi một định nghĩa hàm, lúc nào các câu lệnh trong thân hàm mới chạy?",
+    "expected_answer": "Các câu lệnh trong thân hàm chạy khi hàm được gọi.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 42,
+        "evidence": "The statements inside the function do not run until the function is called"
+      },
+      {
+        "source_id": "think-python-2e",
+        "page": 43,
+        "evidence": "statements inside the function don’t run until the function is called."
+      }
+    ]
+  },
+  {
+    "id": "Q13",
+    "split": "dev",
+    "question": "Trong mục Parameters and arguments, sách gọi những biến nhận đối số bên trong hàm là gì?",
+    "expected_answer": "Đó là các tham số (parameters).",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 43,
+        "evidence": "Inside the function, the arguments are assigned to variables calledparameters."
+      }
+    ]
+  },
+  {
+    "id": "Q14",
+    "split": "dev",
+    "question": "Trong ví dụ stack diagram ở mục 3.9, một frame hiển thị những thông tin gì?",
+    "expected_answer": "Tên hàm, các tham số và các biến của hàm đó.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 45,
+        "evidence": "A frame is a box with the name of a function\nbeside it and the parameters and variables of the function inside it."
+      }
+    ]
+  },
+  {
+    "id": "Q15",
+    "split": "dev",
+    "question": "Nếu gọi một hàm có giá trị trả về dưới dạng một dòng đứng riêng trong script, giá trị trả về sẽ ra sao?",
+    "expected_answer": "Giá trị trả về bị bỏ qua.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 46,
+        "evidence": "But in a script, if you call a fruitful function all by itself, the return value is lost forever!"
+      }
+    ]
+  },
+  {
+    "id": "D16",
+    "split": "dev",
+    "question": "Sách chỉ cách tạo và kích hoạt môi trường ảo bằng venv trên PowerShell như thế nào?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Đã rà toàn bộ 211 chunk theo venv, virtual environment và activate. Mục khởi động trình thông dịch và mục Script mode (trang PDF 24, 33) không đưa lệnh tạo hay kích hoạt môi trường ảo."
+  },
+  {
+    "id": "D17",
+    "split": "dev",
+    "question": "Sách hướng dẫn dùng asyncio.gather để chạy đồng thời hai hàm async như thế nào?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Đã rà toàn bộ 211 chunk theo asyncio, gather, async def, coroutine và await. Chương Functions (trang PDF 39–50) trình bày hàm thông thường, không có ví dụ chạy coroutine bằng asyncio.gather."
+  }
+]

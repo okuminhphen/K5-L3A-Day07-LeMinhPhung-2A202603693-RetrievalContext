@@ -1,0 +1,19 @@
+[
+  {"query_id":"Q01","answer_grade":0,"citation_support":[],"reason":"Có lệnh print đúng ở trang PDF 25. Model gửi cả tên file và số trang làm ID riêng nên ứng dụng chặn và từ chối."},
+  {"query_id":"Q02","answer_grade":0,"citation_support":[false],"reason":"Trả lời int thay vì str. Đoạn được dẫn chỉ minh họa gán và in số 17."},
+  {"query_id":"Q03","answer_grade":1,"citation_support":[false],"reason":"Nhận ra lỗi liên quan đến cách đặt token liền nhau, nhưng nói khái quát rằng một token không được theo sau token khác. Trang 27 chỉ hỗ trợ quy tắc cho tổ hợp + và / trong biểu thức này."},
+  {"query_id":"Q04","answer_grade":0,"citation_support":[false],"reason":"Lặp lại tên kiểu string mà không nêu dãy ký tự. Đoạn được dẫn chỉ giải thích ví dụ Hello, World! và context thiếu định nghĩa trong bảng thuật ngữ."},
+  {"query_id":"Q05","answer_grade":1,"citation_support":[false],"reason":"Đúng giá trị 17. Đoạn trang 32 xác nhận n = 17 trong ví dụ khác, thiếu nguồn cho ví dụ gán đầu tiên ở trang 31."},
+  {"query_id":"Q06","answer_grade":0,"citation_support":[],"reason":"Model nói vị trí đầu tiên, ngược quy tắc đặt tên. Cặp ID và trích đoạn không khớp nên ứng dụng từ chối."},
+  {"query_id":"Q07","answer_grade":0,"citation_support":[false],"reason":"Nêu py, gần với đáp án .py, nhưng nguồn chỉ định nghĩa script mode và không đề cập đuôi file."},
+  {"query_id":"Q08","answer_grade":0,"citation_support":[],"reason":"Model không nêu kiểu số nguyên. Context thiếu quy tắc nhân chuỗi và citation sai định dạng nên ứng dụng từ chối."},
+  {"query_id":"Q09","answer_grade":0,"citation_support":[],"reason":"Model nói Python vẫn thực thi phần sau dấu #, ngược với tài liệu. Citation không hợp lệ nên ứng dụng từ chối."},
+  {"query_id":"Q10","answer_grade":0,"citation_support":[],"reason":"Model nêu đúng rằng int() cắt phần thập phân. Tên file và số trang bị gửi dưới dạng ID bổ sung nên ứng dụng từ chối."},
+  {"query_id":"Q11","answer_grade":0,"citation_support":[false],"reason":"Trang 40 có cú pháp gọi qua dấu chấm, nhưng câu trả lời chỉ nêu bước import module."},
+  {"query_id":"Q12","answer_grade":0,"citation_support":[],"reason":"Model nói thân hàm chạy khi lời gọi hoàn thành, thay vì khi hàm được gọi. Context thiếu bằng chứng và citation sai định dạng."},
+  {"query_id":"Q13","answer_grade":0,"citation_support":[false],"reason":"Lặp lại mô tả biến nhận đối số mà không nêu tên tham số. Đoạn dẫn nói về mối liên hệ giữa tham số và đối số."},
+  {"query_id":"Q14","answer_grade":1,"citation_support":[true],"reason":"Nêu được tham số và nhắc đến thông tin cục bộ, nhưng thiếu tên hàm và không gọi rõ biến cục bộ. Đoạn trang 66 hỗ trợ phần về tham số và thông tin cục bộ."},
+  {"query_id":"Q15","answer_grade":0,"citation_support":[],"reason":"Model không nêu rằng giá trị trả về bị bỏ qua. Đoạn tìm được bàn về phép chia và citation không hợp lệ."},
+  {"query_id":"D16","abstention_correct":true,"citation_support":[],"reason":"Sau khi tìm, model chủ động báo không đủ bằng chứng và không thêm hướng dẫn venv."},
+  {"query_id":"D17","abstention_correct":true,"citation_support":[],"reason":"Model thử đưa cú pháp asyncio.gather. Ứng dụng chặn vì ID và trích đoạn không khớp. Kết quả cuối chỉ báo thiếu bằng chứng."}
+]

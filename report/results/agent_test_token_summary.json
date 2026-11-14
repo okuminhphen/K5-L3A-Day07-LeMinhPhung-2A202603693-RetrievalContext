@@ -1,0 +1,122 @@
+{
+  "800": {
+    "trace": "agent_test_tokens_800.json",
+    "model": "llama3.2:latest",
+    "api_cost_usd": 0,
+    "prompt_tokens": 7957,
+    "output_tokens": 825,
+    "total_tokens": 8782,
+    "median_total_tokens_per_case": 1111,
+    "cases": [
+      {
+        "query_id": "T01",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 881,
+        "output_tokens": 230
+      },
+      {
+        "query_id": "T02",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 927,
+        "output_tokens": 165
+      },
+      {
+        "query_id": "T03",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 868,
+        "output_tokens": 127
+      },
+      {
+        "query_id": "T04",
+        "status": "abstain",
+        "model_calls_with_usage": 3,
+        "prompt_tokens": 1473,
+        "output_tokens": 71
+      },
+      {
+        "query_id": "T05",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 834,
+        "output_tokens": 48
+      },
+      {
+        "query_id": "T06",
+        "status": "abstain",
+        "model_calls_with_usage": 3,
+        "prompt_tokens": 1533,
+        "output_tokens": 122
+      },
+      {
+        "query_id": "T07",
+        "status": "abstain",
+        "model_calls_with_usage": 3,
+        "prompt_tokens": 1441,
+        "output_tokens": 62
+      }
+    ]
+  },
+  "1600": {
+    "trace": "agent_test_tokens_1600.json",
+    "model": "llama3.2:latest",
+    "api_cost_usd": 0,
+    "prompt_tokens": 7812,
+    "output_tokens": 901,
+    "total_tokens": 8713,
+    "median_total_tokens_per_case": 1092,
+    "cases": [
+      {
+        "query_id": "T01",
+        "status": "error",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 969,
+        "output_tokens": 291
+      },
+      {
+        "query_id": "T02",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 927,
+        "output_tokens": 165
+      },
+      {
+        "query_id": "T03",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 1040,
+        "output_tokens": 106
+      },
+      {
+        "query_id": "T04",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 1004,
+        "output_tokens": 48
+      },
+      {
+        "query_id": "T05",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 991,
+        "output_tokens": 101
+      },
+      {
+        "query_id": "T06",
+        "status": "abstain",
+        "model_calls_with_usage": 3,
+        "prompt_tokens": 1844,
+        "output_tokens": 146
+      },
+      {
+        "query_id": "T07",
+        "status": "abstain",
+        "model_calls_with_usage": 2,
+        "prompt_tokens": 1037,
+        "output_tokens": 44
+      }
+    ]
+  }
+}

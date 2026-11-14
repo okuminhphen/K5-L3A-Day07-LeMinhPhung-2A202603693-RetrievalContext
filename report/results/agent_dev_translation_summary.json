@@ -1,0 +1,73 @@
+{
+  "split": "dev",
+  "model": "llama3.2:latest",
+  "context_budget_chars": 1600,
+  "translate_first_query": true,
+  "api_cost_usd": 0,
+  "review_method": "Codex đối chiếu câu trả lời với đoạn nguồn theo rubric; câu lỗi model ghi riêng.",
+  "metrics": {
+    "cases": 17,
+    "provider_errors": 1,
+    "tool_use": {
+      "n": 16,
+      "N": 16
+    },
+    "grounded_answer": {
+      "0": 12,
+      "1": 0,
+      "2": 2,
+      "N": 14,
+      "mean": 0.2857142857142857
+    },
+    "citation_validity": {
+      "n": 2,
+      "N": 5
+    },
+    "answer_citation_coverage": {
+      "n": 5,
+      "N": 5
+    },
+    "abstention": {
+      "n": 2,
+      "N": 2
+    },
+    "false_abstention": {
+      "n": 9,
+      "N": 14
+    }
+  },
+  "fully_grounded_out_of_all_answerable": {
+    "n": 2,
+    "N": 15
+  },
+  "errors": [
+    {
+      "query_id": "Q01",
+      "type": "JSONDecodeError",
+      "message": "Unterminated string starting at: line 1 column 155 (char 154)"
+    }
+  ],
+  "search_call_distribution": {
+    "1": 15,
+    "2": 2
+  },
+  "last_retrieved_context_exact_evidence": {
+    "n": 9,
+    "N": 15,
+    "rate": 0.6,
+    "query_ids": [
+      "Q01",
+      "Q03",
+      "Q05",
+      "Q09",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14"
+    ]
+  },
+  "median_translation_ms": 522.4686999863479,
+  "median_elapsed_seconds": 3.080338200001279,
+  "total_case_elapsed_seconds": 65.45915060001425
+}

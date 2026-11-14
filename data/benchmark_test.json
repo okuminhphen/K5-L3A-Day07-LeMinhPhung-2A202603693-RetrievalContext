@@ -1,0 +1,98 @@
+[
+  {
+    "id": "T01",
+    "split": "test",
+    "question": "Khi mở Python ở chế độ tương tác, dấu nhắc >>> cho biết trình thông dịch đang ở trạng thái nào?",
+    "answerable": true,
+    "expected_answer": "Trình thông dịch đã sẵn sàng nhận mã người dùng nhập.",
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 24,
+        "evidence": "The last line is apromptthat indicates that the interpreter is ready for you to enter code."
+      },
+      {
+        "source_id": "think-python-2e",
+        "page": 28,
+        "evidence": "prompt:Characters displayed by the interpreter to indicate that it is ready to take input\nfrom the user."
+      }
+    ]
+  },
+  {
+    "id": "T02",
+    "split": "test",
+    "question": "Không thêm ngoặc, theo quy tắc thứ tự phép toán trong sách thì biểu thức 6 + 4 / 2 cho kết quả bao nhiêu?",
+    "answerable": true,
+    "expected_answer": "Kết quả là 8, vì phép chia được thực hiện trước phép cộng.",
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 34,
+        "evidence": "•Multiplication andDivision have higher precedence thanAddition andSubtraction.\nSo2*3-1is 5, not 4, and6+4/2is 8, not 5."
+      }
+    ]
+  },
+  {
+    "id": "T03",
+    "split": "test",
+    "question": "Một biến được tạo bên trong hàm tồn tại ở phạm vi nào theo mục nói về biến cục bộ?",
+    "answerable": true,
+    "expected_answer": "Biến là biến cục bộ và chỉ tồn tại bên trong hàm đó.",
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 44,
+        "evidence": "When you create a variable inside a function, it islocal, which means that it only exists\ninside the function."
+      },
+      {
+        "source_id": "think-python-2e",
+        "page": 48,
+        "evidence": "local variable:A variable defined inside a function. A local variable can only be used\ninside its function."
+      }
+    ]
+  },
+  {
+    "id": "T04",
+    "split": "test",
+    "question": "Trong sơ đồ stack của ví dụ countdown, base case có n bằng bao nhiêu và nó có gọi đệ quy tiếp không?",
+    "answerable": true,
+    "expected_answer": "Base case là n = 0 và không thực hiện thêm lời gọi đệ quy.",
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 66,
+        "evidence": "The bottom of the\nstack, wheren=0, is called thebase case. It does not make a recursive call, so there are no\nmore frames."
+      }
+    ]
+  },
+  {
+    "id": "T05",
+    "split": "test",
+    "question": "Nếu chương trình chạy mà không báo lỗi nhưng kết quả sai so với ý định, sách xếp trường hợp đó vào loại lỗi nào?",
+    "answerable": true,
+    "expected_answer": "Đó là lỗi ngữ nghĩa (semantic error).",
+    "gold": [
+      {
+        "source_id": "think-python-2e",
+        "page": 35,
+        "evidence": "If there is a semantic error in your program, it will run without generating error\nmessages, but it will not do the right thing."
+      }
+    ]
+  },
+  {
+    "id": "T06",
+    "split": "test",
+    "question": "Trong ví dụ đệ quy, sách thêm decorator functools.lru_cache với đối số nào để giới hạn bộ nhớ đệm ở 128 kết quả?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Đã rà toàn bộ 211 chunk theo lru_cache, functools, memoization, decorator và maxsize. Các mục đệ quy (trang PDF 65–67) không hướng dẫn cấu hình bộ nhớ đệm bằng decorator này."
+  },
+  {
+    "id": "T07",
+    "split": "test",
+    "question": "Khi chia sẻ một script, sách dùng lệnh pip nào để cài mọi thư viện đã liệt kê trong requirements.txt?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Đã rà toàn bộ 211 chunk theo pip, requirements.txt và các cụm về cài thư viện. Các chỗ khớp về cài đặt (trang PDF 24) nói về việc cài Python. Mục Script mode (trang PDF 33) hướng dẫn chạy script. Không có lệnh cài thư viện từ requirements.txt."
+  }
+]
