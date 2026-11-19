@@ -20,3 +20,12 @@ Bộ câu hỏi dùng 211 chunk cấu hình B của Day 6, trích từ 38 trang 
 Dev giữ 15 câu có đáp án của Day 6, gồm các filter chương đã có trong câu hỏi. Cả 7 câu test đều mới. Các trích đoạn `gold` giữ nguyên văn bản trong kho, kể cả xuống dòng và khoảng trắng do trích PDF. Mỗi trích đoạn khớp trọn trong ít nhất một chunk đúng nguồn, đúng trang. Các câu thiếu bằng chứng ghi phạm vi và cách kiểm tra trên toàn bộ corpus.
 
 Dùng dev để thử và chọn cấu hình. Chỉ đánh giá test sau khi chốt cấu hình. Chỉ đưa câu hỏi và filter do người hỏi cung cấp vào retriever hoặc agent. Khi dùng TF-IDF starter để tính chỉ số retrieval, truyền các câu `answerable: true` vì starter yêu cầu mỗi câu có `gold`.
+
+## Benchmark thử thách nâng cao (100 trang)
+
+| Tập | Bảng | Ảnh, sơ đồ | Biểu đồ | Multi-hop | Text | Thiếu bằng chứng | Tổng |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [Dev nâng cao](advanced_benchmark_dev.json) | 4 | 3 | 3 | 2 | 3 | 3 | **18** |
+| [Test nâng cao](advanced_benchmark_test.json) | 6 | 5 | 5 | 4 | 4 | 6 | **30** |
+
+Bộ câu hỏi nâng cao xây dựng trên toàn bộ 100 trang của *GPT-4 Technical Report* (`arXiv:2303.08774v6`, OpenAI, [nguồn PDF](https://arxiv.org/pdf/2303.08774v6.pdf)). Index đa phương thức, thống kê trang và các ảnh crop đối chiếu nằm tại [data/advanced/](advanced/index_manifest.json). Mỗi câu có đáp án ghi rõ `primary_group`, `page`, `region_id`, `modality`, `bbox`, `crop_path` (nếu là vùng ảnh/biểu đồ bitmap), `evidence`, `units`, `conditions` và `calculation`. Các câu thiếu bằng chứng ghi rõ `absence_reason` và `verification_method` trên toàn bộ 100 trang.

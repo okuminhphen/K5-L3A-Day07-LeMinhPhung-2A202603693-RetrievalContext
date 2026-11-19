@@ -1,0 +1,158 @@
+[
+  {
+    "query_id": "AD01",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng điểm Uniform Bar Exam của GPT-4 là 298/400 (~90th percentile), GPT-3.5 là 213/400 (~10th percentile) và chênh lệch +85 điểm trên thang 400; dẫn đúng Table 1 trang 5.",
+    "original_pdf_verification": "Đối chiếu bản gốc gpt4-technical-report.pdf trang 5, Table 1 hàng 1: Uniform Bar Exam (MBE+MEE+MPT) 298 / 400 (~90th) vs 213 / 400 (~10th)."
+  },
+  {
+    "query_id": "AD02",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng độ chính xác MMLU (5-shot) của GPT-4 là 86.4%, U-PaLM (5-shot) là 70.7% và chênh lệch +15.7 điểm phần trăm; dẫn đúng Table 2 trang 7.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 7, Table 2 hàng MMLU: GPT-4 86.4% (5-shot), LM SOTA 70.7% (5-shot U-PaLM)."
+  },
+  {
+    "query_id": "AD03",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng điểm trung bình (Average) qua các kỳ thi MCQ của Base model là 73.7%, RLHF model là 74.0%, chênh lệch +0.3 điểm phần trăm; dẫn đúng Table 8 trang 28.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 28, Table 8 hàng cuối Average: Base model 73.7 %, RLHF model 74.0 %."
+  },
+  {
+    "query_id": "AD04",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng tỷ lệ nhiễm dữ liệu trên HumanEval là 25%, điểm toàn tập 67.0%, phần không nhiễm 65.58% và mức suy giảm -2.12%; dẫn đúng Table 11 trang 32.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 32, Table 11 hàng HumanEval: 67.0%, 48.1%, 25%, 65.58%, -2.12%."
+  },
+  {
+    "query_id": "AD05",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Xác định đúng thương hiệu ELECOM, dòng P-APLTDCN series (CABLE MANIA) trên vỏ hộp và đầu chuyển VGA sang cổng Lightning; dẫn đúng Table 3 / Im6.jpg trang 9.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_009_img_1_Im6.jpg và Table 3 trang 9."
+  },
+  {
+    "query_id": "AD06",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Mô tả đúng người đàn ông mặc áo vàng đang ủi áo màu xanh trên bàn ủi đồ gắn phía sau/nóc xe taxi màu vàng đang di chuyển; dẫn đúng Table 16 / Im14.jpg trang 36.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_036_img_1_Im14.jpg và Table 16 trang 36."
+  },
+  {
+    "query_id": "AD07",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Trích đúng câu caption tiếng Anh trên ảnh và xác định vật thể trên khay nướng là những miếng gà rán (chicken nuggets) xếp hình bản đồ thế giới; dẫn đúng Table 18 / Im18.png trang 38.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_038_img_1_Im18.png và Table 18 trang 38."
+  },
+  {
+    "query_id": "AD08",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng trục hoành Compute (chuẩn hóa GPT-4 = 1), trục tung Bits per word (final loss) và đường nét đứt là hàm lũy thừa (power law fit) trên các mô hình nhỏ hơn; dẫn đúng Figure 1 trang 3.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 3, Figure 1 (OpenAI codebase next word prediction)."
+  },
+  {
+    "query_id": "AD09",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng thứ tự 5 mô hình (ada, babbage, curie, gpt-3.5, gpt-4), trục tung Accuracy (0-100) và xu hướng giảm từ ada xuống curie rồi tăng vọt ở gpt-3.5 và gpt-4; dẫn đúng Figure 3 trang 4.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 4, Figure 3 (Inverse scaling prize, hindsight neglect)."
+  },
+  {
+    "query_id": "AD10",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đủ 9 danh mục trên trục hoành, 4 mô hình trong chú giải (chatgpt-v2, chatgpt-v3, chatgpt-v4, gpt-4) và mức cải thiện +19 điểm phần trăm; dẫn đúng Figure 6 trang 10.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 10, Figure 6 (Internal factual eval by category)."
+  },
+  {
+    "query_id": "AD11",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Kết hợp đúng tỷ lệ compute <= 1/1,000th ở Abstract (trang 1) và việc loại 15 bài toán khó nhất trước khi chia thành 6 difficulty buckets trên HumanEval ở trang 4; dẫn đủ cả trang 1 và trang 4.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 1 (Abstract) và trang 4 (Section 3)."
+  },
+  {
+    "query_id": "AD12",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Kết hợp đúng 5,214 câu prompt (70.2% ưu tiên GPT-4) ở trang 7 và hơn 50 chuyên gia (over 50 experts) red-teaming ở trang 12; dẫn đủ trang 7 và trang 12.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 7 (Mục 4 & chú thích 7) và trang 12 (Mục 6)."
+  },
+  {
+    "query_id": "AD13",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng thời điểm kết thúc dữ liệu pre-training là tháng 9 năm 2021 (September 2021); dẫn đúng trang 10.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 10, Mục 5 Limitations."
+  },
+  {
+    "query_id": "AD14",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng việc loại bỏ khoảng trắng và ký hiệu (chỉ giữ chữ và số) rồi lấy ngẫu nhiên 3 chuỗi con dài 50 ký tự; dẫn đúng trang 28-29.",
+    "original_pdf_verification": "Đối chiếu bản gốc cuối trang 28 và đầu trang 29 (Appendix C)."
+  },
+  {
+    "query_id": "AD15",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Nêu đúng thời điểm hoàn tất huấn luyện GPT-4 là tháng 8 năm 2022 (August of 2022); dẫn đúng trang 42.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 42, Mục 1 Introduction của System Card."
+  },
+  {
+    "query_id": "AD16",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Từ chối đúng và nêu rõ báo cáo giữ kín số lượng tham số và số tầng Transformer ở Mục 2 trang 2, không suy đoán.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 2, Mục 2 Scope and Limitations."
+  },
+  {
+    "query_id": "AD17",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Từ chối đúng vì báo cáo không công bố số lượng GPU A100 hay chi phí huấn luyện bằng USD.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 2, Mục 2 Scope and Limitations."
+  },
+  {
+    "query_id": "AD18",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Từ chối đúng vì Bảng 1 (trang 5) không đánh giá kỳ thi IELTS hay TOEFL iBT.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 5, Table 1."
+  }
+]

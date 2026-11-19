@@ -1,0 +1,200 @@
+{
+  "document_id": "gpt4-technical-report",
+  "source": "gpt4-technical-report.pdf",
+  "title": "GPT-4 Technical Report (including GPT-4 System Card)",
+  "authors": "OpenAI",
+  "version": "arXiv:2303.08774v6 (2024-03-04)",
+  "url": "https://arxiv.org/pdf/2303.08774v6.pdf",
+  "license": "arXiv.org perpetual, non-exclusive license to distribute",
+  "sha256": "c33a66dadca2388d7b172d6293b00dc32b71110c6f38fafe0d41112e61be7774",
+  "physical_pages": 100,
+  "indexed_pages": 100,
+  "total_chunks": 221,
+  "modality_counts": {
+    "text": 194,
+    "chart": 11,
+    "image_diagram": 9,
+    "table": 7
+  },
+  "bitmap_crops_extracted": 9,
+  "bitmap_crops": [
+    {
+      "page": 9,
+      "image_index": 1,
+      "name": "Im6.jpg",
+      "width": 1079,
+      "height": 1081,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_009_img_1_Im6.jpg"
+    },
+    {
+      "page": 34,
+      "image_index": 1,
+      "name": "Im12.png",
+      "width": 850,
+      "height": 600,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_034_img_1_Im12.png"
+    },
+    {
+      "page": 35,
+      "image_index": 1,
+      "name": "Im13.jpg",
+      "width": 968,
+      "height": 817,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_035_img_1_Im13.jpg"
+    },
+    {
+      "page": 36,
+      "image_index": 1,
+      "name": "Im14.jpg",
+      "width": 570,
+      "height": 380,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_036_img_1_Im14.jpg"
+    },
+    {
+      "page": 37,
+      "image_index": 1,
+      "name": "Im15.jpg",
+      "width": 816,
+      "height": 1056,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_037_img_1_Im15.jpg"
+    },
+    {
+      "page": 37,
+      "image_index": 2,
+      "name": "Im16.jpg",
+      "width": 816,
+      "height": 1056,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_037_img_2_Im16.jpg"
+    },
+    {
+      "page": 37,
+      "image_index": 3,
+      "name": "Im17.jpg",
+      "width": 816,
+      "height": 1056,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_037_img_3_Im17.jpg"
+    },
+    {
+      "page": 38,
+      "image_index": 1,
+      "name": "Im18.png",
+      "width": 1080,
+      "height": 1277,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_038_img_1_Im18.png"
+    },
+    {
+      "page": 39,
+      "image_index": 1,
+      "name": "Im19.jpg",
+      "width": 1161,
+      "height": 1280,
+      "mode": "/DeviceRGB",
+      "crop_path": "data/advanced/crops/page_039_img_1_Im19.jpg"
+    }
+  ],
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_dimensions": 384,
+  "embeddings_path": "starter/data/advanced_embeddings.npz",
+  "chunks_path": "data/advanced/multimodal_chunks.json",
+  "indexing_elapsed_seconds": 56.777,
+  "embedding_elapsed_seconds": 36.0,
+  "partially_processed_or_special_pages": {
+    "rotated_text_layout_fallback_pages": {
+      "pages": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "count": 60,
+      "reason": "Pages 41-100 (Appendix G: GPT-4 System Card) contain rotated margin metadata causing pypdf extraction_mode='layout' to return 0 chars. Automatically recovered via plain extract_text().",
+      "impact": "Full text of all 60 System Card pages recovered; visual alignment uses visitor_text coordinates."
+    },
+    "minimal_divider_pages": {
+      "pages": [
+        79
+      ],
+      "count": 1,
+      "reason": "Page 79 is a section title divider ('Appendix 79') with 11 characters and no tables or figures.",
+      "impact": "Indexed as a minimal text chunk so all 100 physical pages are linked; contains no factual claims."
+    },
+    "vector_drawn_charts_without_bar_value_labels": {
+      "pages": [
+        3,
+        4,
+        6,
+        10,
+        11,
+        14,
+        63,
+        65
+      ],
+      "reason": "Charts such as Figure 1, 2, 3, 4, 6, 7, 9 are rendered with PDF vector paths without text labels for every individual bar height (unlike Figure 5 on p.8 and Figure 8 on p.12 which embed numeric labels in text, or Table 14 p.34 and Figure 11 p.98 which are high-resolution bitmap charts).",
+      "impact": "Axes, units, legends, ordering trends, and caption/text-reported summary values (e.g., +19 percentage points in Figure 6) are indexed and verifiable, whereas unlabelled intermediate bar heights are not guessed."
+    }
+  }
+}

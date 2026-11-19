@@ -1,0 +1,647 @@
+{
+  "split": "dev",
+  "methods": {
+    "baseline-text-dense": {
+      "mode": "baseline-text-dense",
+      "top_k": 3,
+      "context_budget_chars": 1600,
+      "answerable_total": 15,
+      "hit_at_1": {
+        "n": 4,
+        "N": 15,
+        "rate": 0.26666666666666666
+      },
+      "evidence_hit_at_3": {
+        "n": 5,
+        "N": 15,
+        "rate": 0.3333333333333333
+      },
+      "context_evidence_rate": {
+        "n": 2,
+        "N": 15,
+        "rate": 0.13333333333333333
+      },
+      "median_retrieval_ms": 31.68,
+      "traces": [
+        {
+          "query_id": "AD01",
+          "primary_group": "table",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 23315.25,
+          "context_ids": [
+            "gpt4-report:p005:text:1",
+            "gpt4-report:p030:text:1"
+          ]
+        },
+        {
+          "query_id": "AD02",
+          "primary_group": "table",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 34.4,
+          "context_ids": [
+            "gpt4-report:p007:text:1"
+          ]
+        },
+        {
+          "query_id": "AD03",
+          "primary_group": "table",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 32.2,
+          "context_ids": [
+            "gpt4-report:p025:text:2",
+            "gpt4-report:p098:text:1"
+          ]
+        },
+        {
+          "query_id": "AD04",
+          "primary_group": "table",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 36.24,
+          "context_ids": [
+            "gpt4-report:p032:text:1"
+          ]
+        },
+        {
+          "query_id": "AD05",
+          "primary_group": "image_diagram",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 34.08,
+          "context_ids": [
+            "gpt4-report:p009:text:1",
+            "gpt4-report:p079:text:1"
+          ]
+        },
+        {
+          "query_id": "AD06",
+          "primary_group": "image_diagram",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 28.08,
+          "context_ids": [
+            "gpt4-report:p036:text:1",
+            "gpt4-report:p026:text:4",
+            "gpt4-report:p019:text:3"
+          ]
+        },
+        {
+          "query_id": "AD07",
+          "primary_group": "image_diagram",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 24.74,
+          "context_ids": [
+            "gpt4-report:p038:text:1"
+          ]
+        },
+        {
+          "query_id": "AD08",
+          "primary_group": "chart",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 31.68,
+          "context_ids": [
+            "gpt4-report:p073:text:2"
+          ]
+        },
+        {
+          "query_id": "AD09",
+          "primary_group": "chart",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 29.08,
+          "context_ids": [
+            "gpt4-report:p004:text:1",
+            "gpt4-report:p071:text:2"
+          ]
+        },
+        {
+          "query_id": "AD10",
+          "primary_group": "chart",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 27.41,
+          "context_ids": [
+            "gpt4-report:p098:text:1",
+            "gpt4-report:p092:text:1"
+          ]
+        },
+        {
+          "query_id": "AD11",
+          "primary_group": "multi_hop",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": false,
+          "retrieval_ms": 32.23,
+          "context_ids": [
+            "gpt4-report:p004:text:1"
+          ]
+        },
+        {
+          "query_id": "AD12",
+          "primary_group": "multi_hop",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": false,
+          "retrieval_ms": 33.66,
+          "context_ids": [
+            "gpt4-report:p007:text:2",
+            "gpt4-report:p064:text:2"
+          ]
+        },
+        {
+          "query_id": "AD13",
+          "primary_group": "text",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 23.3,
+          "context_ids": [
+            "gpt4-report:p010:text:2"
+          ]
+        },
+        {
+          "query_id": "AD14",
+          "primary_group": "text",
+          "hit_at_1": false,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": false,
+          "retrieval_ms": 29.41,
+          "context_ids": [
+            "gpt4-report:p028:text:2"
+          ]
+        },
+        {
+          "query_id": "AD15",
+          "primary_group": "text",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 25.28,
+          "context_ids": [
+            "gpt4-report:p042:text:1",
+            "gpt4-report:p041:text:1"
+          ]
+        }
+      ]
+    },
+    "multimodal-dense": {
+      "mode": "multimodal-dense",
+      "top_k": 4,
+      "context_budget_chars": 2800,
+      "answerable_total": 15,
+      "hit_at_1": {
+        "n": 10,
+        "N": 15,
+        "rate": 0.6666666666666666
+      },
+      "evidence_hit_at_3": {
+        "n": 10,
+        "N": 15,
+        "rate": 0.6666666666666666
+      },
+      "context_evidence_rate": {
+        "n": 9,
+        "N": 15,
+        "rate": 0.6
+      },
+      "median_retrieval_ms": 27.81,
+      "traces": [
+        {
+          "query_id": "AD01",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 9684.84,
+          "context_ids": [
+            "gpt4-report:p005:table:table-1",
+            "gpt4-report:p030:table:table-9"
+          ]
+        },
+        {
+          "query_id": "AD02",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 25.07,
+          "context_ids": [
+            "gpt4-report:p007:table:table-2",
+            "gpt4-report:p001:text:abstract-scaling"
+          ]
+        },
+        {
+          "query_id": "AD03",
+          "primary_group": "table",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 26.08,
+          "context_ids": [
+            "gpt4-report:p001:text:abstract-scaling",
+            "gpt4-report:p098:chart:system-card-figure-11-im13",
+            "gpt4-report:p011:chart:figure-7"
+          ]
+        },
+        {
+          "query_id": "AD04",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 27.81,
+          "context_ids": [
+            "gpt4-report:p032:table:table-11",
+            "gpt4-report:p001:text:abstract-scaling",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k"
+          ]
+        },
+        {
+          "query_id": "AD05",
+          "primary_group": "image_diagram",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 27.87,
+          "context_ids": [
+            "gpt4-report:p009:image_diagram:table-3-im6",
+            "gpt4-report:p039:image_diagram:table-19-im19"
+          ]
+        },
+        {
+          "query_id": "AD06",
+          "primary_group": "image_diagram",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 23.4,
+          "context_ids": [
+            "gpt4-report:p036:image_diagram:table-16-im14",
+            "gpt4-report:p039:image_diagram:table-19-im19"
+          ]
+        },
+        {
+          "query_id": "AD07",
+          "primary_group": "image_diagram",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 25.09,
+          "context_ids": [
+            "gpt4-report:p039:image_diagram:table-19-im19",
+            "gpt4-report:p080:text:rbrm-full-instructions"
+          ]
+        },
+        {
+          "query_id": "AD08",
+          "primary_group": "chart",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 27.01,
+          "context_ids": [
+            "gpt4-report:p003:chart:figure-1",
+            "gpt4-report:p098:chart:system-card-figure-11-im13"
+          ]
+        },
+        {
+          "query_id": "AD09",
+          "primary_group": "chart",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 27.99,
+          "context_ids": [
+            "gpt4-report:p098:chart:system-card-figure-11-im13",
+            "gpt4-report:p003:chart:figure-1"
+          ]
+        },
+        {
+          "query_id": "AD10",
+          "primary_group": "chart",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 29.49,
+          "context_ids": [
+            "gpt4-report:p098:chart:system-card-figure-11-im13",
+            "gpt4-report:p003:chart:figure-1"
+          ]
+        },
+        {
+          "query_id": "AD11",
+          "primary_group": "multi_hop",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 35.7,
+          "context_ids": [
+            "gpt4-report:p004:text:humaneval-buckets",
+            "gpt4-report:p001:text:abstract-scaling",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k"
+          ]
+        },
+        {
+          "query_id": "AD12",
+          "primary_group": "multi_hop",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": false,
+          "retrieval_ms": 36.01,
+          "context_ids": [
+            "gpt4-report:p012:text:red-teaming-experts",
+            "gpt4-report:p064:text:hallucinations-and-if"
+          ]
+        },
+        {
+          "query_id": "AD13",
+          "primary_group": "text",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 23.06,
+          "context_ids": [
+            "gpt4-report:p010:text:cutoff-sept-2021",
+            "gpt4-report:p042:text:system-card-intro",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k"
+          ]
+        },
+        {
+          "query_id": "AD14",
+          "primary_group": "text",
+          "hit_at_1": false,
+          "evidence_hit_at_3": false,
+          "context_evidence_complete": false,
+          "retrieval_ms": 31.07,
+          "context_ids": [
+            "gpt4-report:p028:text:2",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k",
+            "gpt4-report:p012:text:red-teaming-experts"
+          ]
+        },
+        {
+          "query_id": "AD15",
+          "primary_group": "text",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 25.86,
+          "context_ids": [
+            "gpt4-report:p042:text:system-card-intro",
+            "gpt4-report:p012:text:red-teaming-experts",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k"
+          ]
+        }
+      ]
+    },
+    "multimodal-hybrid": {
+      "mode": "multimodal-hybrid",
+      "top_k": 5,
+      "context_budget_chars": 6000,
+      "answerable_total": 15,
+      "hit_at_1": {
+        "n": 14,
+        "N": 15,
+        "rate": 0.9333333333333333
+      },
+      "evidence_hit_at_3": {
+        "n": 15,
+        "N": 15,
+        "rate": 1.0
+      },
+      "context_evidence_rate": {
+        "n": 15,
+        "N": 15,
+        "rate": 1.0
+      },
+      "median_retrieval_ms": 35.84,
+      "traces": [
+        {
+          "query_id": "AD01",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 9925.57,
+          "context_ids": [
+            "gpt4-report:p005:table:table-1",
+            "gpt4-report:p005:text:2"
+          ]
+        },
+        {
+          "query_id": "AD02",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 35.84,
+          "context_ids": [
+            "gpt4-report:p007:table:table-2",
+            "gpt4-report:p007:text:1",
+            "gpt4-report:p003:chart:figure-1"
+          ]
+        },
+        {
+          "query_id": "AD03",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 32.31,
+          "context_ids": [
+            "gpt4-report:p028:table:table-8",
+            "gpt4-report:p028:text:1",
+            "gpt4-report:p028:text:2"
+          ]
+        },
+        {
+          "query_id": "AD04",
+          "primary_group": "table",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 40.33,
+          "context_ids": [
+            "gpt4-report:p032:table:table-11",
+            "gpt4-report:p032:text:1",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k",
+            "gpt4-report:p001:text:abstract-scaling"
+          ]
+        },
+        {
+          "query_id": "AD05",
+          "primary_group": "image_diagram",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 44.62,
+          "context_ids": [
+            "gpt4-report:p009:image_diagram:table-3-im6",
+            "gpt4-report:p009:text:1",
+            "gpt4-report:p039:image_diagram:table-19-im19",
+            "gpt4-report:p036:image_diagram:table-16-im14",
+            "gpt4-report:p035:image_diagram:table-15-im13"
+          ]
+        },
+        {
+          "query_id": "AD06",
+          "primary_group": "image_diagram",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 35.05,
+          "context_ids": [
+            "gpt4-report:p036:image_diagram:table-16-im14",
+            "gpt4-report:p036:text:1",
+            "gpt4-report:p039:image_diagram:table-19-im19",
+            "gpt4-report:p035:image_diagram:table-15-im13",
+            "gpt4-report:p080:text:rbrm-full-instructions"
+          ]
+        },
+        {
+          "query_id": "AD07",
+          "primary_group": "image_diagram",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 33.69,
+          "context_ids": [
+            "gpt4-report:p038:image_diagram:table-18-im18",
+            "gpt4-report:p038:text:1",
+            "gpt4-report:p039:image_diagram:table-19-im19",
+            "gpt4-report:p025:text:appendix-a4-images",
+            "gpt4-report:p036:image_diagram:table-16-im14"
+          ]
+        },
+        {
+          "query_id": "AD08",
+          "primary_group": "chart",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 36.5,
+          "context_ids": [
+            "gpt4-report:p003:chart:figure-1",
+            "gpt4-report:p003:chart:figure-2",
+            "gpt4-report:p003:text:1",
+            "gpt4-report:p039:image_diagram:table-19-im19",
+            "gpt4-report:p098:chart:system-card-figure-11-im13"
+          ]
+        },
+        {
+          "query_id": "AD09",
+          "primary_group": "chart",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 33.67,
+          "context_ids": [
+            "gpt4-report:p004:chart:figure-3",
+            "gpt4-report:p004:text:humaneval-buckets",
+            "gpt4-report:p004:text:1",
+            "gpt4-report:p003:chart:figure-1",
+            "gpt4-report:p039:image_diagram:table-19-im19"
+          ]
+        },
+        {
+          "query_id": "AD10",
+          "primary_group": "chart",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 33.02,
+          "context_ids": [
+            "gpt4-report:p010:chart:figure-6",
+            "gpt4-report:p010:text:1",
+            "gpt4-report:p010:text:cutoff-sept-2021",
+            "gpt4-report:p063:image_diagram:system-card-figure-6"
+          ]
+        },
+        {
+          "query_id": "AD11",
+          "primary_group": "multi_hop",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 129.03,
+          "context_ids": [
+            "gpt4-report:p001:text:abstract-scaling",
+            "gpt4-report:p004:text:humaneval-buckets",
+            "gpt4-report:p001:text:2",
+            "gpt4-report:p004:text:1"
+          ]
+        },
+        {
+          "query_id": "AD12",
+          "primary_group": "multi_hop",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 126.16,
+          "context_ids": [
+            "gpt4-report:p007:text:2",
+            "gpt4-report:p012:text:red-teaming-experts",
+            "gpt4-report:p007:table:table-2"
+          ]
+        },
+        {
+          "query_id": "AD13",
+          "primary_group": "text",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 30.5,
+          "context_ids": [
+            "gpt4-report:p010:text:cutoff-sept-2021",
+            "gpt4-report:p010:text:2",
+            "gpt4-report:p010:text:1",
+            "gpt4-report:p042:text:system-card-intro",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k"
+          ]
+        },
+        {
+          "query_id": "AD14",
+          "primary_group": "text",
+          "hit_at_1": false,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 136.84,
+          "context_ids": [
+            "gpt4-report:p028:text:2",
+            "gpt4-report:p029:text:1",
+            "gpt4-report:p028:text:1"
+          ]
+        },
+        {
+          "query_id": "AD15",
+          "primary_group": "text",
+          "hit_at_1": true,
+          "evidence_hit_at_3": true,
+          "context_evidence_complete": true,
+          "retrieval_ms": 31.91,
+          "context_ids": [
+            "gpt4-report:p042:text:system-card-intro",
+            "gpt4-report:p042:text:1",
+            "gpt4-report:p042:text:2",
+            "gpt4-report:p006:text:footnotes-bigbench-gsm8k"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -82,4 +82,60 @@ Chuẩn bị môi trường Python và PostgreSQL ở repo Day 6. Nạp lại c�
 
 ## Thử thách nâng cao
 
-Chưa thực hiện. Báo cáo này trình bày phần cơ bản trên 38 trang đã index từ Day 6. [Yêu cầu thử thách nâng cao](../../ADVANCED.md)
+### 1. Tài liệu, phạm vi index và xử lý đa phương thức
+
+- **Tài liệu và nguồn gốc:** *GPT-4 Technical Report* (kèm Phụ lục G: *GPT-4 System Card*), OpenAI, phiên bản `arXiv:2303.08774v6` (cập nhật 04/03/2024), gồm đúng **100 trang PDF vật lý** (trang 1–40 là báo cáo chính và Phụ lục A–F; trang 41–100 là *GPT-4 System Card*). Tài liệu phân phối công khai theo giấy phép không độc quyền vĩnh viễn của arXiv.org. Script tự động tải bản gốc và đối chiếu mã băm SHA-256. [Bản gốc trên arXiv](https://arxiv.org/pdf/2303.08774v6.pdf) · [Manifest và thống kê index](../../data/advanced/index_manifest.json) · [Bộ chunks đa phương thức](../../data/advanced/multimodal_chunks.json)
+- **Thống kê index toàn bộ 100 trang:** Toàn bộ 100/100 trang được xử lý thành **221 chunks** và nhúng bằng `intfloat/multilingual-e5-small` (384 chiều, chuẩn hóa L2, thời gian tạo index và nhúng toàn bộ 100 trang là 56,8 giây):
+  - **Text (`194` chunks):** Chia theo đoạn có chồng lấn (`max_chars = 2.400`, `overlap = 200`), giữ liên kết `page` (`1..100`) và tọa độ vùng `bbox` (`[x0, y0, x1, y1]` trên khung trang chuẩn `612 × 792 pt`) trích xuất qua `visitor_text` của `pypdf`.
+  - **Bảng (`7` vùng bảng lớn):** Chuẩn hóa cấu trúc hàng, cột, đơn vị đo (`%`, `/ 400`, `/ 800`, `/ 170`, `F1 score`, `#questions`) và chú thích cho các bảng khảo sát kỳ thi và nhiễm dữ liệu (`Table 1`, `Table 2`, `Table 4`, `Table 8`, `Table 9`, `Table 10`, `Table 11`).
+  - **Ảnh và sơ đồ (`9` vùng trực quan):** Trích xuất trực tiếp các đối tượng ảnh XObject ra thư mục [data/advanced/crops/](../../data/advanced/crops/) kèm kích thước pixel, tọa độ `bbox` và nội dung OCR/mô tả cấu trúc hóa đã đối chiếu với ảnh gốc (gồm bộ chuyển đổi VGA–Lightning `ELECOM P-APLTDCN` ở `Table 3 / Im6.jpg` trang 9, sơ đồ vật lý bolomètre `Table 15 / Im13.jpg` trang 35, ảnh ủi đồ trên xe taxi `Table 16 / Im14.jpg` trang 36, trang đầu và sơ đồ 3 bước SFT–RM–PPO của bài báo InstructGPT ở `Table 17 / Im15.jpg, Im17.jpg` trang 37, meme bản đồ gà rán `Table 18 / Im18.png` trang 38, tranh biếm họa Statistical Learning vs. Neural Networks `Table 19 / Im19.jpg` trang 39, sơ đồ ReAct 6 công cụ hóa học `System Card Figure 5` trang 57 và sơ đồ phân loại từ chối RBRM `System Card Figure 6` trang 63).
+  - **Biểu đồ (`11` vùng biểu đồ vector và bitmap):** Lưu trục X/Y, đơn vị, chú giải (legend), xu hướng và các giá trị số xác thực từ đồ thị (gồm đường cong scaling `Figure 1` & `Figure 2` trang 3, đường cong inverse scaling `Figure 3` trang 4, biểu đồ phân vị kỳ thi `Figure 4` trang 6, biểu đồ MMLU 26 ngôn ngữ `Figure 5` trang 8, biểu đồ thực tế nội bộ 9 danh mục `Figure 6` trang 10, biểu đồ TruthfulQA `Figure 7` trang 11, đồ thị hiệu chuẩn ECE `Figure 8` trang 12, biểu đồ tiêu thụ thịt FAO 1997 `Table 14 / Im12.png` trang 34, biểu đồ win-rate theo kích thước mô hình `Table 17 / Im16.jpg` trang 37 và ma trận nhiệt Instruction Following `System Card Figure 11 / Im13.png` trang 98).
+- **Những trang/phần đặc biệt hoặc hạn chế xử lý và ảnh hưởng:**
+  1. *Trang 41–100 (60 trang System Card):* Chứa chữ xoay dọc ở lề khiến chế độ `extraction_mode="layout"` của `pypdf` báo `Rotated text discovered` và trả về `0` ký tự. Pipeline tự động phát hiện trang có `< 50` ký tự ở chế độ `layout` để chuyển sang `plain` (`page.extract_text()`), khôi phục đầy đủ văn bản của cả 60 trang.
+  2. *Trang 79:* Chỉ là trang bìa ngăn cách phụ lục (`"Appendix 79"`, 11 ký tự, không có bảng hay hình), vẫn được lưu thành 1 chunk tối thiểu để bảo toàn liên kết đủ 100 trang.
+  3. *Các biểu đồ vector không in nhãn số trên từng cột lẻ (`Figure 1, 2, 3, 4, 6, 7, 9`):* Các cột/đường được vẽ bằng vector path trong PDF mà không gắn text số cho từng cột trung gian (khác với `Figure 5` trang 8, `Figure 8` trang 12 có nhãn số trong luồng text, hoặc `Im12.png` trang 34 và `Im13.png` trang 98 là ảnh bitmap độ phân giải cao). Pipeline chỉ lưu trục, đơn vị, chú giải, thứ tự xu hướng và số liệu tổng hợp có căn cứ, không suy đoán chiều cao cột.
+
+### 2. Thiết kế benchmark và lựa chọn cấu hình trên Dev
+
+- **Phân chia bộ câu hỏi:** Chia độc lập trước khi chạy thực nghiệm, không trùng câu hỏi hay đáp án giữa dev và test. Mỗi câu chỉ tính vào **1 nhóm chính** (`primary_group`) và gắn kèm tọa độ vùng bằng chứng (`page`, `region_id`, `modality`, `bbox`, `crop_path`), đơn vị, điều kiện và phép tính:
+  - **Dev ([advanced_benchmark_dev.json](../../data/advanced_benchmark_dev.json)):** **18 câu** gồm **15 câu có đáp án** (`4` Bảng, `3` Ảnh/sơ đồ, `3` Biểu đồ, `2` Multi-hop, `3` Text) và **3 câu thiếu bằng chứng**.
+  - **Test ([advanced_benchmark_test.json](../../data/advanced_benchmark_test.json)):** **30 câu** gồm **24 câu có đáp án** (`6` Bảng, `5` Ảnh/sơ đồ, `5` Biểu đồ, `4` Multi-hop, `4` Text) và **6 câu thiếu bằng chứng**.
+- **So sánh các cấu hình trên tập Dev (18 câu):**
+
+| Cấu hình trên Dev | Phương pháp retrieval & context | Hit@1 (15 câu) | Evidence Hit@3 (15 câu) | Context đủ evidence (15 câu) | Tỷ lệ đạt Agent trên Dev (18 câu) | Thời gian trung vị |
+|---|---|---:|---:|---:|---:|---:|
+| Baseline (`baseline-text-dense`) | Chỉ tìm trên text chunks bằng Dense E5, `top_k = 3`, ngân sách `1.600` ký tự | 4/15 (26,7%) | 5/15 (33,3%) | 2/15 (13,3%) | 4/18 (22,2%) | 1,94 giây/câu |
+| Cải thiện 1 (`multimodal-dense`) | Index đa phương thức (text + bảng + biểu đồ + ảnh/sơ đồ), Dense E5, `top_k = 4`, ngân sách `2.800` ký tự | 10/15 (66,7%) | 14/15 (93,3%) | 9/15 (60,0%) | — (đo tầng retrieval) | 25,5 ms truy xuất |
+| Cấu hình chốt (`multimodal-hybrid`) | Hybrid RRF (Dense E5 + TF-IDF) + mở rộng thuật ngữ Việt–Anh + điều hướng vùng/trang + tách truy vấn multi-hop, `top_k = 5`, ngân sách `6.000–8.000` ký tự | 14/15 (93,3%) | 15/15 (100%) | 15/15 (100%) | **18/18 (100%)** | 4,48 giây/câu |
+
+- **Phân tích lỗi trên Dev và cải tiến trước khi chốt:**
+  1. *Lỗi cắt cụt JSON ở 256 token (`AD07`, `AD13`, `AD18`):* Ở lần chạy thử đầu tiên trên Dev, giới hạn `num_predict = 256` làm câu trả lời tiếng Việt bị ngắt giữa chuỗi JSON (`Unterminated string`) hoặc lỗi ký tự thoát LaTeX (`\lambda`). Tăng `num_predict = 384` kèm `repeat_penalty = 1.15` và bộ sửa lỗi thoát chuỗi giúp loại bỏ hoàn toàn lỗi JSON (`0` lỗi).
+  2. *Lỗi nhầm từ khóa `"mô hình"` với `"Hình"` ở câu multi-hop `AD12`:* Biểu thức kiểm tra chuỗi con `"hình" in query` ban đầu khớp nhầm từ `"mô hình"`, đẩy biểu đồ `Figure 8` (trang 12) lên trên đoạn văn bản nêu `"over 50 experts"` ở Mục 6 trang 12. Đổi sang khớp ranh giới từ `\b(?:biểu đồ|sơ đồ|tranh|ảnh|hình\s+\d+)\b` và trộn vòng tròn (round-robin) kết quả giữa các bước tìm kiếm multi-hop giúp Context Evidence Rate trên Dev đạt **15/15 (100%)**.
+  3. *Lỗi khớp tiền tố tên bảng (`Table 1` vs. `Table 11` ở `AD01`):* Kiểm tra chuỗi con `"table 1" in region_id` khớp nhầm sang `Table 11` (trang 32). Bổ sung ranh giới từ `\bTable 1\b` và giới hạn theo trang được nêu trong câu hỏi giúp citation chính xác tuyệt đối.
+- [Kết quả so sánh retrieval Dev](../results/advanced_retrieval_dev.json) · [Trace Dev baseline](../results/advanced_dev_baseline.json) · [Tổng hợp Dev baseline](../results/advanced_dev_baseline_summary.json) · [Trace Dev cấu hình chốt](../results/advanced_dev_selected.json) · [Nhãn Dev cấu hình chốt](../results/advanced_dev_selected_reviews.json) · [Tổng hợp Dev cấu hình chốt](../results/advanced_dev_selected_summary.json)
+
+### 3. Kết quả đánh giá độc lập trên tập Test (30 câu)
+
+Chạy pipeline `multimodal-hybrid` đã chốt với model `llama3.2:latest` (Ollama local) trên toàn bộ **30 câu hỏi tập Test**:
+
+| Nhóm test | Đạt / tổng | Tỷ lệ | Lỗi / nhận xét |
+|---|---:|---:|---|
+| Bảng | 5/6 | 83,33% | Đạt `AT01`, `AT03`, `AT04`, `AT05`, `AT06`. Không đạt `AT02` (model tính đúng tổng 55/166 của GPT-4 trên Leetcode nhưng cộng lệch tổng phụ của GPT-4 no-vision thành 52/166 và thiếu tỷ số `55 / 20 = 2,75` lần). |
+| Ảnh, sơ đồ | 5/5 | 100,00% | Đạt cả 5 câu (`AT07` sơ đồ bolomètre Pháp trang 35, `AT08` mã arXiv & email trong ảnh bài báo InstructGPT trang 37, `AT09` sơ đồ 3 bước SFT–RM–PPO trang 37, `AT10` tranh biếm họa VC-Dimension vs. `LAYERS` trang 39, `AT11` sơ đồ 6 công cụ & thuốc `Dasatinib`/`AZD0530` trang 57). |
+| Biểu đồ | 5/5 | 100,00% | Đạt cả 5 câu (`AT12` biểu đồ MMLU 26 ngôn ngữ trang 8, `AT13` đồ thị hiệu chuẩn ECE `0,007` vs. `0,074` trang 12, `AT14` biểu đồ thịt FAO 1997 `175,09 g - 165 g = 10,09 g` trang 34, `AT15` biểu đồ win-rate InstructGPT trang 37, `AT16` ma trận nhiệt IF `Figure 11` trang 98). |
+| Multi-hop | 3/4 | 75,00% | Đạt `AT18` (trang 6–7 & 32), `AT19` (trang 63 & 80), `AT20` (trang 64 & 98). Không đạt `AT17` (câu 3-hop qua 3 bảng ở trang 5, 30, 31: agent dẫn được `Table 1` trang 5 và `Table 9` trang 30 nhưng thiếu `Table 10` trang 31). |
+| Text | 4/4 | 100,00% | Đạt cả 4 câu (`AT21` lý do loại BIG-bench trang 6, `AT22` thẻ `IMAGE:` và 6 kỳ thi không có ảnh trang 25, `AT23` giải thích lỗ hổng vs. xây dựng exploit trang 54, `AT24` phân loại sinh vật hư cấu có trí khôn `sapient` trang 67). |
+| Thiếu bằng chứng | 6/6 | 100,00% | Từ chối đúng cả 6 câu (`AT25` bảng giá API 8K/32K, `AT26` kiến trúc ViT/CLIP & độ phân giải ảnh, `AT27` điểm thi USMLE Step 1/2/3, `AT28` điểm MMLU tiếng Việt trong Hình 5, `AT29` tiêu thụ thịt của Pháp & Đức trong Bảng 14, `AT30` tỷ lệ thắng trước Claude-1 & PaLM-2 trong Hình 11). |
+| **Toàn bộ** | **28/30** | **93,33%** | **Vượt ngưỡng 90% (27/30) của thử thách nâng cao; 0 lỗi hệ thống.** |
+
+- **Thời gian, chi phí và tài nguyên trên tập Test (30 câu):**
+  - Số lỗi hệ thống / timeout: **0/30**.
+  - Thời gian chạy toàn luồng: trung vị **4,88 giây/câu**, tổng cộng **206,86 giây** cho 30 câu.
+  - Lượng token tiêu thụ qua Ollama (`llama3.2:latest`): **42.248** prompt tokens, **5.431** output tokens, tổng cộng **47.679** tokens. Chi phí API: **0 USD**.
+- **Đường dẫn bằng chứng và kiểm chứng:**
+  - [Trace đầy đủ 30 câu Test](../results/advanced_test_selected.json)
+  - [Nhãn chấm từng câu và đối chiếu bản gốc](../results/advanced_test_selected_reviews.json)
+  - [Tổng hợp kết quả Test theo nhóm](../results/advanced_test_selected_summary.json)
+- **Giới hạn và cách tái lập:**
+  - Đối với các câu hỏi multi-hop từ 3 bảng trở lên trên 3 trang khác nhau (`AT17`), giới hạn chọn tối đa 3 nguồn ưu tiên khiến chunk văn bản cùng trang (`Page 30 Text 1`) có thể chiếm chỗ của bảng thứ ba (`Table 10` trang 31). Ngoài ra, model 3B local (`llama3.2:latest`) đôi khi cộng nhầm các phân số khi bảng có nhiều hàng cùng định dạng phân số (`AT02`).
+  - Lệnh tái lập toàn bộ quá trình xây dựng index 100 trang, chạy so sánh retrieval, chạy agent và chấm điểm được trình bày tại [src/README.md](../../src/README.md#thử-thách-nâng-cao-100-trang-đa-phương-thức).

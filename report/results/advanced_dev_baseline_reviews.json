@@ -1,0 +1,158 @@
+[
+  {
+    "query_id": "AD01",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Text chunk ở trang 5 tình cờ chứa dòng đầu của Bảng 1 nên nêu được 298/400 (~90th), 213/400 (~10th) và chênh lệch 85 điểm.",
+    "original_pdf_verification": "Đối chiếu trang 5, Table 1."
+  },
+  {
+    "query_id": "AD02",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm vì text-only dense với ngân sách 1.600 ký tự chỉ giữ phần tiêu đề cột của Bảng 2 và cắt mất dòng MMLU.",
+    "original_pdf_verification": "Đối chiếu trang 7, Table 2."
+  },
+  {
+    "query_id": "AD03",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm vì truy xuất sai sang trang 25 thay vì Bảng 8 trang 28.",
+    "original_pdf_verification": "Đối chiếu trang 28, Table 8."
+  },
+  {
+    "query_id": "AD04",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Đọc lệch cột trong văn bản thô chưa cấu trúc hóa của Bảng 11: trả lời tỷ lệ nhiễm là 67.0% thay vì 25%.",
+    "original_pdf_verification": "Đối chiếu trang 32, Table 11."
+  },
+  {
+    "query_id": "AD05",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Thiếu thương hiệu ELECOM và mã dòng P-APLTDCN series vì thông tin này chỉ nằm trong ảnh bitmap Im6.jpg trang 9.",
+    "original_pdf_verification": "Đối chiếu ảnh Im6.jpg trang 9."
+  },
+  {
+    "query_id": "AD06",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm vì không có mô tả trực quan của ảnh Im14.jpg trang 36 và model không khớp được từ khóa tiếng Việt với đoạn tiếng Anh ngắn.",
+    "original_pdf_verification": "Đối chiếu ảnh Im14.jpg trang 36."
+  },
+  {
+    "query_id": "AD07",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Bịa nội dung dòng chữ trên ảnh ('out of this world!') vì văn bản trang 38 không trích xuất được dòng chữ nằm trong ảnh bitmap Im18.png.",
+    "original_pdf_verification": "Đối chiếu ảnh Im18.png trang 38."
+  },
+  {
+    "query_id": "AD08",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Truy xuất sai sang trang 73 và trả lời sai trục/đơn vị của Figure 1 trang 3.",
+    "original_pdf_verification": "Đối chiếu Figure 1 trang 3."
+  },
+  {
+    "query_id": "AD09",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm vì văn bản thô không mô tả xu hướng đường cong của các mô hình trên Figure 3 trang 4.",
+    "original_pdf_verification": "Đối chiếu Figure 3 trang 4."
+  },
+  {
+    "query_id": "AD10",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Truy xuất sai sang trang 98 và trả lời sai là có 3 danh mục thay vì 9 danh mục trên Figure 6 trang 10.",
+    "original_pdf_verification": "Đối chiếu Figure 6 trang 10."
+  },
+  {
+    "query_id": "AD11",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Chỉ tìm được trang 4, thiếu trang 1 (Abstract) nên trả lời sai tỷ lệ compute là 15 phần thay vì 1/1,000th.",
+    "original_pdf_verification": "Đối chiếu trang 1 và trang 4."
+  },
+  {
+    "query_id": "AD12",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Chỉ tìm được trang 7 và trang 64, thiếu trang 12 (hơn 50 chuyên gia red-teaming).",
+    "original_pdf_verification": "Đối chiếu trang 7 và trang 12."
+  },
+  {
+    "query_id": "AD13",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm do không khớp được cụm 'kết thúc' với 'cuts off in September 2021' trong đoạn văn tiếng Anh dài.",
+    "original_pdf_verification": "Đối chiếu trang 10."
+  },
+  {
+    "query_id": "AD14",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm vì câu mô tả thuật toán cắt qua ranh giới cuối trang 28 sang đầu trang 29 nhưng ngân sách 1.600 ký tự chỉ giữ được 1 chunk.",
+    "original_pdf_verification": "Đối chiếu trang 28-29."
+  },
+  {
+    "query_id": "AD15",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Từ chối nhầm trên đoạn tiếng Anh trang 42.",
+    "original_pdf_verification": "Đối chiếu trang 42."
+  },
+  {
+    "query_id": "AD16",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Từ chối đúng câu hỏi thiếu bằng chứng về số tỷ tham số và số tầng.",
+    "original_pdf_verification": "Đối chiếu trang 2."
+  },
+  {
+    "query_id": "AD17",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Từ chối đúng câu hỏi thiếu bằng chứng về số lượng GPU A100 và chi phí USD.",
+    "original_pdf_verification": "Đối chiếu trang 2."
+  },
+  {
+    "query_id": "AD18",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Từ chối đúng câu hỏi thiếu bằng chứng về điểm IELTS và TOEFL.",
+    "original_pdf_verification": "Đối chiếu trang 5."
+  }
+]

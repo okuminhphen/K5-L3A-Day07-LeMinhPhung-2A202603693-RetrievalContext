@@ -1,9 +1,52 @@
 [
-  {"query_id":"T01","context_grade":0,"context_reason":"Có dấu >>> trong ví dụ nhưng không có đoạn giải thích trình thông dịch sẵn sàng nhận mã.","reason":"Lỗi phân tích JSON từ model sau lượt tìm. Ghi lỗi riêng và chỉ chấm context đã tìm được."},
-  {"query_id":"T02","answer_grade":2,"citation_support":[true],"context_grade":2,"context_reason":"Trang 34 nêu quy tắc ưu tiên và tính đúng biểu thức 6 + 4 / 2.","reason":"Câu hỏi yêu cầu giá trị của biểu thức. Trả đúng 8 và dẫn đoạn nêu trực tiếp kết quả."},
-  {"query_id":"T03","answer_grade":0,"citation_support":[],"context_grade":2,"context_reason":"Trang 44 giải thích biến cục bộ chỉ tồn tại trong hàm.","reason":"Model trả lời local và gửi ID kèm tên file, số trang. Ứng dụng từ chối."},
-  {"query_id":"T04","answer_grade":0,"citation_support":[],"context_grade":2,"context_reason":"Trang 66 có cả n = 0 và việc không gọi đệ quy tiếp.","reason":"Model chủ động từ chối dù context có đủ bằng chứng."},
-  {"query_id":"T05","answer_grade":0,"citation_support":[false,false],"context_grade":1,"context_reason":"Trang 35 bắt đầu định nghĩa lỗi ngữ nghĩa nhưng bị cắt trước dấu hiệu. Đoạn trang 68 là ví dụ lỗi runtime.","reason":"Trả lời lỗi runtime thay vì lỗi ngữ nghĩa. Cả hai citation nói về runtime và không hỗ trợ phân loại tình huống đã hỏi."},
-  {"query_id":"T06","abstention_correct":true,"citation_support":[],"reason":"Model chủ động từ chối. Context nói về đệ quy nhưng thiếu hướng dẫn lru_cache."},
-  {"query_id":"T07","abstention_correct":true,"citation_support":[],"reason":"Model chủ động từ chối. Context không có hướng dẫn dùng pip với requirements.txt."}
+  {
+    "query_id": "T01",
+    "context_grade": 0,
+    "context_reason": "Có dấu >>> trong ví dụ nhưng không có đoạn giải thích trình thông dịch sẵn sàng nhận mã.",
+    "reason": "Lỗi phân tích JSON từ model sau lượt tìm. Ghi lỗi riêng và chỉ chấm context đã tìm được."
+  },
+  {
+    "query_id": "T02",
+    "answer_grade": 2,
+    "citation_support": [true],
+    "context_grade": 2,
+    "context_reason": "Trang 34 nêu quy tắc ưu tiên và tính đúng biểu thức 6 + 4 / 2.",
+    "reason": "Câu hỏi yêu cầu giá trị của biểu thức. Trả đúng 8 và dẫn đoạn nêu trực tiếp kết quả."
+  },
+  {
+    "query_id": "T03",
+    "answer_grade": 0,
+    "citation_support": [],
+    "context_grade": 2,
+    "context_reason": "Trang 44 giải thích biến cục bộ chỉ tồn tại trong hàm.",
+    "reason": "Model trả lời local và gửi ID kèm tên file, số trang. Ứng dụng từ chối."
+  },
+  {
+    "query_id": "T04",
+    "answer_grade": 0,
+    "citation_support": [],
+    "context_grade": 2,
+    "context_reason": "Trang 66 có cả n = 0 và việc không gọi đệ quy tiếp.",
+    "reason": "Model chủ động từ chối dù context có đủ bằng chứng."
+  },
+  {
+    "query_id": "T05",
+    "answer_grade": 0,
+    "citation_support": [false, false],
+    "context_grade": 1,
+    "context_reason": "Trang 35 bắt đầu định nghĩa lỗi ngữ nghĩa nhưng bị cắt trước dấu hiệu. Đoạn trang 68 là ví dụ lỗi runtime.",
+    "reason": "Trả lời lỗi runtime thay vì lỗi ngữ nghĩa. Cả hai citation nói về runtime và không hỗ trợ phân loại tình huống đã hỏi."
+  },
+  {
+    "query_id": "T06",
+    "abstention_correct": true,
+    "citation_support": [],
+    "reason": "Model chủ động từ chối. Context nói về đệ quy nhưng thiếu hướng dẫn lru_cache."
+  },
+  {
+    "query_id": "T07",
+    "abstention_correct": true,
+    "citation_support": [],
+    "reason": "Model chủ động từ chối. Context không có hướng dẫn dùng pip với requirements.txt."
+  }
 ]

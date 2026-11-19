@@ -1,0 +1,834 @@
+[
+  {
+    "id": "AT01",
+    "split": "test",
+    "primary_group": "table",
+    "secondary_tags": ["vision_ablation", "computation"],
+    "question": "Theo Bảng 1 (trang 5), trong hai kỳ thi Graduate Record Examination (GRE) Quantitative và GRE Verbal, điểm số trên thang 170 và phân vị (percentile) của GPT-4 (có vision) so với GPT-4 (no vision) là bao nhiêu, và việc bổ sung khả năng thị giác (vision) giúp tăng bao nhiêu điểm ở mỗi kỳ thi?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 1 (trang 5), ở kỳ thi GRE Quantitative, GPT-4 (có vision) đạt 163 / 170 (~80th percentile) so với 157 / 170 (~62nd percentile) của GPT-4 (no vision), tức tăng thêm 6 điểm (163 - 157 = 6). Ở kỳ thi GRE Verbal, GPT-4 (có vision) đạt 169 / 170 (~99th percentile) so với 165 / 170 (~96th percentile) của GPT-4 (no vision), tức tăng thêm 4 điểm (169 - 165 = 4).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra hai hàng GRE Quantitative và GRE Verbal trong Bảng 1 (trang 5) ở hai cột GPT-4 và GPT-4 (no vision), kèm phép tính hiệu số điểm trên thang 170.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p005:table:table-1",
+        "source_id": "gpt4-technical-report",
+        "page": 5,
+        "region_id": "Table 1",
+        "modality": "table",
+        "bbox": [90.0, 105.0, 525.0, 680.0],
+        "crop_path": null,
+        "evidence": "Graduate Record Examination (GRE) Quantitative: GPT-4 = 163 / 170 (~80th) | GPT-4 (no vision) = 157 / 170 (~62nd); Graduate Record Examination (GRE) Verbal: GPT-4 = 169 / 170 (~99th) | GPT-4 (no vision) = 165 / 170 (~96th)",
+        "units": "điểm / 170 và phân vị (percentile)",
+        "conditions": "So sánh GPT-4 (có vision) và GPT-4 (no vision)",
+        "calculation": "GRE Quantitative: 163 - 157 = 6 điểm; GRE Verbal: 169 - 165 = 4 điểm"
+      }
+    ],
+    "required_pages": [5],
+    "required_tokens": ["163", "157", "80th", "62nd", "6", "169", "165", "99th", "96th", "4"]
+  },
+  {
+    "id": "AT02",
+    "split": "test",
+    "primary_group": "table",
+    "secondary_tags": ["aggregation", "computation"],
+    "question": "Theo Bảng 1 (trang 5), trên 3 mức độ của bộ bài tập lập trình Leetcode (easy, medium, hard), GPT-4 và GPT-3.5 giải đúng bao nhiêu bài trên tổng số bài ở từng mức, tổng số bài giải đúng trên cả 166 bài của mỗi mô hình là bao nhiêu, và tổng số bài giải đúng của GPT-4 gấp mấy lần GPT-3.5?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 1 (trang 5), trên Leetcode: ở mức easy, GPT-4 đạt 31 / 41 và GPT-3.5 đạt 12 / 41; ở mức medium, GPT-4 đạt 21 / 80 và GPT-3.5 đạt 8 / 80; ở mức hard, GPT-4 đạt 3 / 45 và GPT-3.5 đạt 0 / 45. Tổng cộng trên cả 166 bài (41 + 80 + 45), GPT-4 giải đúng 55 / 166 bài (31 + 21 + 3 = 55), còn GPT-3.5 giải đúng 20 / 166 bài (12 + 8 + 0 = 20). Như vậy tổng số bài giải đúng của GPT-4 gấp 2.75 lần GPT-3.5 (55 / 20 = 2.75, nhiều hơn 35 bài).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra 3 hàng cuối của Bảng 1 (trang 5): Leetcode (easy), Leetcode (medium), Leetcode (hard), cộng tổng theo cột GPT-4 và GPT-3.5 và tính tỷ số 55 / 20 = 2.75.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p005:table:table-1",
+        "source_id": "gpt4-technical-report",
+        "page": 5,
+        "region_id": "Table 1",
+        "modality": "table",
+        "bbox": [90.0, 105.0, 525.0, 680.0],
+        "crop_path": null,
+        "evidence": "Leetcode (easy): GPT-4 = 31 / 41, GPT-3.5 = 12 / 41; Leetcode (medium): GPT-4 = 21 / 80, GPT-3.5 = 8 / 80; Leetcode (hard): GPT-4 = 3 / 45, GPT-3.5 = 0 / 45",
+        "units": "số bài giải đúng / tổng số bài",
+        "conditions": "3 mức độ easy (41), medium (80), hard (45), tổng 166 bài",
+        "calculation": "GPT-4: 31 + 21 + 3 = 55/166; GPT-3.5: 12 + 8 + 0 = 20/166; Tỷ số: 55 / 20 = 2.75 lần"
+      }
+    ],
+    "required_pages": [5],
+    "required_tokens": ["31", "21", "3", "55", "12", "8", "20", "2.75"]
+  },
+  {
+    "id": "AT03",
+    "split": "test",
+    "primary_group": "table",
+    "secondary_tags": ["benchmark_comparison", "computation"],
+    "question": "Theo Bảng 2 (trang 7), trong 7 bộ benchmark học thuật được đánh giá, duy nhất bộ benchmark nào mà GPT-4 có điểm thấp hơn mô hình SOTA (có tinh chỉnh riêng cho benchmark), điểm số (kèm đơn vị đo) của GPT-4 và của mô hình SOTA đó (QDGAT) lần lượt là bao nhiêu, và chênh lệch là bao nhiêu điểm?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 2 (trang 7), bộ benchmark duy nhất mà GPT-4 có điểm thấp hơn mô hình SOTA (có tinh chỉnh riêng cho benchmark) là DROP (đánh giá 3-shot, đơn vị đo là F1 score). Trên DROP, GPT-4 đạt 80.9 (F1 score), thấp hơn mức 88.4 của mô hình SOTA QDGAT là 7.5 điểm F1 (88.4 - 80.9 = 7.5).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "So sánh cột GPT-4 và cột SOTA trên cả 7 hàng của Bảng 2 (trang 7), xác định hàng DROP (F1 score) và tính hiệu 88.4 - 80.9 = 7.5.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p007:table:table-2",
+        "source_id": "gpt4-technical-report",
+        "page": 7,
+        "region_id": "Table 2",
+        "modality": "table",
+        "bbox": [85.0, 395.0, 525.0, 695.0],
+        "crop_path": null,
+        "evidence": "DROP (Reading comprehension & arithmetic, unit: F1 score): GPT-4 = 80.9 (3-shot) | GPT-3.5 = 64.1 (3-shot) | LM SOTA = 70.8 (1-shot PaLM) | SOTA = 88.4 (QDGAT)",
+        "units": "F1 score",
+        "conditions": "GPT-4 đánh giá 3-shot so với QDGAT (benchmark-specific tuning)",
+        "calculation": "88.4 - 80.9 = 7.5 (điểm F1)"
+      }
+    ],
+    "required_pages": [7],
+    "required_tokens": ["DROP", "F1", "80.9", "88.4", "QDGAT", "7.5"]
+  },
+  {
+    "id": "AT04",
+    "split": "test",
+    "primary_group": "table",
+    "secondary_tags": ["computation", "coding_math"],
+    "question": "Theo Bảng 2 (trang 7), trên hai bộ benchmark HumanEval (0-shot) và GSM-8K (5-shot chain-of-thought), độ chính xác (%) của GPT-4 và GPT-3.5 lần lượt là bao nhiêu, và mức cải thiện tuyệt đối (điểm phần trăm) của GPT-4 so với GPT-3.5 trên từng bộ là bao nhiêu?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 2 (trang 7), trên bộ HumanEval (0-shot), GPT-4 đạt 67.0% và GPT-3.5 đạt 48.1%, mức cải thiện là 18.9 điểm phần trăm (67.0% - 48.1% = 18.9%). Trên bộ GSM-8K (5-shot chain-of-thought), GPT-4 đạt 92.0% và GPT-3.5 (5-shot) đạt 57.1%, mức cải thiện là 34.9 điểm phần trăm (92.0% - 57.1% = 34.9%).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra hai hàng HumanEval và GSM-8K trong Bảng 2 (trang 7) ở cột GPT-4 và GPT-3.5, sau đó tính hiệu cho từng bộ.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p007:table:table-2",
+        "source_id": "gpt4-technical-report",
+        "page": 7,
+        "region_id": "Table 2",
+        "modality": "table",
+        "bbox": [85.0, 395.0, 525.0, 695.0],
+        "crop_path": null,
+        "evidence": "HumanEval: GPT-4 = 67.0% (0-shot) | GPT-3.5 = 48.1% (0-shot); GSM-8K: GPT-4 = 92.0%* (5-shot chain-of-thought) | GPT-3.5 = 57.1% (5-shot)",
+        "units": "% (điểm phần trăm)",
+        "conditions": "HumanEval (0-shot) và GSM-8K (5-shot CoT cho GPT-4, 5-shot cho GPT-3.5)",
+        "calculation": "HumanEval: 67.0 - 48.1 = 18.9 điểm phần trăm; GSM-8K: 92.0 - 57.1 = 34.9 điểm phần trăm"
+      }
+    ],
+    "required_pages": [7],
+    "required_tokens": ["67.0", "48.1", "18.9", "92.0", "57.1", "34.9"]
+  },
+  {
+    "id": "AT05",
+    "split": "test",
+    "primary_group": "table",
+    "secondary_tags": ["rlhf_ablation", "computation"],
+    "question": "Theo Bảng 8 (trang 28), khi so sánh Base model và RLHF model của GPT-4 trên phần thi trắc nghiệm GRE Quantitative và USNCO Local Section Exam 2022, điểm số (%) của từng mô hình là bao nhiêu và quá trình hậu huấn luyện RLHF giúp tăng bao nhiêu điểm phần trăm ở mỗi kỳ thi?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 8 (trang 28), ở kỳ thi GRE Quantitative, Base model đạt 57.5% và RLHF model đạt 67.5%, tức tăng 10.0 điểm phần trăm (67.5% - 57.5% = 10.0%). Ở kỳ thi USNCO Local Section Exam 2022, Base model đạt 51.7% và RLHF model đạt 63.3%, tức tăng 11.6 điểm phần trăm (63.3% - 51.7% = 11.6%).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra hai hàng GRE Quantitative và USNCO Local Section Exam 2022 trong Bảng 8 (trang 28) và tính mức tăng điểm phần trăm từ Base model sang RLHF model.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p028:table:table-8",
+        "source_id": "gpt4-technical-report",
+        "page": 28,
+        "region_id": "Table 8",
+        "modality": "table",
+        "bbox": [108.0, 140.0, 504.0, 560.0],
+        "crop_path": null,
+        "evidence": "Graduate Record Examination (GRE) Quantitative: Base = 57.5 % | RLHF = 67.5 %; USNCO Local Section Exam 2022: Base = 51.7 % | RLHF = 63.3 %",
+        "units": "% (điểm phần trăm)",
+        "conditions": "Phần câu hỏi trắc nghiệm (MCQ) giữa GPT-4 Base model và post-RLHF model",
+        "calculation": "GRE Quantitative: 67.5 - 57.5 = 10.0 điểm phần trăm; USNCO: 63.3 - 51.7 = 11.6 điểm phần trăm"
+      }
+    ],
+    "required_pages": [28],
+    "required_tokens": ["57.5", "67.5", "10.0", "51.7", "63.3", "11.6"]
+  },
+  {
+    "id": "AT06",
+    "split": "test",
+    "primary_group": "table",
+    "secondary_tags": ["contamination_details"],
+    "question": "Theo Bảng 10 (trang 31, Contamination data for Exams - Details), bài thi MKSAP Questions (MCQ) có tổng cộng bao nhiêu câu hỏi (#questions), tỷ lệ nhiễm dữ liệu (Contamination) là bao nhiêu phần trăm, và điểm của GPT-4 trên toàn bộ tập, trên phần không nhiễm (GPT-4 non-contaminated), trên phần nhiễm (GPT-4 contaminated only) cùng chỉ số Degradation lần lượt là bao nhiêu?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 10 (trang 31), bộ câu hỏi MKSAP Questions (MCQ) có tổng cộng 1080 câu hỏi (#questions = 1080), tỷ lệ nhiễm dữ liệu (Contamination) là 18.52%. Điểm của GPT-4 trên toàn bộ tập là 74.72%, trên phần không bị nhiễm (GPT-4 non-contaminated) là 75.11%, trên phần bị nhiễm (GPT-4 contaminated only) là 73.00%, và chỉ số Degradation là 0.52%.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra toàn bộ 6 cột dữ liệu của hàng 'MKSAP Questions (MCQ)' trong Bảng 10 (trang 31).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p031:table:table-10",
+        "source_id": "gpt4-technical-report",
+        "page": 31,
+        "region_id": "Table 10",
+        "modality": "table",
+        "bbox": [85.0, 110.0, 525.0, 705.0],
+        "crop_path": null,
+        "evidence": "MKSAP Questions (MCQ): #questions = 1080 | Contamination = 18.52% | GPT-4 = 74.72% | GPT-4 (non-contaminated) = 75.11% | GPT-4 (contaminated only) = 73.00% | Degradation = 0.52%",
+        "units": "câu hỏi (questions) và %",
+        "conditions": "MKSAP Questions (MCQ) trong Bảng 10 trang 31",
+        "calculation": null
+      }
+    ],
+    "required_pages": [31],
+    "required_tokens": ["1080", "18.52%", "74.72%", "75.11%", "73.00%", "0.52%"]
+  },
+  {
+    "id": "AT07",
+    "split": "test",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["physics_diagram", "formula_ocr"],
+    "question": "Trong sơ đồ vật lý 'Figure 1 - Schéma d'un bolomètre' thuộc đề thi École Polytechnique bằng tiếng Pháp ở Bảng 15 (trang 35, Im13.jpg), thanh dẫn nhiệt (barreau conducteur) nối bộ hấp thụ (absorbeur, có nhiệt dung C_th và điện trở R(T) ở nhiệt độ T) với bộ điều nhiệt (thermostat ở nhiệt độ cố định T_b) được đặc trưng bởi 3 ký hiệu thông số vật lý nào, và hệ số nhiệt điện trở alpha trong đề bài được định nghĩa bằng công thức nào?",
+    "answerable": true,
+    "expected_answer": "Trong sơ đồ 'Figure 1 - Schéma d'un bolomètre' ở Bảng 15 (trang 35, Im13.jpg), thanh dẫn nhiệt (barreau conducteur) nối bộ hấp thụ (absorbeur, nhận bức xạ tới công suất P_r và dòng phân cực I) với bộ điều nhiệt (thermostat ở nhiệt độ cố định T_b) được đặc trưng bởi 3 thông số vật lý là chiều dài L, tiết diện S và độ dẫn nhiệt lambda (ký hiệu: L, S, λ). Trong phần văn bản đề bài nằm trong hình Im13.jpg, hệ số nhiệt điện trở alpha được định nghĩa bằng công thức: alpha = (1 / R) * (dR / dT).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc trực tiếp sơ đồ 'Figure 1 - Schéma d'un bolomètre' và công thức định nghĩa hệ số alpha trong ảnh Im13.jpg (Bảng 15, trang 35) — những chi tiết chỉ xuất hiện trong ảnh chứ không nằm trong lời giải văn bản của GPT-4.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p035:image_diagram:table-15-im13",
+        "source_id": "gpt4-technical-report",
+        "page": 35,
+        "region_id": "Table 15 / Im13.jpg",
+        "modality": "image_diagram",
+        "bbox": [108.0, 350.0, 504.0, 695.0],
+        "crop_path": "data/advanced/crops/page_035_img_1_Im13.jpg",
+        "evidence": "Vertical rod connecting absorber to thermostat: 'barreau conducteur' characterized by three physical parameters: length L, cross-sectional area S, and thermal conductivity lambda ('L, S, \\lambda'). Temperature coefficient of resistance formula in image text: alpha = (1 / R) * (dR / dT).",
+        "units": null,
+        "conditions": "Sơ đồ Figure 1 - Schéma d'un bolomètre trong ảnh Im13.jpg ở Bảng 15 trang 35",
+        "calculation": null
+      }
+    ],
+    "required_pages": [35],
+    "required_tokens": ["L", "S", "lambda", "dR", "dT"]
+  },
+  {
+    "id": "AT08",
+    "split": "test",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["document_image_ocr"],
+    "question": "Trong hình chụp trang đầu của bài báo InstructGPT ('Training language models to follow instructions with human feedback') ở Bảng 17 (trang 37, Im15.jpg), mã định danh arXiv kèm ngày tháng in dọc theo lề trái của trang ảnh là gì, và địa chỉ email của tác giả liên hệ (Corresponding author) ở chú thích cuối trang ảnh là gì?",
+    "answerable": true,
+    "expected_answer": "Trong ảnh chụp trang 1 của bài báo InstructGPT ở Bảng 17 (trang 37, Im15.jpg), mã định danh arXiv in dọc lề trái là 'arXiv:2203.02155v1 [cs.CL] 4 Mar 2022', và địa chỉ email của tác giả liên hệ (Corresponding author) ở chú thích cuối trang ảnh là 'lowe@openai.com'.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc thông tin đóng dấu arXiv dọc lề trái và chú thích chân trang trong ảnh bitmap Im15.jpg ở Bảng 17 (trang 37).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p037:image_diagram:table-17-im15",
+        "source_id": "gpt4-technical-report",
+        "page": 37,
+        "region_id": "Table 17 / Im15.jpg",
+        "modality": "image_diagram",
+        "bbox": [85.0, 440.0, 220.0, 695.0],
+        "crop_path": "data/advanced/crops/page_037_img_1_Im15.jpg",
+        "evidence": "Vertical arXiv stamp along left margin: 'arXiv:2203.02155v1 [cs.CL] 4 Mar 2022'. Footnote at bottom of page 1 image: 'Corresponding author: lowe@openai.com.'",
+        "units": null,
+        "conditions": "Ảnh Im15.jpg trong Bảng 17 (trang 37)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [37],
+    "required_tokens": ["2203.02155v1", "4 Mar 2022", "lowe@openai.com"]
+  },
+  {
+    "id": "AT09",
+    "split": "test",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["pipeline_diagram", "ocr"],
+    "question": "Trong sơ đồ quy trình 3 bước của InstructGPT ('Figure 2') thuộc ảnh thứ ba ở Bảng 17 (trang 37, Im17.jpg), tên của 3 bước huấn luyện là gì, và câu prompt mẫu màu xanh dương được minh họa ở Bước 1 & Bước 2 so với câu prompt mẫu mới ở Bước 3 có nội dung nguyên văn là gì?",
+    "answerable": true,
+    "expected_answer": "Trong sơ đồ Figure 2 thuộc ảnh Im17.jpg (Bảng 17, trang 37), quy trình gồm 3 bước: (1) Step 1: Collect demonstration data, and train a supervised policy (Supervised fine-tuning - SFT); (2) Step 2: Collect comparison data, and train a reward model (RM); và (3) Step 3: Optimize a policy against the reward model using reinforcement learning (PPO). Câu prompt mẫu màu xanh dương ở Bước 1 và Bước 2 là 'Explain the moon landing to a 6 year old', còn câu prompt mẫu mới ở Bước 3 là 'Write a story about frogs' (với phần đầu ra bắt đầu bằng 'Once upon a time...').",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kiểm tra sơ đồ 3 cột Figure 2 và đọc các ô prompt màu xanh bên trong ảnh Im17.jpg ở Bảng 17 (trang 37).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p037:image_diagram:table-17-im17",
+        "source_id": "gpt4-technical-report",
+        "page": 37,
+        "region_id": "Table 17 / Im17.jpg",
+        "modality": "image_diagram",
+        "bbox": [385.0, 440.0, 520.0, 695.0],
+        "crop_path": "data/advanced/crops/page_037_img_3_Im17.jpg",
+        "evidence": "Step 1: Collect demonstration data, and train a supervised policy (SFT), prompt box: 'Explain the moon landing to a 6 year old'. Step 2: Collect comparison data, and train a reward model (RM), prompt box: 'Explain the moon landing to a 6 year old'. Step 3: Optimize a policy against the reward model using reinforcement learning (PPO), prompt box: 'Write a story about frogs'.",
+        "units": null,
+        "conditions": "Sơ đồ Figure 2 trong ảnh Im17.jpg (Bảng 17, trang 37)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [37],
+    "required_tokens": ["Explain the moon landing to a 6 year old", "Write a story about frogs", "SFT", "PPO"]
+  },
+  {
+    "id": "AT10",
+    "split": "test",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["comic_ocr", "visual_reasoning"],
+    "question": "Trong bức tranh biếm họa ở Bảng 19 (trang 39, Im19.jpg - Moar Layers), nhân vật ở khung trên (STATISTICAL LEARNING) nêu nguyên nhân kỹ thuật cụ thể nào khiến bộ học bị khái quát hóa quá mức (overgeneralizes), còn nhân vật đội mũ chú hề ở khung dưới (NEURAL NETWORKS) hô khẩu hiệu gì và cả hai trục của đồ thị trên bảng vẽ ở khung dưới đều được gắn nhãn chữ gì?",
+    "answerable": true,
+    "expected_answer": "Trong tranh biếm họa Im19.jpg ở Bảng 19 (trang 39), nhân vật ở khung STATISTICAL LEARNING nói rằng bộ học bị khái quát hóa quá mức vì chiều VC của hàm nhân quá cao ('our learner overgeneralizes because the VC-Dimension of our Kernel is too high') và đề xuất giảm rủi ro cấu trúc (structural risk), sửa hàm mất mát (loss function) và dùng lề mềm (soft margin). Ngược lại, nhân vật đội mũ chú hề ở khung NEURAL NETWORKS hô khẩu hiệu 'STACK MORE LAYERS' (kèm dòng chữ 'But unironically' bên dưới), và cả hai trục (trục tung và trục hoành) của đồ thị trên bảng vẽ đều được gắn nhãn là 'LAYERS'.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc nguyên văn bóng thoại của nhân vật Statistical Learning ('VC-Dimension of our Kernel is too high') và nhãn hai trục 'LAYERS' trên bảng vẽ của nhân vật Neural Networks trong ảnh Im19.jpg (trang 39).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p039:image_diagram:table-19-im19",
+        "source_id": "gpt4-technical-report",
+        "page": 39,
+        "region_id": "Table 19 / Im19.jpg",
+        "modality": "image_diagram",
+        "bbox": [108.0, 350.0, 504.0, 695.0],
+        "crop_path": "data/advanced/crops/page_039_img_1_Im19.jpg",
+        "evidence": "Top panel 'STATISTICAL LEARNING': 'People , our learner overgeneralizes because the VC-Dimension of our Kernel is too high...'. Bottom panel 'NEURAL NETWORKS': speech bubble 'STACK MORE LAYERS', and both vertical and horizontal axes of the chart are labeled 'LAYERS'.",
+        "units": null,
+        "conditions": "Tranh biếm họa Im19.jpg ở Bảng 19 (trang 39)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [39],
+    "required_tokens": ["VC-Dimension", "Kernel", "STACK MORE LAYERS", "LAYERS"]
+  },
+  {
+    "id": "AT11",
+    "split": "test",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["system_card_figure", "agent_trace"],
+    "question": "Trong Hình 5 của System Card (trang 57, 'Example of a potentially risky task GPT-4 augmented with tools can accomplish'), hệ thống cấp cho mô hình GPT-4 (early) quyền sử dụng đúng 6 công cụ (tools) có tên là gì, tên loại thuốc (drug) ban đầu trong đề bài là gì, và công cụ Literature Answer đã tìm ra hợp chất tương tự nào ức chế Fyn kinase?",
+    "answerable": true,
+    "expected_answer": "Trong Hình 5 của System Card (trang 57), GPT-4 (early) được cấp quyền truy cập vào 6 công cụ: Molecule search, Purchase, Patent Search, Modify compound, Email và Literature Answer. Loại thuốc ban đầu được yêu cầu tìm chất tương tự trong đề bài là Dasatinib, và công cụ Literature Answer đã tìm ra hợp chất có cùng cơ chế tác động (MOA) là AZD0530 (chất cũng ức chế Fyn kinase, bên cạnh thuốc Đông y QSYQ).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kiểm tra sơ đồ trace ReAct trong Figure 5 của System Card ở trang 57 (và bản đầy đủ ở trang 99).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p057:image_diagram:system-card-figure-5",
+        "source_id": "gpt4-technical-report",
+        "page": 57,
+        "region_id": "System Card Figure 5",
+        "modality": "image_diagram",
+        "bbox": [72.0, 140.0, 540.0, 710.0],
+        "crop_path": null,
+        "evidence": "6 Tools: Molecule search, Purchase, Patent Search, Modify compound, Email, Literature Answer. Question: 'Propose a compound with similar properties to the drug Dasatinib...' Observation from Literature Answer: 'One compound with the same MOA/target as Dasatinib is AZD0530, which also inhibits Fyn kinase'.",
+        "units": null,
+        "conditions": "System Card Figure 5 (trang 57)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [57],
+    "required_tokens": ["Molecule search", "Purchase", "Patent Search", "Modify compound", "Email", "Literature Answer", "Dasatinib", "AZD0530"]
+  },
+  {
+    "id": "AT12",
+    "split": "test",
+    "primary_group": "chart",
+    "secondary_tags": ["multilingual_mmlu", "computation"],
+    "question": "Trong Biểu đồ Hình 5 (trang 8, GPT-4 3-shot accuracy on MMLU across languages), độ chính xác 3-shot của GPT-4 English và GPT-3.5-English là bao nhiêu phần trăm, và trong 26 ngôn ngữ được đánh giá với GPT-4, ngôn ngữ không phải tiếng Anh nào đạt độ chính xác cao nhất (kèm số %) và ngôn ngữ nào thấp nhất (kèm số % và khoảng cách điểm phần trăm giữa hai ngôn ngữ này)?",
+    "answerable": true,
+    "expected_answer": "Theo Biểu đồ Hình 5 (trang 8), độ chính xác 3-shot trên MMLU của GPT-4 English là 85.5% và của GPT-3.5-English là 70.1% (cao hơn PaLM-English 69.3% và Chinchilla-English 67.0%). Trong các ngôn ngữ không phải tiếng Anh được đánh giá với GPT-4, ngôn ngữ đạt độ chính xác cao nhất là Italian và Afrikaans cùng đạt 84.1%, còn ngôn ngữ đạt độ chính xác thấp nhất là Telugu với 62.0%. Khoảng cách giữa mức cao nhất (84.1%) và thấp nhất (62.0%) là 22.1 điểm phần trăm (84.1% - 62.0% = 22.1%).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc các nhãn phần trăm trên từng thanh của Figure 5 (trang 8) và tính hiệu 84.1 - 62.0 = 22.1.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p008:chart:figure-5",
+        "source_id": "gpt4-technical-report",
+        "page": 8,
+        "region_id": "Figure 5",
+        "modality": "chart",
+        "bbox": [72.0, 290.0, 540.0, 710.0],
+        "crop_path": null,
+        "evidence": "GPT-3.5-English = 70.1%, GPT-4 English = 85.5%, Italian = 84.1%, Afrikaans = 84.1%, ..., Marathi = 66.7%, Telugu = 62.0%",
+        "units": "% (3-shot accuracy trên MMLU)",
+        "conditions": "3-shot evaluation trên MMLU dịch sang 26 ngôn ngữ bằng Azure Translate",
+        "calculation": "84.1 - 62.0 = 22.1 điểm phần trăm"
+      }
+    ],
+    "required_pages": [8],
+    "required_tokens": ["85.5%", "70.1%", "Italian", "84.1%", "Telugu", "62.0%", "22.1"]
+  },
+  {
+    "id": "AT13",
+    "split": "test",
+    "primary_group": "chart",
+    "secondary_tags": ["calibration", "computation"],
+    "question": "Trong Biểu đồ Hình 8 (trang 12, Calibration plot on MMLU), nhãn của trục hoành và trục tung là gì, giá trị sai số hiệu chuẩn kỳ vọng (ECE) của mô hình pre-trained (model=pre-train, bên trái) và mô hình post-trained (model=ppo, bên phải) lần lượt là bao nhiêu, và ECE sau hậu huấn luyện PPO tăng gấp bao nhiêu lần so với pre-train?",
+    "answerable": true,
+    "expected_answer": "Trong Biểu đồ Hình 8 (trang 12), trục hoành là P(answer) (độ tự tin/xác suất dự đoán của mô hình cho lựa chọn A/B/C/D, từ 0.0 đến 1.0) và trục tung là P(correct) (độ chính xác thực nghiệm trong từng bin, từ 0.0 đến 1.0). Mô hình pre-trained (model=pre-train, biểu đồ bên trái) có ECE = 0.007, trong khi mô hình post-trained (model=ppo, biểu đồ bên phải) có ECE = 0.074. Như vậy sai số ECE sau hậu huấn luyện PPO tăng thêm 0.067 và cao gấp khoảng 10.57 lần (0.074 / 0.007 ≈ 10.57 lần) so với mô hình pre-trained.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc nhãn trục P(answer), P(correct) và chỉ số ECE: 0.007 (pre-train) vs ECE: 0.074 (ppo) trong Figure 8 ở trang 12, kèm tỷ số 0.074 / 0.007 = 10.57.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p012:chart:figure-8",
+        "source_id": "gpt4-technical-report",
+        "page": 12,
+        "region_id": "Figure 8",
+        "modality": "chart",
+        "bbox": [108.0, 520.0, 504.0, 710.0],
+        "crop_path": null,
+        "evidence": "X-axis: P(answer) (0.0 to 1.0). Y-axis: P(correct) (0.0 to 1.0). Left plot (model=pre-train): ECE: 0.007. Right plot (model=ppo): ECE: 0.074.",
+        "units": "Xác suất (0.0 - 1.0) và ECE (Expected Calibration Error)",
+        "conditions": "Tập con MMLU trước và sau hậu huấn luyện PPO/RLHF",
+        "calculation": "0.074 - 0.007 = 0.067; 0.074 / 0.007 = 10.57 lần"
+      }
+    ],
+    "required_pages": [12],
+    "required_tokens": ["P(answer)", "P(correct)", "0.007", "0.074", "10.57"]
+  },
+  {
+    "id": "AT14",
+    "split": "test",
+    "primary_group": "chart",
+    "secondary_tags": ["bitmap_chart", "computation"],
+    "question": "Trong biểu đồ 'Daily meat consumption per person, 1997' (Our World in Data / UN FAO) ở Bảng 14 (trang 34, Im12.png), lượng tiêu thụ thịt trung bình mỗi ngày của một người ở cả 3 thanh dữ liệu (Finland, Georgia và Western Asia) lần lượt là bao nhiêu gam, và mức tiêu thụ của Finland vượt mức trung bình dự kiến của EU (expected EU average) ghi trên phần mô tả biểu đồ là bao nhiêu gam mỗi người mỗi ngày?",
+    "answerable": true,
+    "expected_answer": "Theo biểu đồ Im12.png ở Bảng 14 (trang 34), lượng tiêu thụ thịt trung bình mỗi người mỗi ngày năm 1997 của 3 quốc gia/khu vực trên biểu đồ lần lượt là: Finland đạt 175.09 g, Georgia đạt 79.84 g và Western Asia đạt 69.62 g (tổng của Georgia và Western Asia là 149.46 g). Phần mô tả phía trên biểu đồ nêu mức trung bình dự kiến của EU (expected EU average) là 165 g mỗi người mỗi ngày (và ngưỡng tham vọng là 40 g), do đó Finland vượt mức trung bình dự kiến của EU là 10.09 g mỗi người mỗi ngày (175.09 g - 165 g = 10.09 g).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc giá trị của thanh Finland (175.09 g) và ngưỡng expected EU average (165g) chỉ xuất hiện bên trong ảnh biểu đồ Im12.png ở trang 34, kết hợp với Georgia (79.84 g) và Western Asia (69.62 g), rồi tính 175.09 - 165 = 10.09 g.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p034:chart:table-14-im12",
+        "source_id": "gpt4-technical-report",
+        "page": 34,
+        "region_id": "Table 14 / Im12.png",
+        "modality": "chart",
+        "bbox": [108.0, 320.0, 504.0, 690.0],
+        "crop_path": "data/advanced/crops/page_034_img_1_Im12.png",
+        "evidence": "Subtitle in Im12.png: 'expected EU average of 165g per person... ambitious limit of 40g per person'. Bars: Finland = 175.09 g, Georgia = 79.84 g, Western Asia = 69.62 g.",
+        "units": "grams per person per day (g)",
+        "conditions": "Năm 1997, nguồn UN Food and Agricultural Organization (FAO)",
+        "calculation": "175.09 - 165 = 10.09 g"
+      }
+    ],
+    "required_pages": [34],
+    "required_tokens": ["175.09", "79.84", "69.62", "165", "10.09"]
+  },
+  {
+    "id": "AT15",
+    "split": "test",
+    "primary_group": "chart",
+    "secondary_tags": ["embedded_paper_chart", "axes_legend"],
+    "question": "Trong biểu đồ đường 'Figure 1' thuộc trang 2 của bài báo InstructGPT được nhúng dưới dạng ảnh ở Bảng 17 (trang 37, Im16.jpg), nhãn của trục hoành và trục tung là gì, có 3 mốc kích thước mô hình nào trên trục hoành, và 5 chuỗi mô hình nào được liệt kê trong chú giải (Model)?",
+    "answerable": true,
+    "expected_answer": "Trong biểu đồ Figure 1 thuộc ảnh Im16.jpg (Bảng 17, trang 37), trục hoành có nhãn là 'Model size' với 3 mốc kích thước là 1.3B, 6B và 175B; trục tung có nhãn là 'Win rate against SFT 175B' (tỷ lệ được người đánh giá thích hơn so với mô hình SFT 175B, các vạch chia 0.2, 0.4, 0.6). Trong phần chú giải (Model) có 5 chuỗi mô hình: PPO-ptx, PPO, SFT, GPT (prompted) và GPT.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc trực tiếp nhãn trục X, trục Y, các mốc 1.3B/6B/175B và 5 tên chuỗi trong legend của biểu đồ nằm trong ảnh Im16.jpg ở trang 37.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p037:chart:table-17-im16",
+        "source_id": "gpt4-technical-report",
+        "page": 37,
+        "region_id": "Table 17 / Im16.jpg",
+        "modality": "chart",
+        "bbox": [235.0, 440.0, 370.0, 695.0],
+        "crop_path": "data/advanced/crops/page_037_img_2_Im16.jpg",
+        "evidence": "X-axis: 'Model size' with 3 ticks: 1.3B, 6B, 175B. Y-axis: 'Win rate against SFT 175B' (0.2, 0.4, 0.6). Legend ('Model' - 5 series): PPO-ptx, PPO, SFT, GPT (prompted), GPT.",
+        "units": "Model size (tỷ tham số: 1.3B, 6B, 175B) và Win rate (0.2 - 0.6)",
+        "conditions": "Đánh giá của con người trên phân phối prompt API của OpenAI, khoảng tin cậy 95%",
+        "calculation": null
+      }
+    ],
+    "required_pages": [37],
+    "required_tokens": ["Model size", "Win rate against SFT 175B", "1.3B", "6B", "175B", "PPO-ptx", "GPT (prompted)"]
+  },
+  {
+    "id": "AT16",
+    "split": "test",
+    "primary_group": "chart",
+    "secondary_tags": ["heatmap_matrix", "bitmap_chart"],
+    "question": "Trong biểu đồ ma trận nhiệt 'Figure 11: Results on IF evaluations across GPT3.5, GPT3.5-Turbo, GPT-4-launch' ở trang 98 (Im13.png), nhãn của trục tung và trục hoành là gì, 3 mô hình nào được so sánh, và tỷ lệ thắng (Win rate) của GPT-4 RLHF trước GPT-3.5 Turbo RLHF, của GPT-4 RLHF trước GPT-3.5 RLHF, cũng như của GPT-3.5 Turbo RLHF trước GPT-3.5 RLHF lần lượt là bao nhiêu phần trăm?",
+    "answerable": true,
+    "expected_answer": "Trong biểu đồ ma trận nhiệt Figure 11 ở trang 98 (Im13.png), trục tung có nhãn là 'Win rate' (theo hàng) và trục hoành có nhãn là 'Lose rate' (theo cột), so sánh 3 mô hình: GPT-4 RLHF, GPT-3.5 Turbo RLHF và GPT-3.5 RLHF (các ô trên đường chéo chính đều bằng 50.0%). Tỷ lệ thắng (Win rate) của GPT-4 RLHF trước GPT-3.5 Turbo RLHF là 61.1% (tỷ lệ thua tương ứng là 38.9%), của GPT-4 RLHF trước GPT-3.5 RLHF là 70.2% (tỷ lệ thua là 29.8%), và của GPT-3.5 Turbo RLHF trước GPT-3.5 RLHF là 63.0% (tỷ lệ thua là 37.0%).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc toàn bộ 9 ô phần trăm và nhãn trục Win rate / Lose rate trong ảnh bitmap Im13.png của Figure 11 ở trang 98.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p098:chart:system-card-figure-11-im13",
+        "source_id": "gpt4-technical-report",
+        "page": 98,
+        "region_id": "System Card Figure 11 / Im13.png",
+        "modality": "chart",
+        "bbox": [90.0, 260.0, 520.0, 695.0],
+        "crop_path": "data/advanced/crops/page_098_img_1_Im13.png",
+        "evidence": "Y-axis: Win rate; X-axis: Lose rate. Models: GPT-4 RLHF, GPT-3.5 Turbo RLHF, GPT-3.5 RLHF. Row 1 (GPT-4 RLHF): 50.0%, 61.1%, 70.2%. Row 2 (GPT-3.5 Turbo RLHF): 38.9%, 50.0%, 63.0%. Row 3 (GPT-3.5 RLHF): 29.8%, 37.0%, 50.0%.",
+        "units": "% (Win rate / Lose rate)",
+        "conditions": "Instruction Following (IF) evaluations trên 5,214 prompts",
+        "calculation": null
+      }
+    ],
+    "required_pages": [98],
+    "required_tokens": ["Win rate", "Lose rate", "61.1%", "70.2%", "63.0%", "38.9%", "29.8%", "37.0%"]
+  },
+  {
+    "id": "AT17",
+    "split": "test",
+    "primary_group": "multi_hop",
+    "secondary_tags": ["cross_table", "lsat_contamination"],
+    "question": "Kết hợp Bảng 1 (trang 5), Bảng 9 (trang 30) và Bảng 10 (trang 31) đối với kỳ thi LSAT, hãy cho biết: (1) phần thi LSAT (MCQ) có bao nhiêu câu hỏi, tỷ lệ nhiễm dữ liệu (Contamination) là bao nhiêu phần trăm và độ chính xác của GPT-4 trên toàn tập so với tập không nhiễm trong Bảng 10 là bao nhiêu; (2) điểm quy đổi và phân vị (percentile) của GPT-4 (có vision) trên toàn bộ đề thi so với khi ngoại suy từ phần không bị nhiễm (Non-contaminated GPT-4) trong Bảng 1 & Bảng 9 tăng lên như thế nào?",
+    "answerable": true,
+    "expected_answer": "Kết hợp Bảng 1 (trang 5), Bảng 9 (trang 30) và Bảng 10 (trang 31) cho kỳ thi LSAT: (1) Theo Bảng 10 (trang 31), LSAT (MCQ) có 100 câu hỏi với tỷ lệ nhiễm dữ liệu là 39.00% (39% ở Bảng 9), trong đó độ chính xác của GPT-4 trên toàn bộ tập là 76.00%, trên tập không nhiễm (non-contaminated) là 83.61% và trên tập nhiễm là 64.10% (Degradation = 10.01%). (2) Theo Bảng 1 (trang 5) và Bảng 9 (trang 30), điểm quy đổi của GPT-4 (có vision) trên toàn bộ đề thi LSAT là 163 (~88th percentile), và khi tính trên phần không bị nhiễm (Non-contaminated GPT-4) thì điểm tăng thêm 6 điểm lên mức 169 (~97th percentile).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kết hợp thông tin kỳ thi LSAT từ 3 bảng ở 3 trang khác nhau: Bảng 1 (trang 5), Bảng 9 (trang 30) và Bảng 10 (trang 31).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p030:table:table-9",
+        "source_id": "gpt4-technical-report",
+        "page": 30,
+        "region_id": "Table 9",
+        "modality": "table",
+        "bbox": [85.0, 120.0, 525.0, 695.0],
+        "crop_path": null,
+        "evidence": "LSAT: Contam = 39% | GPT-4 (no vision) = 161 (~83rd) | Non-contaminated GPT-4 (no vision) = 167 (~95th) | GPT-4 = 163 (~88th) | Non-contaminated GPT-4 = 169 (~97th)",
+        "units": "điểm LSAT, percentile và %",
+        "conditions": "So sánh toàn bộ đề thi và tập con không nhiễm",
+        "calculation": "169 - 163 = +6 điểm"
+      },
+      {
+        "chunk_id": "gpt4-report:p031:table:table-10",
+        "source_id": "gpt4-technical-report",
+        "page": 31,
+        "region_id": "Table 10",
+        "modality": "table",
+        "bbox": [85.0, 110.0, 525.0, 705.0],
+        "crop_path": null,
+        "evidence": "LSAT (MCQ): #questions = 100 | Contamination = 39.00% | GPT-4 = 76.00% | non-contaminated = 83.61% | contaminated only = 64.10% | Degradation = 10.01%",
+        "units": "câu hỏi và %",
+        "conditions": "LSAT (MCQ) trong Bảng 10 trang 31",
+        "calculation": null
+      }
+    ],
+    "required_pages": [30, 31],
+    "required_tokens": ["100", "39", "76.00%", "83.61%", "163", "88th", "169", "97th"]
+  },
+  {
+    "id": "AT18",
+    "split": "test",
+    "primary_group": "multi_hop",
+    "secondary_tags": ["gsm8k", "cross_page_table"],
+    "question": "Kết hợp trang 6 (chú thích 6), Bảng 2 (trang 7) và Bảng 11 (trang 32), tại sao điểm GSM-8K của GPT-4 (92.0%*) trong Bảng 2 lại có dấu hoa thị (*), phương pháp prompting nào được dùng khi đánh giá GPT-4 trên GSM-8K, và tỷ lệ nhiễm (Contamination) giữa dữ liệu pre-training của GPT-4 với tập đánh giá GSM-8K trong Bảng 11 là bao nhiêu?",
+    "answerable": true,
+    "expected_answer": "Kết hợp trang 6 (chú thích 6), Bảng 2 (trang 7) và Bảng 11 (trang 32): Điểm 92.0%* của GPT-4 trên bộ GSM-8K được gắn dấu hoa thị (*) vì một phần tập huấn luyện (training set) của GSM-8K đã được đưa vào hỗn hợp dữ liệu pre-training (pre-training mix) của GPT-4 (xem thêm Phụ lục E trang 29). Khi đánh giá trên GSM-8K, OpenAI sử dụng phương pháp 5-shot chain-of-thought prompting. Theo Bảng 11 (trang 32), tỷ lệ nhiễm dữ liệu (Contamination) đối với tập đánh giá GSM-8K là xấp xỉ ~1%.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kết hợp chú thích và bảng ở trang 6-7 (lý do dấu *, 5-shot chain-of-thought) với tỷ lệ nhiễm ~1% trong Bảng 11 ở trang 32.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p007:table:table-2",
+        "source_id": "gpt4-technical-report",
+        "page": 7,
+        "region_id": "Table 2",
+        "modality": "table",
+        "bbox": [85.0, 395.0, 525.0, 695.0],
+        "crop_path": null,
+        "evidence": "GSM-8K: GPT-4 = 92.0%* (5-shot chain-of-thought) | GPT-3.5 = 57.1% (5-shot). For GSM-8K, we included part of the training set in the GPT-4 pre-training mix (see Appendix E), and we use chain-of-thought prompting when evaluating.",
+        "units": "%",
+        "conditions": "5-shot chain-of-thought",
+        "calculation": null
+      },
+      {
+        "chunk_id": "gpt4-report:p032:table:table-11",
+        "source_id": "gpt4-technical-report",
+        "page": 32,
+        "region_id": "Table 11",
+        "modality": "table",
+        "bbox": [108.0, 480.0, 504.0, 700.0],
+        "crop_path": null,
+        "evidence": "GSM-8K: GPT-4 = 92.0% | GPT-3.5 = 57.1% | Contamination = ~1%",
+        "units": "%",
+        "conditions": "Ước lượng trên 1000 mẫu ngẫu nhiên trong Bảng 11 trang 32",
+        "calculation": null
+      }
+    ],
+    "required_pages": [7, 32],
+    "required_tokens": ["training set", "pre-training", "5-shot", "chain-of-thought", "1%"]
+  },
+  {
+    "id": "AT19",
+    "split": "test",
+    "primary_group": "multi_hop",
+    "secondary_tags": ["rbrm", "system_card_appendix"],
+    "question": "Kết hợp Hình 6 của System Card (trang 63) và Phụ lục A của System Card (trang 80, Full RBRM Instructions for Classifying Refusal Styles), prompt phân loại của RBRM nêu 3 câu hỏi kiểm tra Yes/No nào ở đầu, có tất cả bao nhiêu lựa chọn chữ cái (từ A đến chữ cái nào), và sự khác biệt giữa nhãn (A), nhãn (B) và nhãn (E) là gì?",
+    "answerable": true,
+    "expected_answer": "Kết hợp Hình 6 (trang 63) và Phụ lục A (trang 80), prompt phân loại kiểu từ chối của RBRM đặt 3 câu hỏi Yes/No ở đầu gồm: (1) [Is it a refusal?], (2) [Providing reasons?], và (3) [Contains harmful content]. Hệ thống có tất cả 18 lựa chọn chữ cái từ (A) đến (R). Trong đó: nhãn (A) là lời từ chối đơn giản bắt đầu bằng lời xin lỗi ngôi thứ nhất ('I'), không dùng 'we' và không nêu lý do hay viện dẫn chính sách an toàn; nhãn (B) là lời từ chối có giải thích cài đặt an toàn nào chịu trách nhiệm cho việc từ chối; còn nhãn (E) (nêu ở trang 80) là lời từ chối có nêu lý do dành cho tình huống tổn thương cảm xúc/tự gây hại, bắt đầu bằng lời xin lỗi thừa nhận cảm xúc và khuyến khích tìm sự giúp đỡ nhưng không nêu số điện thoại cụ thể.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kết hợp sơ đồ Figure 6 ở trang 63 và định nghĩa đầy đủ các nhãn từ (A) đến (R) (đặc biệt nhãn E) ở Phụ lục A trang 80.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p063:image_diagram:system-card-figure-6",
+        "source_id": "gpt4-technical-report",
+        "page": 63,
+        "region_id": "System Card Figure 6",
+        "modality": "image_diagram",
+        "bbox": [72.0, 380.0, 540.0, 710.0],
+        "crop_path": null,
+        "evidence": "Three Yes/No check questions: [Is it a refusal?], [Providing reasons?], [Contains harmful content]. Classification options: 18 lettered categories from (A) through (R). (A) simple refusal starting with 'I' without reasons or 'we'; (B) explains which safety setting is responsible.",
+        "units": "18 nhãn phân loại (A - R)",
+        "conditions": "Rule-Based Reward Model (RBRM) refusal style classifier",
+        "calculation": null
+      },
+      {
+        "chunk_id": "gpt4-report:p080:text:2",
+        "source_id": "gpt4-technical-report",
+        "page": 80,
+        "region_id": "Page 80 Text 2",
+        "modality": "text",
+        "bbox": [72.0, 264.0, 444.5, 492.0],
+        "crop_path": null,
+        "evidence": "(E) [It is a refusal] [Provides reasons] [Does not contain harmful content] The message must start with an apology that acknowledges the emotions and the severity of the state of emotional harm ... and encouragement to seek help ... and must not mention specific resources or phone numbers",
+        "units": null,
+        "conditions": "Full RBRM Instructions ở Phụ lục A trang 80",
+        "calculation": null
+      }
+    ],
+    "required_pages": [63, 80],
+    "required_tokens": ["Is it a refusal", "Providing reasons", "Contains harmful content", "18", "R"]
+  },
+  {
+    "id": "AT20",
+    "split": "test",
+    "primary_group": "multi_hop",
+    "secondary_tags": ["hallucinations", "if_eval_chart"],
+    "question": "Kết hợp nội dung văn bản ở trang 64 (Mục 3 của System Card) và biểu đồ ma trận Figure 11 ở trang 98 (Im13.png), quy trình dùng chính GPT-4 tạo dữ liệu tổng hợp (synthetic comparison data) để giảm ảo giác miền đóng (closed-domain hallucinations) gồm mấy bước với tối đa mấy lần lặp và giúp tăng độ chính xác trên TruthfulQA từ mức nào lên mức nào; đồng thời tỷ lệ câu trả lời của GPT-4-launch (GPT-4 RLHF) được ưa chuộng hơn GPT-3.5 RLHF và GPT-3.5 Turbo RLHF trên 5,214 câu prompt khớp giữa trang 64 và biểu đồ trang 98 là bao nhiêu?",
+    "answerable": true,
+    "expected_answer": "Theo trang 64, quy trình dùng GPT-4 tự sinh dữ liệu so sánh tổng hợp để giảm ảo giác miền đóng (closed-domain hallucinations) gồm 4 bước (sinh câu trả lời -> liệt kê mọi ảo giác -> viết lại câu trả lời không còn ảo giác -> kiểm tra lại ảo giác) và lặp lại tối đa 5 lần (repeat up to 5x), giúp cải thiện độ chính xác trên TruthfulQA từ khoảng 30% (ở phiên bản sớm) lên khoảng 60%. Đồng thời, cả văn bản trang 64 (trên 5,214 câu prompt từ ChatGPT và OpenAI API) và biểu đồ ma trận Figure 11 ở trang 98 (Im13.png) đều ghi nhận câu trả lời của GPT-4-launch (GPT-4 RLHF) được người đánh giá ưa chuộng hơn GPT-3.5 RLHF trên 70.2% số prompt và hơn GPT-3.5 Turbo RLHF trên 61.1% số prompt.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kết hợp quy trình 4 bước (tối đa 5 lần lặp, tăng TruthfulQA từ 30% lên 60%) ở trang 64 với số liệu 70.2% và 61.1% trong biểu đồ ma trận Figure 11 ở trang 98.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p064:text:2",
+        "source_id": "gpt4-technical-report",
+        "page": 64,
+        "region_id": "Page 64 Text 2",
+        "modality": "text",
+        "bbox": [72.0, 264.0, 444.5, 492.0],
+        "crop_path": null,
+        "evidence": "For closed-domain hallucinations, we are able to use GPT-4 itself to generate synthetic data. Specifically, we design a multi-step process [steps 1-4] ... (b) Otherwise, repeat up to 5x ... increase accuracy to around 60% as compared to 30% for an earlier version.",
+        "units": "4 bước, tối đa 5 lần lặp (5x), độ chính xác % (30% -> 60%)",
+        "conditions": "Closed-domain hallucinations và TruthfulQA trên trang 64",
+        "calculation": null
+      },
+      {
+        "chunk_id": "gpt4-report:p098:chart:system-card-figure-11-im13",
+        "source_id": "gpt4-technical-report",
+        "page": 98,
+        "region_id": "System Card Figure 11 / Im13.png",
+        "modality": "chart",
+        "bbox": [90.0, 260.0, 520.0, 695.0],
+        "crop_path": "data/advanced/crops/page_098_img_1_Im13.png",
+        "evidence": "Row 1 (GPT-4 RLHF): vs GPT-3.5 Turbo RLHF = 61.1% | vs GPT-3.5 RLHF = 70.2% (on 5,214 user prompts).",
+        "units": "%",
+        "conditions": "Figure 11 trang 98 và Mục 3 trang 64",
+        "calculation": null
+      }
+    ],
+    "required_pages": [64, 98],
+    "required_tokens": ["4", "5", "30%", "60%", "70.2%", "61.1%"]
+  },
+  {
+    "id": "AT21",
+    "split": "test",
+    "primary_group": "text",
+    "secondary_tags": ["contamination_exclusion"],
+    "question": "Theo chú thích 5 ở trang 6, vì sao bộ benchmark BIG-bench lại bị loại khỏi kết quả báo cáo của GPT-4?",
+    "answerable": true,
+    "expected_answer": "Theo chú thích 5 ở trang 6, trong quá trình kiểm tra nhiễm dữ liệu (contamination check), OpenAI phát hiện một số phần của bộ BIG-bench đã vô tình bị trộn vào tập dữ liệu huấn luyện (inadvertently mixed into the training set), vì vậy họ đã loại bỏ bộ benchmark này khỏi kết quả báo cáo.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kiểm tra chú thích chân trang số 5 ở trang 6.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p006:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 6,
+        "region_id": "Page 6 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 42.1, 522.0, 710.0],
+        "crop_path": null,
+        "evidence": "5During our contamination check we discovered that portions of BIG-bench [48] were inadvertently mixed into the training set, and we excluded it from our reported results.",
+        "units": null,
+        "conditions": "Kiểm tra nhiễm dữ liệu các bộ benchmark học thuật ở trang 6",
+        "calculation": null
+      }
+    ],
+    "required_pages": [6],
+    "required_tokens": ["BIG-bench", "training set"]
+  },
+  {
+    "id": "AT22",
+    "split": "test",
+    "primary_group": "text",
+    "secondary_tags": ["exam_methodology", "images"],
+    "question": "Theo Phụ lục A.4 (Images, trang 25), khi đánh giá các mô hình chỉ nhận văn bản (như GPT-3.5) trên các câu hỏi thi trắc nghiệm có hình ảnh, OpenAI đã thay thế hình ảnh bị thiếu bằng cách nào, và 6 kỳ thi/nhóm kỳ thi nào được nêu rõ là phần thi trắc nghiệm không chứa bất kỳ hình ảnh nào?",
+    "answerable": true,
+    "expected_answer": "Theo Phụ lục A.4 (trang 25), khi đánh giá các mô hình chỉ nhận văn bản trên các câu hỏi trắc nghiệm có hình ảnh, OpenAI đã đưa vào một thẻ văn bản ghi 'IMAGE:' kèm theo một tên file không mang ý nghĩa (non-meaningful filename) tại bất kỳ vị trí nào thiếu ảnh nhằm ước lượng cận dưới hiệu năng của mô hình văn bản. Sáu kỳ thi/nhóm kỳ thi có phần trắc nghiệm không chứa bất kỳ hình ảnh nào gồm: SAT Reading and Writing, MKSAP, Sommelier, AP Psychology, AP English Language và AP English Literature.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tổng hợp quy tắc thẻ IMAGE: và danh sách 6 kỳ thi không có ảnh ở Phụ lục A.4 (trang 25).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p025:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 25,
+        "region_id": "Page 25 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 380.0, 522.0, 710.0],
+        "crop_path": null,
+        "evidence": "When evaluating text models on multiple-choice questions, we included a text tag stating IMAGE: with a non-meaningful filename wherever an image would be missing... The SAT Reading and Writing, MKSAP, Sommelier, AP Psychology, AP English Language, and AP English Literature exams' multiple-choice sections did not contain any images.",
+        "units": null,
+        "conditions": "Multiple-choice sections trong Phụ lục A.4 trang 25",
+        "calculation": null
+      }
+    ],
+    "required_pages": [25],
+    "required_tokens": ["IMAGE:", "SAT Reading and Writing", "MKSAP", "Sommelier", "AP Psychology", "AP English Language", "AP English Literature"]
+  },
+  {
+    "id": "AT23",
+    "split": "test",
+    "primary_group": "text",
+    "secondary_tags": ["cybersecurity", "system_card"],
+    "question": "Theo phần đánh giá an ninh mạng trong System Card (trang 54, mục Vulnerability discovery and exploitation), các chuyên gia red-team bên ngoài đã kết luận như thế nào về khả năng của GPT-4 trong việc giải thích lỗ hổng bảo mật ( kèm điều kiện về mã nguồn) so với việc xây dựng mã khai thác (building exploits)?",
+    "answerable": true,
+    "expected_answer": "Theo trang 54 của System Card (mục Vulnerability discovery and exploitation), các chuyên gia an ninh mạng bên ngoài nhận thấy GPT-4 có thể giải thích một số lỗ hổng bảo mật (explain some vulnerabilities) với điều kiện mã nguồn đủ nhỏ để nằm vừa trong cửa sổ ngữ cảnh (small enough to fit in the context window), nhưng GPT-4 hoạt động kém (performed poorly) trong việc xây dựng mã khai thác (building exploits) cho các lỗ hổng đã được xác định đó.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tìm và tổng hợp thông tin có điều kiện về khả năng phát hiện/khai thác lỗ hổng bảo mật ở trang 54.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p054:text:2",
+        "source_id": "gpt4-technical-report",
+        "page": 54,
+        "region_id": "Page 54 Text 2",
+        "modality": "text",
+        "bbox": [72.0, 264.0, 444.5, 492.0],
+        "crop_path": null,
+        "evidence": "They found that GPT-4 could explain some vulnerabilities if the source code was small enough to fit in the context window, just as the model can explain other source code. However, GPT-4 performed poorly at building exploits for the vulnerabilities that were identified.",
+        "units": null,
+        "conditions": "Mã nguồn đủ nhỏ để vừa cửa sổ ngữ cảnh (context window)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [54],
+    "required_tokens": ["context window", "poorly", "exploits"]
+  },
+  {
+    "id": "AT24",
+    "split": "test",
+    "primary_group": "text",
+    "secondary_tags": ["policy_definitions", "system_card"],
+    "question": "Theo định nghĩa thuật ngữ của bộ phân loại nội dung trong System Card (trang 67, Definition of terms), các sinh vật hư cấu như 'Elves', 'Bigfoot', 'Angels', 'Fairies' và các sinh vật hư cấu như 'Pegasus', 'Unicorn', 'Jackalope', 'Phoenix' được xếp tương ứng vào nhóm nào ('A person or people' hay 'An animal') và dựa trên tiêu chí phân biệt nào?",
+    "answerable": true,
+    "expected_answer": "Theo mục Definition of terms ở trang 67 của System Card, tiêu chí phân biệt dựa trên việc sinh vật hư cấu có phẩm chất hình người và được nêu/ngụ ý là có trí khôn (humanoid qualities that are stated or implied to be sapient) hay không: các sinh vật hư cấu có phẩm chất hình người và có trí khôn gồm 'Elves', 'Bigfoot', 'Angels', 'Fairies' được xếp vào nhóm 'A person or people' (cùng với con người thực); ngược lại, các sinh vật hư cấu không có phẩm chất hình người và không được nêu/ngụ ý là có trí khôn gồm 'Pegasus', 'Unicorn', 'Jackalope', 'Phoenix' được xếp vào nhóm 'An animal' (cùng với động vật thực như bò, sói, khủng long).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kiểm tra điều kiện phân loại 'A person or people' và 'An animal' tại trang 67.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p067:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 67,
+        "region_id": "Page 67 Text 1",
+        "modality": "text",
+        "bbox": [72.0, 492.0, 444.5, 720.0],
+        "crop_path": null,
+        "evidence": "A person or people, includes all human beings ... as well as fictional beings with humanoid qualities that are stated or implied to be sapient (e.g., 'Elves', 'Bigfoot', 'Angels', 'Fairies'). An animal is any real non-sapient creature ... as well as fictional creatures without humanoid qualities that are not stated or implied to be sapient (e.g., 'Pegasus', 'Unicorn', 'Jackalope', 'Phoenix').",
+        "units": null,
+        "conditions": "humanoid qualities và stated or implied to be sapient (trang 67)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [67],
+    "required_tokens": ["person", "animal", "sapient", "Elves", "Pegasus"]
+  },
+  {
+    "id": "AT25",
+    "split": "test",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["api_pricing"],
+    "question": "Theo báo cáo kỹ thuật này, bảng giá dịch vụ thương mại trên OpenAI API của GPT-4 cho hai phiên bản cửa sổ ngữ cảnh 8K và 32K được niêm yết là bao nhiêu USD trên mỗi 1,000 prompt tokens và 1,000 completion tokens?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Câu hỏi gần chủ đề triển khai GPT-4 trên OpenAI API, nhưng báo cáo kỹ thuật arXiv:2303.08774v6 không chứa bảng giá thương mại theo token.",
+    "absence_reason": "Tài liệu không công bố bảng giá thương mại (USD / 1,000 tokens) cho phiên bản 8K hay 32K của GPT-4.",
+    "verification_method": "Tìm kiếm trên toàn bộ 100 trang PDF các cụm từ '1,000 tokens', 'pricing', '$0.03', '$0.06', '32K', '8K' (0 kết quả về giá API)."
+  },
+  {
+    "id": "AT26",
+    "split": "test",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["vision_encoder_architecture"],
+    "question": "Theo Mục 4.1 (Visual Inputs, trang 8), bộ mã hóa thị giác (Vision Encoder) của GPT-4 sử dụng kiến trúc ViT-H/14 hay CLIP với kích thước patch và độ phân giải ảnh đầu vào tối đa là bao nhiêu pixel?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Mục 2 (trang 2) và Mục 4.1 (trang 8) không tiết lộ kiến trúc bộ mã hóa hình ảnh (ViT/CLIP), kích thước patch hay độ phân giải ảnh đầu vào của GPT-4.",
+    "absence_reason": "Báo cáo giữ kín toàn bộ chi tiết kiến trúc mô hình và bộ mã hóa hình ảnh (Mục 2 trang 2 và Mục 4.1 trang 8).",
+    "verification_method": "Kiểm tra Mục 2 (trang 2), Mục 4.1 (trang 8) và tìm kiếm 'ViT', 'CLIP', 'patch size', 'resolution' trên toàn bộ 100 trang."
+  },
+  {
+    "id": "AT27",
+    "split": "test",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["missing_exam_usmle"],
+    "question": "Theo Bảng 1 (trang 5), điểm phần trăm chính xác của GPT-4 trong 3 bậc của kỳ thi cấp phép hành nghề y khoa Hoa Kỳ (USMLE Step 1, USMLE Step 2 CK và USMLE Step 3) lần lượt là bao nhiêu?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Bảng 1 (trang 5) chỉ có điểm của chương trình tự đánh giá kiến thức nội khoa MKSAP (75%), hoàn toàn không đánh giá hay báo cáo điểm thi USMLE Step 1, Step 2 CK hay Step 3.",
+    "absence_reason": "Kỳ thi USMLE Step 1, Step 2 CK và Step 3 không có trong Bảng 1 (trang 5) hay bất kỳ bảng nào trong báo cáo.",
+    "verification_method": "Rà soát toàn bộ các hàng của Bảng 1 (trang 5), Bảng 8 (trang 28), Bảng 9 (trang 30), Bảng 10 (trang 31) và tìm kiếm chuỗi 'USMLE' trên toàn bộ 100 trang (0 kết quả)."
+  },
+  {
+    "id": "AT28",
+    "split": "test",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["missing_language_in_chart"],
+    "question": "Theo Biểu đồ Hình 5 (trang 8, GPT-4 3-shot accuracy on MMLU across languages), độ chính xác 3-shot trên bộ MMLU khi dịch sang tiếng Việt (Vietnamese) của GPT-4 là bao nhiêu phần trăm?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Biểu đồ Hình 5 (trang 8) đánh giá 26 ngôn ngữ nhưng không có tiếng Việt (Vietnamese).",
+    "absence_reason": "Tiếng Việt (Vietnamese) không nằm trong 26 ngôn ngữ được đánh giá trong Biểu đồ Hình 5 (trang 8) hay Phụ lục F (trang 32-33).",
+    "verification_method": "Đối chiếu toàn bộ danh sách 26 ngôn ngữ trên trục của Figure 5 (trang 8) và tìm kiếm chuỗi 'Vietnamese' trên toàn bộ 100 trang (0 kết quả)."
+  },
+  {
+    "id": "AT29",
+    "split": "test",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["missing_country_in_chart"],
+    "question": "Theo biểu đồ tiêu thụ thịt năm 1997 ở Bảng 14 (trang 34, Im12.png), lượng tiêu thụ thịt trung bình mỗi người mỗi ngày của Pháp (France) và Đức (Germany) là bao nhiêu gam?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Biểu đồ Im12.png ở Bảng 14 (trang 34) chỉ hiển thị 3 thanh dữ liệu cho Finland (175.09 g), Georgia (79.84 g) và Western Asia (69.62 g) cùng ngưỡng trung bình dự kiến của EU (165 g), không có số liệu của Pháp hay Đức.",
+    "absence_reason": "Ảnh biểu đồ Im12.png (trang 34) không có thanh dữ liệu hay con số nào cho Pháp (France) hoặc Đức (Germany).",
+    "verification_method": "Kiểm tra trực tiếp ảnh gốc data/advanced/crops/page_034_img_1_Im12.png và văn bản Bảng 14 ở trang 34."
+  },
+  {
+    "id": "AT30",
+    "split": "test",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["missing_model_in_heatmap"],
+    "question": "Theo biểu đồ ma trận nhiệt Figure 11 ở trang 98 (Im13.png), tỷ lệ thắng (Win rate) trong đánh giá Instruction Following (IF) của GPT-4 RLHF khi đối đầu trực tiếp với Anthropic Claude-1 và Google PaLM-2 là bao nhiêu phần trăm?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Biểu đồ ma trận Figure 11 (trang 98, Im13.png) chỉ so sánh 3 mô hình nội bộ của OpenAI là GPT-4 RLHF, GPT-3.5 Turbo RLHF và GPT-3.5 RLHF, không có Anthropic Claude-1 hay Google PaLM-2.",
+    "absence_reason": "Ma trận Figure 11 (trang 98, Im13.png) không đánh giá hay biểu diễn tỷ lệ thắng đối đầu với Claude-1 hay PaLM-2.",
+    "verification_method": "Kiểm tra trực tiếp ảnh gốc data/advanced/crops/page_098_img_1_Im13.png (trang 98) và đoạn mô tả ở trang 64."
+  }
+]

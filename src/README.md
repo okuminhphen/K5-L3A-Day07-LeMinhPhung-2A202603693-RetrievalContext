@@ -94,3 +94,34 @@ Hai lệnh sau tái lập baseline và cấu hình đã chốt cho test. Dùng �
 ```powershell
 python -m src.agent_report --cases data/benchmark_test.json --run report/results/agent_test_baseline.json --reviews report/results/agent_test_baseline_reviews.json --output report/results/agent_test_baseline_summary.json
 ```
+
+## Thử thách nâng cao (100 trang đa phương thức)
+
+Phần thử thách nâng cao index toàn bộ 100 trang của báo cáo *GPT-4 Technical Report* (`arXiv:2303.08774v6`, gồm văn bản, bảng, biểu đồ vector/bitmap và ảnh/sơ đồ):
+
+```powershell
+$day6 = '..\K5-L3A-Day06-LeMinhPhung-2A202603693-DataIngestionEngineering\starter'
+& "$day6\.venv\Scripts\python.exe" -X utf8 -m src.advanced_index
+```
+
+Lệnh tự động tải bản gốc PDF về `starter/data/gpt4-technical-report.pdf` (nếu chưa có), trích xuất các ảnh/biểu đồ crop vào `data/advanced/crops/`, xuất 221 chunks đa phương thức vào `data/advanced/multimodal_chunks.json`, lưu thống kê vào `data/advanced/index_manifest.json` và tạo vector 384 chiều từ `intfloat/multilingual-e5-small` tại `starter/data/advanced_embeddings.npz`.
+
+So sánh 3 phương pháp retrieval (`baseline-text-dense`, `multimodal-dense`, `multimodal-hybrid`) trên tập dev nâng cao (18 câu):
+
+```powershell
+& "$day6\.venv\Scripts\python.exe" -X utf8 -m src.advanced_agent --split dev --mode compare-retrieval --output report/results/advanced_retrieval_dev.json
+```
+
+Chạy agent với `llama3.2:latest` qua Ollama cho cấu hình baseline và cấu hình đã chốt trên dev/test (ghi sang đường dẫn mới nếu muốn giữ nguyên các trace đã chấm):
+
+```powershell
+& "$day6\.venv\Scripts\python.exe" -X utf8 -m src.advanced_agent --split dev --mode baseline-text-dense --top-k 3 --context-budget 1600 --output report/results/replay_advanced_dev_baseline.json
+& "$day6\.venv\Scripts\python.exe" -X utf8 -m src.advanced_agent --split dev --mode multimodal-hybrid --output report/results/replay_advanced_dev_selected.json
+& "$day6\.venv\Scripts\python.exe" -X utf8 -m src.advanced_agent --split test --mode multimodal-hybrid --output report/results/replay_advanced_test_selected.json
+```
+
+Tổng hợp kết quả chấm đạt/không đạt theo từng nhóm của bộ test nâng cao (30 câu):
+
+```powershell
+python -X utf8 -m src.advanced_evaluate --cases data/advanced_benchmark_test.json --run report/results/advanced_test_selected.json --reviews report/results/advanced_test_selected_reviews.json --output report/results/advanced_test_selected_summary.json
+```

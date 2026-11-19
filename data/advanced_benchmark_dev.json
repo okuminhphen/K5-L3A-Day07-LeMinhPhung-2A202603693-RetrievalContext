@@ -1,0 +1,505 @@
+[
+  {
+    "id": "AD01",
+    "split": "dev",
+    "primary_group": "table",
+    "secondary_tags": ["computation", "exam_comparison"],
+    "question": "Theo Bảng 1 (trang 5), điểm số và phân vị (percentile) ước tính của GPT-4 (có vision) và GPT-3.5 trong kỳ thi Uniform Bar Exam (MBE+MEE+MPT) là bao nhiêu, và GPT-4 cao hơn GPT-3.5 bao nhiêu điểm trên thang 400?",
+    "answerable": true,
+    "expected_answer": "Trong kỳ thi Uniform Bar Exam (MBE+MEE+MPT), GPT-4 đạt 298 / 400 (~90th percentile), còn GPT-3.5 đạt 213 / 400 (~10th percentile). Như vậy GPT-4 cao hơn GPT-3.5 là 85 điểm trên thang 400 (298 - 213 = 85).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra cứu hàng 'Uniform Bar Exam (MBE+MEE+MPT)' và các cột 'GPT-4', 'GPT-3.5' trong Bảng 1 (trang 5), sau đó lấy hiệu hai điểm số trên cùng thang 400.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p005:table:table-1",
+        "source_id": "gpt4-technical-report",
+        "page": 5,
+        "region_id": "Table 1",
+        "modality": "table",
+        "bbox": [90.0, 105.0, 525.0, 680.0],
+        "crop_path": null,
+        "evidence": "Uniform Bar Exam (MBE+MEE+MPT): GPT-4 = 298 / 400 (~90th) | GPT-4 (no vision) = 298 / 400 (~90th) | GPT-3.5 = 213 / 400 (~10th)",
+        "units": "điểm / 400 và phân vị (percentile)",
+        "conditions": "Mô phỏng điều kiện và cách chấm thực tế của Uniform Bar Exam (MBE+MEE+MPT)",
+        "calculation": "298 - 213 = 85 (điểm trên thang 400)"
+      }
+    ],
+    "required_pages": [5],
+    "required_tokens": ["298", "213", "90th", "10th", "85"]
+  },
+  {
+    "id": "AD02",
+    "split": "dev",
+    "primary_group": "table",
+    "secondary_tags": ["computation", "academic_benchmark"],
+    "question": "Theo Bảng 2 (trang 7), trên bộ benchmark MMLU (57 môn học, đánh giá 5-shot), độ chính xác của GPT-4 là bao nhiêu phần trăm và cao hơn mô hình LM SOTA đánh giá few-shot (U-PaLM, 5-shot) bao nhiêu điểm phần trăm?",
+    "answerable": true,
+    "expected_answer": "Trên bộ benchmark MMLU (5-shot), độ chính xác của GPT-4 là 86.4%, trong khi mô hình LM SOTA đánh giá few-shot là U-PaLM (5-shot) đạt 70.7%. Do đó GPT-4 cao hơn U-PaLM là 15.7 điểm phần trăm (86.4% - 70.7% = 15.7%).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra hàng MMLU trong Bảng 2 (trang 7) ở cột 'GPT-4' và cột 'LM SOTA (Best external LM evaluated few-shot)', kèm điều kiện 5-shot và phép trừ 86.4 - 70.7.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p007:table:table-2",
+        "source_id": "gpt4-technical-report",
+        "page": 7,
+        "region_id": "Table 2",
+        "modality": "table",
+        "bbox": [85.0, 395.0, 525.0, 695.0],
+        "crop_path": null,
+        "evidence": "MMLU (Multiple-choice questions in 57 subjects): GPT-4 = 86.4% (5-shot) | GPT-3.5 = 70.0% (5-shot) | LM SOTA = 70.7% (5-shot U-PaLM) | SOTA = 75.2% (5-shot Flan-PaLM)",
+        "units": "% (điểm phần trăm)",
+        "conditions": "5-shot evaluation trên 57 môn học trắc nghiệm",
+        "calculation": "86.4 - 70.7 = 15.7 (điểm phần trăm)"
+      }
+    ],
+    "required_pages": [7],
+    "required_tokens": ["86.4", "70.7", "15.7", "U-PaLM"]
+  },
+  {
+    "id": "AD03",
+    "split": "dev",
+    "primary_group": "table",
+    "secondary_tags": ["rlhf", "computation"],
+    "question": "Theo Bảng 8 (trang 28), điểm trung bình (Average) qua tất cả các kỳ thi trắc nghiệm (MCQ) của mô hình Base model và RLHF model của GPT-4 lần lượt là bao nhiêu phần trăm, và chênh lệch giữa hai mô hình là bao nhiêu điểm phần trăm?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 8 (trang 28), điểm trung bình qua tất cả các kỳ thi của GPT-4 Base model là 73.7% và của RLHF model là 74.0%, chênh lệch 0.3 điểm phần trăm (74.0% - 73.7% = 0.3%).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra hàng cuối cùng 'Average' của Bảng 8 (trang 28) và tính hiệu giữa RLHF model (74.0%) và Base model (73.7%).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p028:table:table-8",
+        "source_id": "gpt4-technical-report",
+        "page": 28,
+        "region_id": "Table 8",
+        "modality": "table",
+        "bbox": [108.0, 140.0, 504.0, 560.0],
+        "crop_path": null,
+        "evidence": "Average across all exams: Base model = 73.7 % | RLHF model = 74.0 %",
+        "units": "% (điểm phần trăm)",
+        "conditions": "Trung bình trên các phần thi trắc nghiệm (MCQ) của bộ exam benchmark",
+        "calculation": "74.0 - 73.7 = 0.3 (điểm phần trăm)"
+      }
+    ],
+    "required_pages": [28],
+    "required_tokens": ["73.7", "74.0", "0.3"]
+  },
+  {
+    "id": "AD04",
+    "split": "dev",
+    "primary_group": "table",
+    "secondary_tags": ["contamination"],
+    "question": "Trong Bảng 11 (trang 32), tỷ lệ nhiễm dữ liệu (Contamination) giữa tập pre-training của GPT-4 và bộ benchmark HumanEval là bao nhiêu phần trăm, và điểm của GPT-4 trên phần không nhiễm (GPT-4 non-contaminated) cùng mức suy giảm (Degradation) là bao nhiêu?",
+    "answerable": true,
+    "expected_answer": "Theo Bảng 11 (trang 32), trên bộ HumanEval, tỷ lệ nhiễm dữ liệu (Contamination) là 25%. Điểm của GPT-4 trên toàn bộ tập là 67.0%, trên phần không bị nhiễm (GPT-4 non-contaminated) là 65.58%, và mức suy giảm (Degradation) là -2.12%.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tra hàng 'HumanEval' trong Bảng 11 (trang 32) cho các cột GPT-4, Contamination, GPT-4 (non-contaminated) và Degradation.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p032:table:table-11",
+        "source_id": "gpt4-technical-report",
+        "page": 32,
+        "region_id": "Table 11",
+        "modality": "table",
+        "bbox": [108.0, 480.0, 504.0, 700.0],
+        "crop_path": null,
+        "evidence": "HumanEval: GPT-4 = 67.0% | GPT-3.5 = 48.1% | Contamination = 25% | GPT-4 (non-contaminated) = 65.58% | Degradation = -2.12%",
+        "units": "%",
+        "conditions": "Base GPT-4 model (without RLHF)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [32],
+    "required_tokens": ["25%", "67.0%", "65.58%", "-2.12%"]
+  },
+  {
+    "id": "AD05",
+    "split": "dev",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["visual_input", "ocr"],
+    "question": "Trong hình ảnh minh họa ở Bảng 3 (trang 9, Im6.jpg), bộ chuyển đổi cáp màu xanh dương thuộc thương hiệu và mã dòng sản phẩm (series) nào in ở phía trên vỏ hộp ở khung hình thứ hai, và bộ chuyển đổi này kết nối đầu cổng nào với cổng sạc smartphone ở khung hình thứ nhất và thứ ba?",
+    "answerable": true,
+    "expected_answer": "Trên vỏ hộp ở khung hình thứ hai của ảnh Im6.jpg (Bảng 3, trang 9), sản phẩm mang thương hiệu ELECOM, dòng P-APLTDCN series (thuộc bộ sưu tập CABLE MANIA - For Lightning Cable). Bộ chuyển đổi này có hình dáng một đầu cắm màn hình VGA 15 chân màu xanh dương cỡ lớn nhưng thực chất gắn đầu cắm Lightning nhỏ ở chính giữa để cắm vào cổng sạc iPhone/smartphone.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc chữ in trên bao bì trong ảnh Im6.jpg (ELECOM, P-APLTDCN series, CABLE MANIA) và nhận diện 3 khung hình của bộ chuyển đổi VGA-Lightning ở trang 9.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p009:image_diagram:table-3-im6",
+        "source_id": "gpt4-technical-report",
+        "page": 9,
+        "region_id": "Table 3 / Im6.jpg",
+        "modality": "image_diagram",
+        "bbox": [108.0, 125.0, 504.0, 690.0],
+        "crop_path": "data/advanced/crops/page_009_img_1_Im6.jpg",
+        "evidence": "Panel 2 (top right): Retail packaging labeled 'ELECOM' (top left) and 'P-APLTDCN series' (top right), product line 'CABLE MANIA', 'For Lightning Cable'. Panel 1 & 3: blue 15-pin VGA connector with a small Lightning connector at the end plugged into a smartphone.",
+        "units": null,
+        "conditions": "Ba khung hình (Panel 1, 2, 3) trong ảnh Im6.jpg ở Bảng 3 trang 9",
+        "calculation": null
+      }
+    ],
+    "required_pages": [9],
+    "required_tokens": ["ELECOM", "P-APLTDCN", "VGA", "Lightning"]
+  },
+  {
+    "id": "AD06",
+    "split": "dev",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["visual_input"],
+    "question": "Trong ảnh chụp thực tế ở Bảng 16 (trang 36, Im14.jpg - Extreme Ironing), người đàn ông mặc áo màu vàng đang làm hành động gì và chiếc bàn ủi đồ được đặt ở vị trí nào?",
+    "answerable": true,
+    "expected_answer": "Trong ảnh Im14.jpg ở Bảng 16 (trang 36), người đàn ông mặc áo dài tay màu vàng đang đứng phía sau xe và ủi (là) một chiếc áo màu xanh trên bàn ủi đồ (ironing board) được gắn vào phía sau/nóc của một chiếc xe taxi SUV màu vàng đang di chuyển trên đường phố.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kiểm tra nội dung bức ảnh chụp ở Bảng 16 (trang 36, Im14.jpg).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p036:image_diagram:table-16-im14",
+        "source_id": "gpt4-technical-report",
+        "page": 36,
+        "region_id": "Table 16 / Im14.jpg",
+        "modality": "image_diagram",
+        "bbox": [108.0, 380.0, 504.0, 690.0],
+        "crop_path": "data/advanced/crops/page_036_img_1_Im14.jpg",
+        "evidence": "A man wearing a yellow long-sleeved shirt is standing on the rear bumper of a moving yellow SUV taxi in city traffic, ironing a blue shirt with a white iron on an ironing board strapped to the back/roof of the taxi.",
+        "units": null,
+        "conditions": "Bảng 16 (trang 36), ảnh Im14.jpg",
+        "calculation": null
+      }
+    ],
+    "required_pages": [36],
+    "required_tokens": ["ironing", "taxi"]
+  },
+  {
+    "id": "AD07",
+    "split": "dev",
+    "primary_group": "image_diagram",
+    "secondary_tags": ["visual_input", "meme_ocr"],
+    "question": "Trong hình ảnh meme ở Bảng 18 (trang 38, Im18.png - Chicken Nugget Map), dòng chữ tiếng Anh phía trên bức ảnh viết nguyên văn là gì và vật thể thực tế nằm trên khay nướng trong ảnh là gì?",
+    "answerable": true,
+    "expected_answer": "Dòng chữ phía trên bức ảnh trong Im18.png (Bảng 18, trang 38) viết nguyên văn là: \"Sometimes I just look at pictures of the earth from space and I marvel at how beautiful it all is.\" Vật thể thực tế trong ảnh là những miếng gà rán (chicken nuggets) đặt trên khay nướng được sắp xếp theo hình dáng bản đồ thế giới (các châu lục).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc dòng chữ OCR phía trên ảnh Im18.png và nhận diện hình ảnh các miếng gà rán xếp thành bản đồ thế giới ở trang 38.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p038:image_diagram:table-18-im18",
+        "source_id": "gpt4-technical-report",
+        "page": 38,
+        "region_id": "Table 18 / Im18.png",
+        "modality": "image_diagram",
+        "bbox": [108.0, 320.0, 504.0, 695.0],
+        "crop_path": "data/advanced/crops/page_038_img_1_Im18.png",
+        "evidence": "Top caption text in image: 'Sometimes I just look at pictures of the earth from space and I marvel at how beautiful it all is.' Image below caption: Fried chicken nuggets arranged on a dark baking tray in the shape of the continents of a world map.",
+        "units": null,
+        "conditions": "Bảng 18 (trang 38), ảnh Im18.png",
+        "calculation": null
+      }
+    ],
+    "required_pages": [38],
+    "required_tokens": ["earth from space", "chicken nuggets"]
+  },
+  {
+    "id": "AD08",
+    "split": "dev",
+    "primary_group": "chart",
+    "secondary_tags": ["scaling_law", "axes_units"],
+    "question": "Trong Biểu đồ Hình 1 (trang 3, OpenAI codebase next word prediction), trục hoành (x-axis) và trục tung (y-axis) biểu diễn đại lượng gì với đơn vị/cách chuẩn hóa nào, và đường nét đứt trong biểu đồ thể hiện điều gì?",
+    "answerable": true,
+    "expected_answer": "Trong Biểu đồ Hình 1 (trang 3), trục hoành biểu diễn lượng tính toán huấn luyện (Compute) được chuẩn hóa sao cho GPT-4 bằng 1 (với các mốc từ 100p, 10n, 1µ, 100µ, 0.01 đến 1), còn trục tung biểu diễn độ mất mát cuối cùng tính theo đơn vị Bits per word (từ 1.0 đến 6.0) trên tập dữ liệu mã nguồn nội bộ của OpenAI. Đường nét đứt (Prediction) là đường khớp hàm lũy thừa (power law fit) trên các mô hình nhỏ hơn (không bao gồm GPT-4), dự đoán chính xác final loss của GPT-4.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc nhãn trục X (Compute), trục Y (Bits per word), chú giải (Observed, Prediction, gpt-4) và caption của Figure 1 ở trang 3.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p003:chart:figure-1",
+        "source_id": "gpt4-technical-report",
+        "page": 3,
+        "region_id": "Figure 1",
+        "modality": "chart",
+        "bbox": [72.0, 430.0, 540.0, 710.0],
+        "crop_path": null,
+        "evidence": "X-axis: Compute (training compute normalized so that GPT-4 = 1; ticks: 100p, 10n, 1µ, 100µ, 0.01, 1). Y-axis: Bits per word (final loss on a dataset derived from OpenAI internal codebase; ticks: 1.0 to 6.0). Dotted line: power law fit to smaller models (excluding GPT-4).",
+        "units": "Compute (chuẩn hóa GPT-4 = 1) và Bits per word",
+        "conditions": "OpenAI internal codebase dataset (không nằm trong training set)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [3],
+    "required_tokens": ["Compute", "Bits per word", "power law"]
+  },
+  {
+    "id": "AD09",
+    "split": "dev",
+    "primary_group": "chart",
+    "secondary_tags": ["inverse_scaling", "trend"],
+    "question": "Trong Biểu đồ Hình 3 (trang 4, Inverse scaling prize, hindsight neglect), 5 mô hình nào được xếp theo thứ tự từ trái sang phải trên trục hoành, đại lượng trên trục tung là gì, và xu hướng biến thiên độ chính xác diễn ra như thế nào?",
+    "answerable": true,
+    "expected_answer": "Trong Biểu đồ Hình 3 (trang 4), 5 mô hình trên trục hoành theo thứ tự từ trái sang phải là: ada, babbage, curie, gpt-3.5 và gpt-4; trục tung biểu diễn độ chính xác (Accuracy, thang 0 đến 100). Độ chính xác giảm dần khi quy mô tăng từ ada sang babbage và xuống thấp nhất ở curie (xu hướng inverse scaling), sau đó đảo chiều tăng mạnh ở gpt-3.5 và đạt gần 100% ở gpt-4.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc các nhãn mô hình trên trục X, nhãn trục Y (Accuracy) và xu hướng chữ U trên biểu đồ Figure 3 ở trang 4.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p004:chart:figure-3",
+        "source_id": "gpt4-technical-report",
+        "page": 4,
+        "region_id": "Figure 3",
+        "modality": "chart",
+        "bbox": [110.0, 340.0, 500.0, 545.0],
+        "crop_path": null,
+        "evidence": "X-axis: Model (ada, babbage, curie, gpt-3.5, gpt-4). Y-axis: Accuracy (0, 50, 100). Accuracy decreases from ada to babbage and curie, then reverses sharply with gpt-3.5 and gpt-4 (~100%).",
+        "units": "Accuracy (%)",
+        "conditions": "Hindsight Neglect task trong Inverse Scaling Prize",
+        "calculation": null
+      }
+    ],
+    "required_pages": [4],
+    "required_tokens": ["ada", "babbage", "curie", "gpt-3.5", "gpt-4", "Accuracy"]
+  },
+  {
+    "id": "AD10",
+    "split": "dev",
+    "primary_group": "chart",
+    "secondary_tags": ["factuality", "legend"],
+    "question": "Trong Biểu đồ Hình 6 (trang 10, Internal factual eval by category), có bao nhiêu danh mục (Category) trên trục hoành, 4 phiên bản mô hình nào được so sánh trong chú giải (legend), và GPT-4 vượt mô hình GPT-3.5 mới nhất bao nhiêu điểm phần trăm?",
+    "answerable": true,
+    "expected_answer": "Trong Biểu đồ Hình 6 (trang 10), trục hoành gồm 9 danh mục: learning, technology, writing, history, math, science, recommendation, code và business. Chú giải so sánh 4 mô hình: chatgpt-v2, chatgpt-v3, chatgpt-v4 và gpt-4. GPT-4 đạt độ chính xác cao hơn mô hình GPT-3.5 mới nhất 19 điểm phần trăm.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Đọc 9 nhãn danh mục trên trục X, 4 chuỗi trong legend và mức cải thiện 19 điểm phần trăm của Figure 6 ở trang 10.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p010:chart:figure-6",
+        "source_id": "gpt4-technical-report",
+        "page": 10,
+        "region_id": "Figure 6",
+        "modality": "chart",
+        "bbox": [108.0, 390.0, 504.0, 615.0],
+        "crop_path": null,
+        "evidence": "X-axis: Category (9 categories: learning, technology, writing, history, math, science, recommendation, code, business). Legend: chatgpt-v2, chatgpt-v3, chatgpt-v4, gpt-4. GPT-4 scores 19 percentage points higher than the latest GPT-3.5.",
+        "units": "percentage points (%)",
+        "conditions": "9 internal adversarially-designed factuality evaluations",
+        "calculation": null
+      }
+    ],
+    "required_pages": [10],
+    "required_tokens": ["9", "chatgpt-v2", "chatgpt-v3", "chatgpt-v4", "19"]
+  },
+  {
+    "id": "AD11",
+    "split": "dev",
+    "primary_group": "multi_hop",
+    "secondary_tags": ["scaling_prediction", "cross_page"],
+    "question": "Kết hợp phần Abstract (trang 1) và Mục 3 (trang 4), khi dự đoán hiệu năng của GPT-4 trước khi hoàn tất huấn luyện, các mô hình nhỏ hơn dùng để ngoại suy được huấn luyện với lượng compute tối đa bằng bao nhiêu phần của GPT-4, và trên bộ HumanEval có bao nhiêu bài toán khó nhất bị loại ra trước khi chia các bài còn lại thành mấy nhóm độ khó (difficulty buckets)?",
+    "answerable": true,
+    "expected_answer": "Theo phần Abstract (trang 1), các mô hình nhỏ hơn dùng để dự đoán hiệu năng của GPT-4 được huấn luyện với lượng compute không quá 1/1,000 (1/1,000th) so với GPT-4. Theo trang 4, khi đăng ký dự đoán trên bộ HumanEval trước khi huấn luyện xong, toàn bộ các bài toán ngoại trừ 15 bài khó nhất đã được chia thành 6 nhóm độ khó (6 difficulty buckets).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kết hợp thông tin tỷ lệ compute ở Abstract (trang 1) và cách chia 6 difficulty buckets sau khi bớt 15 bài khó nhất trên HumanEval ở trang 4.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p001:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 1,
+        "region_id": "Page 1 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 260.0, 522.0, 690.0],
+        "crop_path": null,
+        "evidence": "This allowed us to accurately predict some aspects of GPT-4's performance based on models trained with no more than 1/1,000th the compute of GPT-4.",
+        "units": "tỷ lệ compute (1/1,000th)",
+        "conditions": "Dự đoán hiệu năng từ các mô hình nhỏ hơn",
+        "calculation": null
+      },
+      {
+        "chunk_id": "gpt4-report:p004:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 4,
+        "region_id": "Page 4 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 380.0, 522.0, 710.0],
+        "crop_path": null,
+        "evidence": "All but the 15 hardest HumanEval problems were split into 6 difficulty buckets based on the performance of smaller models.",
+        "units": "bài toán (problems) và nhóm độ khó (difficulty buckets)",
+        "conditions": "Dự đoán trên tập HumanEval trước khi huấn luyện hoàn tất",
+        "calculation": null
+      }
+    ],
+    "required_pages": [1, 4],
+    "required_tokens": ["1/1,000", "15", "6"]
+  },
+  {
+    "id": "AD12",
+    "split": "dev",
+    "primary_group": "multi_hop",
+    "secondary_tags": ["human_evaluation", "red_teaming"],
+    "question": "Kết hợp trang 7 (Mục 4 / chú thích 7) và trang 12 (Mục 6), OpenAI đã thu thập bao nhiêu câu prompt từ người dùng ChatGPT và OpenAI API để chấm tỷ lệ ưu tiên câu trả lời của GPT-4 so với GPT-3.5 (đạt 70.2%), và đã mời hơn bao nhiêu chuyên gia từ các lĩnh vực rủi ro để kiểm thử đối kháng (red-teaming) mô hình?",
+    "answerable": true,
+    "expected_answer": "Theo trang 7, OpenAI đã thu thập 5,214 câu prompt được gửi qua ChatGPT và OpenAI API để đánh giá mức độ tuân thủ ý định người dùng (trong đó câu trả lời của GPT-4 được ưa chuộng hơn GPT-3.5 trên 70.2% số prompt). Theo trang 12 (Mục 6), OpenAI đã mời hơn 50 chuyên gia (over 50 experts) từ các lĩnh vực như rủi ro căn chỉnh AI dài hạn, an ninh mạng, rủi ro sinh học và an ninh quốc tế để kiểm thử đối kháng (red-teaming).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kết hợp con số 5,214 prompts (70.2%) ở trang 7 với số lượng hơn 50 chuyên gia red-teaming ở trang 12.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p007:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 7,
+        "region_id": "Page 7 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 60.0, 522.0, 390.0],
+        "crop_path": null,
+        "evidence": "On a dataset of 5,214 prompts submitted to ChatGPT [64] and the OpenAI API [47], the responses generated by GPT-4 were preferred over the responses generated by GPT-3.5 on 70.2% of prompts.",
+        "units": "prompts và %",
+        "conditions": "Lọc bỏ PII và nội dung nhạy cảm/ngắn",
+        "calculation": null
+      },
+      {
+        "chunk_id": "gpt4-report:p012:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 12,
+        "region_id": "Page 12 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 60.0, 522.0, 360.0],
+        "crop_path": null,
+        "evidence": "over 50 experts from domains such as long-term AI alignment risks, cybersecurity, biorisk, and international security to adversarially test the model.",
+        "units": "chuyên gia (experts)",
+        "conditions": "Adversarial Testing via Domain Experts",
+        "calculation": null
+      }
+    ],
+    "required_pages": [7, 12],
+    "required_tokens": ["5,214", "70.2%", "50"]
+  },
+  {
+    "id": "AD13",
+    "split": "dev",
+    "primary_group": "text",
+    "secondary_tags": ["pretraining_cutoff"],
+    "question": "Theo Mục 5 (Limitations, trang 10), dữ liệu pre-training của GPT-4 chủ yếu kết thúc (cuts off) vào tháng và năm nào?",
+    "answerable": true,
+    "expected_answer": "Theo Mục 5 (trang 10), phần lớn dữ liệu pre-training của GPT-4 kết thúc (cuts off) vào tháng 9 năm 2021 (September 2021).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tìm thông tin thời điểm cắt dữ liệu pre-training ở Mục 5, trang 10.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p010:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 10,
+        "region_id": "Page 10 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 60.0, 522.0, 380.0],
+        "crop_path": null,
+        "evidence": "GPT-4 generally lacks knowledge of events that have occurred after the vast majority of its pre-training data cuts off in September 2021",
+        "units": "tháng/năm",
+        "conditions": "Phần lớn dữ liệu pre-training (ngoại trừ một lượng nhỏ dữ liệu mới hơn)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [10],
+    "required_tokens": ["September 2021"]
+  },
+  {
+    "id": "AD14",
+    "split": "dev",
+    "primary_group": "text",
+    "secondary_tags": ["contamination_methodology"],
+    "question": "Theo Phụ lục C (trang 28-29), khi đo mức độ nhiễm dữ liệu (cross-contamination) giữa tập đánh giá và dữ liệu pre-training bằng so khớp chuỗi con (substring match), OpenAI xử lý chuỗi văn bản như thế nào và chọn ngẫu nhiên bao nhiêu chuỗi con với độ dài bao nhiêu ký tự cho mỗi mẫu đánh giá?",
+    "answerable": true,
+    "expected_answer": "Theo Phụ lục C (trang 28-29), cả dữ liệu đánh giá và dữ liệu huấn luyện đều được xử lý bằng cách loại bỏ toàn bộ khoảng trắng và ký hiệu (removing all spaces and symbols), chỉ giữ lại các ký tự chữ và số. Với mỗi mẫu đánh giá, OpenAI chọn ngẫu nhiên 3 chuỗi con (three substrings), mỗi chuỗi có độ dài 50 ký tự (hoặc dùng toàn bộ mẫu nếu ngắn hơn 50 ký tự) để kiểm tra khớp chuỗi con.",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Tổng hợp điều kiện tiền xử lý và tham số thuật toán kiểm tra nhiễm dữ liệu ở cuối trang 28 và đầu trang 29.",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p029:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 29,
+        "region_id": "Page 29 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 360.0, 522.0, 710.0],
+        "crop_path": null,
+        "evidence": "keeping only characters (including numbers). For each evaluation example, we randomly select three substrings of 50 characters (or use the entire example if it's less than 50 characters).",
+        "units": "chuỗi con (substrings) và ký tự (characters)",
+        "conditions": "Sau khi loại bỏ toàn bộ khoảng trắng và ký hiệu",
+        "calculation": null
+      }
+    ],
+    "required_pages": [29],
+    "required_tokens": ["50", "three"]
+  },
+  {
+    "id": "AD15",
+    "split": "dev",
+    "primary_group": "text",
+    "secondary_tags": ["system_card", "timeline"],
+    "question": "Theo phần Giới thiệu của GPT-4 System Card (Mục 1, trang 42), mô hình GPT-4 đã hoàn tất quá trình huấn luyện (finished training) vào tháng và năm nào trước khi được kiểm thử đối kháng và cải thiện an toàn?",
+    "answerable": true,
+    "expected_answer": "Theo Mục 1 của GPT-4 System Card (trang 42), GPT-4 đã hoàn tất quá trình huấn luyện vào tháng 8 năm 2022 (August of 2022).",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Kiểm tra văn bản trên trang 42 (thuộc phần System Card được khôi phục qua plain fallback).",
+    "gold": [
+      {
+        "chunk_id": "gpt4-report:p042:text:1",
+        "source_id": "gpt4-technical-report",
+        "page": 42,
+        "region_id": "Page 42 Text 1",
+        "modality": "text",
+        "bbox": [90.0, 350.0, 522.0, 710.0],
+        "crop_path": null,
+        "evidence": "Since it finished training in August of 2022, we have been evaluating, adversarially testing, and iteratively improving the model and the system-level mitigations around it.",
+        "units": "tháng/năm",
+        "conditions": "Mục 1 Introduction của GPT-4 System Card (trang 42)",
+        "calculation": null
+      }
+    ],
+    "required_pages": [42],
+    "required_tokens": ["August", "2022"]
+  },
+  {
+    "id": "AD16",
+    "split": "dev",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["architecture_secret"],
+    "question": "Báo cáo kỹ thuật này công bố mô hình GPT-4 có chính xác bao nhiêu tỷ tham số (parameters) và bao nhiêu tầng (layers) Transformer?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Mục 2 (trang 2) nêu rõ báo cáo từ chối tiết lộ kích thước mô hình (model size) và chi tiết kiến trúc vì lý do cạnh tranh và an toàn.",
+    "absence_reason": "Tài liệu cố ý không công bố số lượng tham số và số tầng Transformer của GPT-4 (xem Mục 2 Scope and Limitations, trang 2).",
+    "verification_method": "Quét toàn bộ 100 trang PDF cho các từ khóa 'parameter count', 'billion parameters', 'number of layers', và kiểm tra Mục 2 trang 2 ('this report contains no further details about the architecture (including model size)...')."
+  },
+  {
+    "id": "AD17",
+    "split": "dev",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["hardware_cost_secret"],
+    "question": "Tổng chi phí tiền điện và hạ tầng tính bằng đô la Mỹ (USD) cùng số lượng GPU NVIDIA A100 được sử dụng để huấn luyện GPT-4 trong báo cáo là bao nhiêu?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Báo cáo không công bố phần cứng huấn luyện (hardware), số lượng GPU hay chi phí huấn luyện bằng USD.",
+    "absence_reason": "Mục 2 (trang 2) nêu rõ báo cáo không tiết lộ thông tin về phần cứng (hardware) hay chi phí tính toán tuyệt đối để huấn luyện GPT-4.",
+    "verification_method": "Quét toàn bộ 100 trang cho các từ khóa 'A100', 'GPU', 'million dollars', 'training cost', xác nhận không có số lượng GPU hay chi phí USD."
+  },
+  {
+    "id": "AD18",
+    "split": "dev",
+    "primary_group": "unanswerable",
+    "secondary_tags": ["missing_exam_in_table"],
+    "question": "Theo Bảng 1 (trang 5), GPT-4 đạt bao nhiêu điểm trong hai kỳ thi chứng chỉ tiếng Anh quốc tế IELTS Academic và TOEFL iBT?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "source_id": "gpt4-technical-report",
+    "source": "gpt4-technical-report.pdf",
+    "rationale": "Câu hỏi gần chủ đề các kỳ thi chuẩn hóa ở Bảng 1 (trang 5), nhưng IELTS và TOEFL không nằm trong danh sách các kỳ thi được đánh giá.",
+    "absence_reason": "Bảng 1 (trang 5) và Bảng 8-10 (trang 28-31) không hề có kỳ thi IELTS hay TOEFL iBT.",
+    "verification_method": "Kiểm tra toàn bộ danh sách kỳ thi trong Bảng 1 (trang 5), Bảng 8 (trang 28), Bảng 9 (trang 30), Bảng 10 (trang 31) và tìm kiếm chuỗi 'IELTS', 'TOEFL' trên toàn bộ 100 trang (0 kết quả)."
+  }
+]

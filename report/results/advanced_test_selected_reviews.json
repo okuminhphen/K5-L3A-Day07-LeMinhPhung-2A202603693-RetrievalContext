@@ -1,0 +1,260 @@
+[
+  {
+    "query_id": "AT01",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng điểm GRE Quantitative của GPT-4 (có vision) là 163/170 (~80th) so với 157/170 (~62nd) của GPT-4 (no vision) (+6 điểm), và GRE Verbal là 169/170 (~99th) so với 165/170 (~96th) (+4 điểm); dẫn đúng Table 1 trang 5.",
+    "original_pdf_verification": "Đối chiếu bản gốc gpt4-technical-report.pdf trang 5, Table 1 (hàng 5 và 6: Graduate Record Examination Quantitative & Verbal)."
+  },
+  {
+    "query_id": "AT02",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Không đạt. Dù dẫn đúng Table 1 trang 5 và tính đúng tổng bài giải đúng của GPT-4 là 31/41 + 21/80 + 3/45 = 55/166 (và trích xuất 12/41, 8/80, 0/45 = 20/166 của GPT-3.5 trong phần chi tiết), phần lời giải của model tính sai tổng của GPT-4 (no vision) thành 52/166 và thiếu kết quả phép chia tỷ lệ 55 / 20 = 2.75 lần.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 5, Table 1 (3 hàng cuối: Leetcode easy 31/41 vs 12/41, medium 21/80 vs 8/80, hard 3/45 vs 0/45)."
+  },
+  {
+    "query_id": "AT03",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Xác định đúng bộ benchmark duy nhất GPT-4 thấp hơn SOTA là DROP (3-shot, đơn vị F1 score), nêu đúng điểm GPT-4 là 80.9, QDGAT SOTA là 88.4 và chênh lệch -7.5 điểm F1; dẫn đúng Table 2 trang 7.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 7, Table 2 (hàng 6: DROP F1 score 80.9 vs 88.4 QDGAT)."
+  },
+  {
+    "query_id": "AT04",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đầy đủ độ chính xác và mức cải thiện tuyệt đối của GPT-4 so với GPT-3.5 trên cả hai bộ: HumanEval (0-shot: 67.0% vs 48.1%, tăng +18.9 điểm phần trăm) và GSM-8K (5-shot CoT: 92.0% vs 57.1%, tăng +34.9 điểm phần trăm); dẫn đúng Table 2 trang 7.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 7, Table 2 (hàng 5 HumanEval và hàng 7 GSM-8K)."
+  },
+  {
+    "query_id": "AT05",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng điểm Base model và RLHF model trên GRE Quantitative (57.5% vs 67.5%, tăng +10.0 điểm phần trăm) và USNCO Local Section Exam 2022 (51.7% vs 63.3%, tăng +11.6 điểm phần trăm); dẫn đúng Table 8 trang 28.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 28, Table 8 (hàng GRE Quantitative và USNCO Local Section Exam 2022)."
+  },
+  {
+    "query_id": "AT06",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng toàn bộ 6 chỉ số của MKSAP Questions (MCQ) trong Bảng 10: 1080 câu hỏi, tỷ lệ nhiễm 18.52%, điểm toàn tập 74.72%, phần không nhiễm 75.11%, phần nhiễm 73.00% và Degradation 0.52%; dẫn đúng Table 10 trang 31.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 31, Table 10 (hàng MKSAP Questions MCQ)."
+  },
+  {
+    "query_id": "AT07",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nhận diện đúng từ sơ đồ Figure 1 - Schéma d'un bolomètre trong ảnh Im13.jpg (Bảng 15, trang 35) 3 ký hiệu thông số của thanh dẫn nhiệt (barreau conducteur) là L, S, lambda và công thức alpha = (1/R)*(dR/dT); dẫn đúng Table 15 / Im13.jpg trang 35.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_035_img_1_Im13.jpg và Bảng 15 trang 35."
+  },
+  {
+    "query_id": "AT08",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Đọc đúng mã arXiv dọc lề trái ('arXiv:2203.02155v1 [cs.CL] 4 Mar 2022') và email tác giả liên hệ ('lowe@openai.com') từ ảnh chụp trang 1 bài báo InstructGPT; dẫn đúng Table 17 / Im15.jpg trang 37.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_037_img_1_Im15.jpg và Bảng 17 trang 37."
+  },
+  {
+    "query_id": "AT09",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đủ 3 bước huấn luyện trong sơ đồ Figure 2 của InstructGPT (SFT, RM, PPO) và nội dung nguyên văn của hai câu prompt mẫu màu xanh ('Explain the moon landing to a 6 year old' ở Bước 1 & 2, 'Write a story about frogs' ở Bước 3); dẫn đúng Table 17 / Im17.jpg trang 37.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_037_img_3_Im17.jpg và Bảng 17 trang 37."
+  },
+  {
+    "query_id": "AT10",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng nguyên nhân ở khung STATISTICAL LEARNING ('because the VC-Dimension of our Kernel is too high'), khẩu hiệu 'STACK MORE LAYERS' ở khung NEURAL NETWORKS và cả hai trục đồ thị đều gắn nhãn 'LAYERS'; dẫn đúng Table 19 / Im19.jpg trang 39.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_039_img_1_Im19.jpg và Bảng 19 trang 39."
+  },
+  {
+    "query_id": "AT11",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Liệt kê đúng 6 công cụ (Molecule search, Purchase, Patent Search, Modify compound, Email, Literature Answer), tên thuốc ban đầu Dasatinib và hợp chất tương tự AZD0530 ức chế Fyn kinase; dẫn đúng System Card Figure 5 trang 57.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 57, System Card Figure 5."
+  },
+  {
+    "query_id": "AT12",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng độ chính xác 3-shot MMLU của GPT-4 English (85.5%), GPT-3.5-English (70.1%), ngôn ngữ không phải tiếng Anh cao nhất là Italian/Afrikaans (84.1%), thấp nhất là Telugu (62.0%) và khoảng cách 22.1 điểm phần trăm; dẫn đúng Figure 5 trang 8.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 8, Figure 5."
+  },
+  {
+    "query_id": "AT13",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng hai trục P(answer) và P(correct) (0.0 - 1.0), giá trị ECE của pre-train (0.007) và ppo (0.074), cùng tỷ lệ tăng 10.57 lần (tăng thêm 0.067); dẫn đúng Figure 8 trang 12.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 12, Figure 8."
+  },
+  {
+    "query_id": "AT14",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Đọc đúng cả 3 thanh dữ liệu trên biểu đồ Im12.png (Finland 175.09 g, Georgia 79.84 g, Western Asia 69.62 g) và tính đúng mức vượt của Finland so với ngưỡng trung bình dự kiến của EU (165 g) là 175.09 - 165 = 10.09 g/người/ngày; dẫn đúng Table 14 / Im12.png trang 34.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_034_img_1_Im12.png và Bảng 14 trang 34."
+  },
+  {
+    "query_id": "AT15",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng trục hoành 'Model size' (3 mốc: 1.3B, 6B, 175B), trục tung 'Win rate against SFT 175B' (0.2, 0.4, 0.6) và 5 chuỗi trong chú giải (PPO-ptx, PPO, SFT, GPT (prompted), GPT); dẫn đúng Table 17 / Im16.jpg trang 37.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_037_img_2_Im16.jpg và Bảng 17 trang 37."
+  },
+  {
+    "query_id": "AT16",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng nhãn trục tung 'Win rate', trục hoành 'Lose rate', 3 mô hình (GPT-4 RLHF, GPT-3.5 Turbo RLHF, GPT-3.5 RLHF) và các tỷ lệ thắng 61.1%, 70.2%, 63.0% (cùng tỷ lệ thua đối xứng 38.9%, 29.8%, 37.0%); dẫn đúng System Card Figure 11 / Im13.png trang 98.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_098_img_1_Im13.png ở trang 98."
+  },
+  {
+    "query_id": "AT17",
+    "answer_accurate_and_complete": false,
+    "citation_locates_page_and_region": false,
+    "evidence_supports_full_answer": false,
+    "passed": false,
+    "rationale": "Không đạt. Câu multi-hop yêu cầu kết hợp 3 bảng ở 3 trang (Bảng 1 trang 5, Bảng 9 trang 30 và Bảng 10 trang 31). Agent truy xuất và dẫn được Table 1 (trang 5) và Table 9 (trang 30: điểm quy đổi tăng từ 163 ~88th lên 169 ~97th, +6 điểm), nhưng bỏ sót Table 10 ở trang 31 nên thiếu số câu hỏi (100 câu) và độ chính xác % trên tập không nhiễm (83.61% vs 76.00%).",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 5 (Table 1), trang 30 (Table 9) và trang 31 (Table 10)."
+  },
+  {
+    "query_id": "AT18",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Giải thích đúng dấu * trên GSM-8K (92.0%*) là do một phần tập training của GSM-8K nằm trong pre-training mix của GPT-4, nêu đúng kỹ thuật 5-shot chain-of-thought prompting và tỷ lệ nhiễm ~1% trong Bảng 11; dẫn đủ Table 2 (trang 7) và Table 11 (trang 32).",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 6-7 (Table 2 & Footnote 6) và trang 32 (Table 11)."
+  },
+  {
+    "query_id": "AT19",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đủ 3 câu hỏi kiểm tra Yes/No ([Is it a refusal?], [Providing reasons?], [Contains harmful content]), 18 lựa chọn từ (A) đến (R), và phân biệt chính xác nhãn (A), (B) và (E); dẫn đủ System Card Figure 6 (trang 63) và Appendix A (trang 80).",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 63 (Figure 6) và trang 80 (Appendix A)."
+  },
+  {
+    "query_id": "AT20",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đủ quy trình 4 bước giảm ảo giác miền đóng (lặp tối đa 5 lần, tăng độ chính xác TruthfulQA từ 30% lên 60%) ở trang 64 và đối chiếu khớp tỷ lệ thắng 70.2% (trước GPT-3.5 RLHF) và 61.1% (trước GPT-3.5 Turbo RLHF) trên 5,214 prompts với biểu đồ Figure 11 ở trang 98; dẫn đủ trang 64 và trang 98.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 64 (Section 3 & Footnote 30) và trang 98 (Figure 11 / Im13.png)."
+  },
+  {
+    "query_id": "AT21",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng lý do loại bỏ BIG-bench ở chú thích 5 trang 6 là do phát hiện một số phần của BIG-bench vô tình bị trộn vào tập huấn luyện (training set) khi kiểm tra nhiễm dữ liệu; dẫn đúng trang 6.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 6, Footnote 5."
+  },
+  {
+    "query_id": "AT22",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng cách thay thế ảnh bị thiếu bằng thẻ 'IMAGE:' kèm tên file không mang ý nghĩa và liệt kê đủ 6 kỳ thi không có ảnh trong phần trắc nghiệm (SAT Reading and Writing, MKSAP, Sommelier, AP Psychology, AP English Language, AP English Literature); dẫn đúng Appendix A.4 trang 25.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 25, Appendix A.4 Images."
+  },
+  {
+    "query_id": "AT23",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng kết luận của chuyên gia red-team ở trang 54: giải thích được một số lỗ hổng nếu mã nguồn đủ nhỏ để vừa cửa sổ ngữ cảnh (context window), nhưng hoạt động kém khi xây dựng mã khai thác (building exploits); dẫn đúng trang 54.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 54, mục Vulnerability discovery and exploitation."
+  },
+  {
+    "query_id": "AT24",
+    "answer_accurate_and_complete": true,
+    "citation_locates_page_and_region": true,
+    "evidence_supports_full_answer": true,
+    "passed": true,
+    "rationale": "Đạt. Nêu đúng tiêu chí phân loại dựa trên phẩm chất hình người và có trí khôn (humanoid qualities & sapient), xếp đúng 'Elves', 'Bigfoot', 'Angels', 'Fairies' vào 'A person or people' và 'Pegasus', 'Unicorn', 'Jackalope', 'Phoenix' vào 'An animal'; dẫn đúng trang 67.",
+    "original_pdf_verification": "Đối chiếu bản gốc trang 67, mục Definition of terms."
+  },
+  {
+    "query_id": "AT25",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Đạt. Từ chối đúng câu hỏi về bảng giá thương mại OpenAI API cho bản 8K/32K theo mỗi 1,000 tokens, không thêm khẳng định thiếu căn cứ.",
+    "original_pdf_verification": "Đối chiếu toàn bộ 100 trang bản gốc (đặc biệt Mục 2 trang 2)."
+  },
+  {
+    "query_id": "AT26",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Đạt. Từ chối đúng câu hỏi về kiến trúc bộ mã hóa thị giác (ViT/CLIP) và độ phân giải pixel đầu vào.",
+    "original_pdf_verification": "Đối chiếu Mục 2 (trang 2) và Mục 4.1 (trang 8) của bản gốc."
+  },
+  {
+    "query_id": "AT27",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Đạt. Từ chối đúng câu hỏi về điểm thi USMLE Step 1, Step 2 CK và Step 3 và nêu rõ Bảng 1 chỉ đánh giá MKSAP.",
+    "original_pdf_verification": "Đối chiếu Bảng 1 (trang 5) và Bảng 8-10 (trang 28-31) của bản gốc."
+  },
+  {
+    "query_id": "AT28",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Đạt. Từ chối đúng câu hỏi về độ chính xác MMLU tiếng Việt (Vietnamese) vì ngôn ngữ này không nằm trong 26 ngôn ngữ của Biểu đồ Hình 5.",
+    "original_pdf_verification": "Đối chiếu Biểu đồ Hình 5 (trang 8) của bản gốc."
+  },
+  {
+    "query_id": "AT29",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Đạt. Từ chối đúng câu hỏi về lượng tiêu thụ thịt của Pháp và Đức trong biểu đồ Bảng 14 (trang 34) vì biểu đồ chỉ có Finland, Georgia và Western Asia.",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_034_img_1_Im12.png và Bảng 14 (trang 34)."
+  },
+  {
+    "query_id": "AT30",
+    "abstained_without_speculation": true,
+    "passed": true,
+    "rationale": "Đạt. Từ chối đúng câu hỏi về tỷ lệ thắng đối đầu với Claude-1 và PaLM-2 trong ma trận Figure 11 (trang 98).",
+    "original_pdf_verification": "Đối chiếu ảnh gốc data/advanced/crops/page_098_img_1_Im13.png (trang 98) và trang 64."
+  }
+]
